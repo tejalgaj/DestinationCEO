@@ -21,6 +21,11 @@ Route::get('/resume-builder', function () {
     return view('resume_builder');
 })->middleware('auth');
 
+Route::get('/resume-scan', function () {
+    return view('resume_scan');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
