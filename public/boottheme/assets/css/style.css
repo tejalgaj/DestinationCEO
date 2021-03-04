@@ -1592,7 +1592,7 @@ section {
 /* Containing areas */
 
 .container_scan {
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
     margin-top: 100px;
 }
@@ -1626,7 +1626,7 @@ textarea {
 /* matched results*/
 
 #scanning_results {
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(95, 260, 128);
     display: inline-flex;
 }
@@ -1687,11 +1687,41 @@ table {
     color: hsl(0, 0%, 90%);
 }
 
+#match_title {
+    margin-top: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(177, 76, 76);
+}
+
+#myTableHardSkills {
+    font-size: 18px;
+}
+
+#myTableSoftSkills {
+    font-size: 18px;
+}
+
+#result_description {
+    font-size: 19px;
+    color: rgb(177, 76, 76);
+    font-weight: bolder;
+}
+
+#myTable {
+    font-size: 18px;
+}
+
+#title_scanning h1 {
+    color: rgb(177, 76, 76);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#title_scanning p {
+    color: rgb(55, 99, 68);
+    font-size: 18px;
+}
+
 
 /* Inderjit CSS ends*/
-
-#hardskills {
-    margin-top: 80px;
-    font-size: 18px;
-    font-weight: bold;
-}
