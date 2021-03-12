@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\skills_scanning_controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,15 @@ Route::get('/resume-builder', function () {
 Route::get('/resume-template', function () {
     return view('template_select');
 })->middleware('auth');
+
+/*
+Route::get('/resume-scan', function () {
+    return view('resume_scan');
+});
+
+*/
+Route::get('resume-scan',[skills_scanning_controller::class,'getSkills']);
+
 
 Auth::routes();
 
