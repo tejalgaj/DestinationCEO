@@ -155,4 +155,16 @@ class UserDetailController extends Controller
         $userDetail->delete();
         return back();
     }
+
+    
+     public function storeSessionData(Request $request) {
+       // $request->session()->put('resume_selected_template','Virat Gandhi');
+        session(['resume_selected_template' => $request->template_title]);
+        return response()->json(['code'=>200, 'message'=>'session stored successfully'], 200);
+        
+     }
+     public function deleteSessionData(Request $request) {
+        $request->session()->forget('resume_selected_template');
+        echo "Data has been removed from session.";
+     }
 }

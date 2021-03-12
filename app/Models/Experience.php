@@ -23,26 +23,9 @@ class Experience extends Model
         return Carbon::parse($value)->format('Y-m');
     }
 
-    public function getWorkResponsibilitiesAttribute($value)
-    {
-        //
-        return json_decode($value);
-        
-    }
+    
 
-    public function getArrayFiltered($value)
-    {
-        $filteredArray = array();
-if(is_array($value))
-{
-    $filteredArray = Arr::where($value, function ($value, $key) {
-        return $value!= null;
-    });
-
-    $filteredArray = array_values($filteredArray);
-}
-        return $filteredArray;
-    }
+    
 
    
 

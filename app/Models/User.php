@@ -64,4 +64,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(AdditionalExperience::class);
     }
+    public function technicalExperience()
+    {
+        return $this->hasMany(TechnicalExperience::class);
+    }
+
+    public function highlight()
+    {
+        return $this->hasOne(Highlight::class);
+    }
 }

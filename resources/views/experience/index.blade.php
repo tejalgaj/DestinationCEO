@@ -46,7 +46,10 @@
         </div>
     
         <div class="col text-right">
-            <a class=" btn btn-primary" href=" {{route('additional-experience.index')}} " role="button">Additional Experience</a> 
+         
+          <a class=" btn btn-primary" href=" {{route('technical-experience.index')}} " role="button">Technical Experience</a>
+      
+            
         </div>
     </div>
      

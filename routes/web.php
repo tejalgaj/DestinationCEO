@@ -21,6 +21,10 @@ Route::get('/resume-builder', function () {
     return view('resume_builder');
 })->middleware('auth');
 
+Route::get('/resume-template', function () {
+    return view('template_select');
+})->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
@@ -34,9 +38,16 @@ Route::resource('experience', 'App\Http\Controllers\ExperienceController')->midd
 Route::resource('skills', 'App\Http\Controllers\SkillController')->middleware('auth');
 
 Route::resource('additional-experience', 'App\Http\Controllers\AdditionalExperienceController')->middleware('auth');
+Route::resource('technical-experience', 'App\Http\Controllers\TechnicalExperienceController')->middleware('auth');
 
 Route::get('/resume', 'App\Http\Controllers\ResumeController@index')->name('resume.index');
 Route::get('/resume/download', 'App\Http\Controllers\ResumeController@download')->name('resume.download');
+Route::get('/resume/convert-word-to-pdf', 'App\Http\Controllers\ResumeController@convertWordToPDF')->name('resume.wordtopdf');
+
+
+Route::post('/set-selected-template', 'App\Http\Controllers\UserDetailController@storeSessionData');
+
+Route::resource('highlight', 'App\Http\Controllers\HighlightController')->middleware('auth');
 
 
 //Route::get('/dynamic_dependent', 'DynamicDependent@index');

@@ -79,15 +79,15 @@
            <div class="form-row">
              <div class="col-md-4 mb-3">
                <label for="education-country">Country</label>
-                         <input type="text" class="form-control" id="education-country" name="country" placeholder="Country" value={{$education->country}}>
+                         <input type="text" class="form-control" id="education-country" name="country" placeholder="Country" value="{{$education->country}}">
              </div>
              <div class="col-md-4 mb-3">
                 <label for="education-state">State/Province</label>
-                          <input type="text" class="form-control" id="education-state" name="state" placeholder="State" value={{$education->state}}>
+                          <input type="text" class="form-control" id="education-state" name="state" placeholder="State" value="{{$education->state}}">
               </div>
              <div class="col-md-4 mb-3">
               <label for="education-city">City</label>
-                         <input type="text" class="form-control" id="education-city" name="city" placeholder="City" value={{$education->city}}>
+                         <input type="text" class="form-control" id="education-city" name="city" placeholder="City" value="{{$education->city}}">
              </div>
              
            </div>
@@ -184,7 +184,21 @@
  </main>
  <script type="text/javascript">
    
-     jQuery("#education-startdate").datepicker( {
+   jQuery( window ).load(function() {
+     if($('#education-graduated').val()=="still_enrolled")
+     {
+      jQuery('#education-enddate').datepicker('setEndDate', '+10y');
+      jQuery('#education-enddate').datepicker('setStartDate', '+1d');
+     }
+   });
+
+
+
+
+
+
+
+     jQuery("#education-enddate").datepicker( {
     format: "yyyy-mm",
     startView: "months", 
     minViewMode: "months",

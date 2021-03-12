@@ -1,195 +1,396 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-	<title>Resume</title>
-	<meta name="robots" content="noindex, nofollow">
-	<style type="text/css" media="all">
-		html{
-			background-color:#FFF;
-			padding:0 1em;
-			}
-		body {
-			background-color:#FFF;
-			font-family:Georgia, "Times New Roman", Times, serif;
-			padding:1em;
-			border:solid #AAA 1px;
-			margin:1em auto;
-			max-width: 50em;
-			}
-		#address{
-			height:5em;
-			width:48em;
-			text-align:center;
-			}
-		#address div{
-			width:14em;
-			float:left;
-			padding:0 .5em 0 1.5em;
-			}
-		#address h3{
-			border-bottom: none;
-			margin-top: 0;
-			}	
-		.date {
-			float:right;
-			font-size:.8em;
-			margin-top:.4em;
-			text-align:right;
-			}
-		abbr, acronym{
-			border-bottom:1px dotted #333;
-			cursor:help;
-			}	
-		address{
-			font-style:italic;
-			color:#333;
-			font-size:.9em;
-			}
-			
-		
-		h1{
-			font-size:1.75em;
-			text-align:center;
-			padding:.5em 0;
-			}
-		h2 {
-			clear:both;
-			font-size: 1.4em;
-			font-weight:bold;
-			margin-top:2em;
-			font-variant: small-caps;
-			padding-left:.25em;
-			background-color:#EEE;
-			border-bottom: 1px solid #999;
-			letter-spacing: .06em;
-			}
-		h3 {margin: 1em 0 0 0;}
-	</style>
-	<style type="text/css" media="print">
-		body {
-			background-color:#FFF;
-			border-width:0 0 0 0;
-			margin:0;
-			width:100%
-			}
-	</style>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->
+
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+
+<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+
+<!--[if (gt IE 9)|!(IE)]><html lang="en"><![endif]-->
+
+<!--[if !IE]><html lang="en-US"><![endif]-->
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Resume</title>
+<style>
+    body{
+        padding:0px;
+        margin:0px;
+        font-family: arial;
+    }
+    *
+    {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box
+    }
+</style>
+<style type="text/css" media="print">
+	body {
+		background-color:#FFF;
+		border-width:0 0 0 0;
+		margin:0;
+		width:100%
+		}
+</style>
 </head>
-<body data-new-gr-c-s-check-loaded="8.871.0" data-gr-ext-installed="">
-	<h1>{{ucfirst($user->details->firstname)}} {{ucfirst($user->details->lastname)}}</h1>
-	<div id="address">
-		<div>
-			{{$user->details->address}}<br>
-			{{$user->details->city}}, {{$user->details->state}}, {{$user->details->zipcode}}<br>
-			
-		</div>
-		
-		<div>
-			{{$user->details->phone}}<br>
-			{{$user->details->email}} <br>
-			{{$user->details->github}}<br>
-			{{$user->details->linkedin}}
-		</div>
-	</div>
-	
-	
-	
-	
-	<h2>Employment</h2>
-    @foreach($user->experiences as $work)
-	<span class="date">{{$work->startdate}} � @if (($work->currently_working == 'yes'))
-        Present
-    @else
-    {{$work->enddate }}
-    @endif
-        
-   </span>
-	<h3>{{$work->job_title }}</h3>
-	<address>{{$work->employer }}, {{$work->address }}, {{$work->city }} {{$work->state }} {{$work->zipcode }}</address>
-    <ul>
-    @if(count($work->work_responsibilities)>0)
+
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+    <td align="center" valign="top" style="background-color: #ffffff;" bgcolor="#ffffff;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                
+               
+                   
+                       
+                            <td style="padding:20px;" align="left" valign="top">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+
+                                    <!--  Repeated Row Start -->
+                                    <tr>
+                                        <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td align="left" width="30%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                            <tr>
+                                                                
+                                                                <td align="left" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->address}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td align="left" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->city}}, {{$user->details->state}}, {{$user->details->zipcode}}</td>
+                                                            </tr>
+                                                            
+                                                           
+                                                           
+                                                        </table>
+                                                    </td>
+                                                    <td align="left" width="40%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                          
+                                                           
+                                                            <tr>
+                                                                
+                                                                <td align="center" valign="top" style="line-height: 24px; padding-left: 15px;font-weight: bold; font-size:25px;">{{ucfirst($user->details->firstname)}} {{ucfirst($user->details->lastname)}}</td>
+                                                            </tr>
+                                                            
+                                                        </table>
+                                                    </td>
+                                                    <td align="left" width="30%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                          
+                                                           
+                                                            <tr>
+                                                                
+                                                                <td align="right" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->phone}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td align="right" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->email}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td align="right" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->github}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td align="right" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->linkedin}}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                
+                                                
+                                                
+                                                
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!--  Repeated Row End -->
+
+
+
+
+
+                                    <!--  Repeated Row Start -->
+                                    <tr>
+                                        <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:18px; text-transform: uppercase; border-bottom: 2px solid #eeeeee; padding:10px 0px 5px 0px;">EMPLOYMENT</td>
+                                                </tr>
+
+												@foreach($user->experiences as $work)
+												
+                                                <tr>
+
+                                                    <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                            <tr>
+                                                                <td align="left" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$work->job_title }}</td>
+                                                                <td align="center" width="30%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$work->employer }},{{$work->address }}, {{$work->city }} {{$work->state }} {{$work->zipcode }}</td>
+                                                                <td align="right" width="30%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+																	<?php 
+																	$workstartdate = $work->startdate;
+																	$newworkstartdate = date("F Y", strtotime($workstartdate));
+																	$newworkenddate = '';
+																	if(!is_null($work->enddate))
+																	{
+																		$workenddate = $work->enddate;
+																	$newworkenddate = date("F Y", strtotime($workenddate));
+																	}
+																	?>
+																	{{$newworkstartdate}} – 
+																	@if (($work->currently_working == 'yes'))
+																	Present
+																@else
+																{{$newworkenddate}}
+																@endif
+															</td>
+                                                            </tr>
+                                                            </table>
+                                                    </td>
+
+
+
+
+
+                                                    <!-- <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:14px; text-transform: uppercase; padding-top:10px;">Senior PHP Developer</td> -->
+                                                </tr>
+                                                <!-- each project div start -->
+                                                
+                                                
     
-    @foreach ($work->work_responsibilities as $key=>$value)
+                                                    <tr>
+														
+                                                        <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+															
+															
+																
+																{!! $work->work_responsibilities; !!}
+																
+                                                            
+															
+                                                        </td>
+														
+                                                    </tr>
+                                               
+                                            
+                                                <!-- each project div start -->
 
-    <li>{{$value}}</li>
-    
-@endforeach
-@else
-<li>No Work Resposibilities Added</li>
+                                                @endforeach
 
-@endif
-</ul>
-	@endforeach
+                                                
+                                                
+                                                
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!--  Repeated Row End -->
 
-	
-    <h2>Education</h2>
-    @foreach($user->education as $e)
-    <span class="date"> @if (($e->graduated == 'no'))
-        Present
-    @else
-    {{$e->enddate }}
-    @endif
-        
-   </span>
-    @endforeach
-    <h3>{{$e->degree }} in {{$e->fieldofstudy }}</h3>
-    <address>{{$e->schoolname }}, {{$e->address }}, {{$e->city }} {{$e->state }} {{$e->zipcode }}</address>
-	
-        @if (!is_null($e->GPA))
-        <span>Cumulative GPA: {{$e->GPA}}</span>
-        @endif
-        @if(count($e->awards)>0)
+                                    <!--  Repeated Row Start -->
+                                    <tr>
+                                        <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:18px; text-transform: uppercase; border-bottom: 2px solid #eeeeee; padding:10px 0px 5px 0px;">Education</td>
+                                                </tr>
+												@foreach($user->education as $education)
+                                                <tr>
+
+                                                    <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                            <tr>
+                                                                <td align="left" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$education->city }} {{$education->state }} {{$education->country }}</td>
+                                                                <td align="center" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$education->schoolname }}</td>
+                                                                <td align="right" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+																	<?php $education_enddate = $education->enddate;
+																	$new_education_enddate = date("F Y", strtotime($education_enddate));?>
+																	@if (($education->graduated == 'still_enrolled'))
+																	Present - {{$new_education_enddate }}
+																	@else
+																	{{$new_education_enddate }}
+																	@endif
+															</td>
+                                                            </tr>
+                                                            </table>
+                                                    </td>
+
+
+
+
+
+                                                    <!-- <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:14px; text-transform: uppercase; padding-top:10px;">Senior PHP Developer</td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$education->degree }} in {{$education->fieldofstudy }}. 
+														@if (!is_null($education->GPA))
+														Cumulative GPA: {{$education->GPA}};
+														@endif
+														 </td>
+                                                </tr>
+												<tr>
+                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:12px;">
+														@if(count($education->awards)>0)
         <span>Awards:</span>
-        <ul>
-    @foreach ($e->awards as $key=>$value)
+        
+    @foreach ($education->awards as $key=>$value)
 
-    <li>{{$value}}</li>
+    {{$value}};
     
 @endforeach
-        </ul>
+      
 @endif
+                                                        
+                                                    </td>
+                                                </tr>
+												<tr>
+                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:12px; padding-bottom: 10px;">
+                                                        @if(count($education->relevant_courses)>0)
+Relevant Courses:
 
-@if(count($e->relevant_courses)>0)
-<span>Relevant Courses:</span>
+@foreach ($education->relevant_courses as $key=>$value)
 
-@foreach ($e->relevant_courses as $key=>$value)
-
-{{$value}},
+{{$value}};
 
 @endforeach
 
 @endif
-    <br>
-    <br>
-@if(count($e->extra_activity)>0)
-<span>Extra Activity:</span>
+                                                    </td>
+                                                </tr>
+												<tr>
+                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:12px; padding-bottom: 10px;">
+														@if(count($education->extra_activity)>0)
+														<span>Extra Activity:</span>
+														
+														@foreach ($education->extra_activity as $key=>$value)
+														
+														{{$value}};
+														
+														@endforeach
+														
+														@endif
+                                                    </td>
+                                                </tr>
+                                                
+                                                @endforeach
+                                                
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!--  Repeated Row End -->
 
-@foreach ($e->extra_activity as $key=>$value)
+                                    
+                                    
+                                    <!--  Repeated Row Start -->
+									@if(count($user->technicalExperience)>0)
 
-{{$value}},
+                                    <tr>
+                                        <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:18px; text-transform: uppercase; border-bottom: 2px solid #eeeeee; padding:10px 0px 5px 0px;">TECHNICAL  Experience</td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:14px; text-transform: uppercase; padding-top:10px;">Projects</td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+                                                        <ul style="padding: 0 0 0 10px; margin: 0;">
+															@foreach ($user->technicalExperience as $technical_experience)
+                                                            <li style="margin-bottom: 5px;">{{$technical_experience->project_title}} 
+																@if (!is_null($technical_experience->project_year))
+																({{$technical_experience->project_year}})
+																@endif : {{$technical_experience->project_description}} ({{$technical_experience->technology_stack}})</li>
+                                                            
+                                                            @endforeach
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                
+                                                
+                                            </table>
+                                        </td>
+                                    </tr>
+									@endif
+                                    <!--  Repeated Row End -->
+                                     <!--  Repeated Row Start -->
+									 @if(count($user->additionalExperience)>0)
+                                     <tr>
+                                        <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:18px; text-transform: uppercase; border-bottom: 2px solid #eeeeee; padding:10px 0px 5px 0px;">ADDITIONAL  Experience</td>
+                                                </tr>
+											
 
-@endforeach
+<tr>
+	<td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+		<ul style="padding: 0 0 0 10px; margin: 0;">
+			@foreach ($user->additionalExperience as $additional_experience)
 
-@endif
+			<li style="margin-bottom: 5px;">{{$additional_experience->role}}: {{$additional_experience->responsibilities}}</li>
+			
+			@endforeach
+		
+		</ul>
+	</td>
+</tr>
 
 
-@if(count($user->additionalExperience)>0)
-<h2>Additional Experience</h2>
-<ul>
-@foreach ($user->additionalExperience as $additional_experience)
 
-<li>{{$additional_experience->role}}:{{$additional_experience->responsibilities}}</li>
+                                                
+                                                
+                                                
+                                            </table>
+                                        </td>
+                                    </tr>
+									@endif
+                                    <!--  Repeated Row End -->
+                                    <!--  Repeated Row Start -->
+                                    <tr>
+                                        <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:18px; text-transform: uppercase; border-bottom: 2px solid #eeeeee; padding:10px 0px 5px 0px;">Languages and Technologies</td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+														@foreach($user->skills as $skill)
+														{{$skill->name}} @if (!is_null($skill->description))({{$skill->description}}) @endif<br>
+														@endforeach
+                                                       
+                                                    </td>
+                                                </tr>
+                                               
+                                                
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!--  Repeated Row End -->
+                                </table>
+                            </td>
+                       
+                    
+                
 
-@endforeach
-</ul>
-@endif
-	
-	
-	
-	<h2>Skills</h2>
-    <ul>
-    @foreach($user->skills as $skill)
-            <li> {{$skill->name}} ({{$skill->description}})</li>
-            @endforeach
-        </ul>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
 
-</body></html>
+</body>
+</html>

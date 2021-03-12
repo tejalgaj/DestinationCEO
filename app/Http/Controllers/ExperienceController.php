@@ -49,12 +49,12 @@ class ExperienceController extends Controller
         request()->validate([
             'job_title'=>'required',
             'employer'=>'required',
-            'enddate'=>'required',
+            
             
             
            // 'tags'=>'exist:tags,id',
         ]);
-
+       // dd(request('work_responsibilities'));
         //dd(request());
         $experience = new Experience();
          $experience->job_title = request('job_title');
@@ -73,8 +73,8 @@ class ExperienceController extends Controller
          $experience->currently_working = request('currently_working');
 
          
-         $filter_work_responsibilities = $experience->getArrayFiltered(request('work_responsibilities'));
-         $experience->work_responsibilities = json_encode($filter_work_responsibilities);
+         
+         $experience->work_responsibilities = request('work_responsibilities');
 
 
          $experience->city = request('city');
@@ -123,12 +123,12 @@ class ExperienceController extends Controller
         request()->validate([
             'job_title'=>'required',
             'employer'=>'required',
-            'enddate'=>'required',
+            
             
            // 'tags'=>'exist:tags,id',
         ]);
 
-        
+       
        
          $experience->job_title = request('job_title');
          $experience->user_id = auth()->id();
@@ -144,8 +144,8 @@ class ExperienceController extends Controller
          $experience->enddate = $enddate_value;
          $experience->currently_working = request('currently_working');
 
-         $filter_work_responsibilities = $experience->getArrayFiltered(request('work_responsibilities'));
-         $experience->work_responsibilities = json_encode($filter_work_responsibilities);
+        
+         $experience->work_responsibilities = request('work_responsibilities');
 
          $experience->city = request('city');
          $experience->state = request('state');

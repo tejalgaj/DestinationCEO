@@ -6,6 +6,7 @@
 @endpush
 
 @push('datepicker-js')
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 @endpush
@@ -25,6 +26,7 @@
           <form action="{{route('experience.update', $experience->id)}}" method='POST' class="form-horizontal">
             @csrf
             @method('PUT')
+            
               <div class="form-group">
                 <label for="experience-job_title">Job Title</label>
                 <input type="text" class="form-control {{ $errors->has('job_title') ? 'is-invalid' : ''}}" id="experience-job_title" placeholder="School name" name="job_title" value="{{$experience->job_title}}" required>
@@ -44,44 +46,10 @@
                           @enderror
               </div>
 
-
-
-              <div class="field_wrapper">
-         
-                @if(count($experience->work_responsibilities)>0)
-                <label for="experience-employer">Work Responsibilities</label>
-                @foreach ($experience->work_responsibilities as $key=>$value)
-      
-      
-                <div class="form-row"><div class="form-group col-md-4">
-                  <textarea class="form-control" placeholder="Work Responsibility" name="work_responsibilities[]">{{$value}}</textarea>
-                </div>
-                <div class="form-group col-md-4">
-                  <a href="javascript:void(0);" class="btn btn-primary remove_button mt-2">Delete</a></div>
-                </div>
-            @endforeach
-      @else
-        <p>No Work Resposibilities Added</p>
-      @endif
-                
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <a href="javascript:void(0);" role="button" class="add_button">+Add Work Resposibilities</a>
-           
-            <input type="hidden" id="resp_count" value="{{count($experience->work_responsibilities)}}">
-                </div>
+              <div class="form-group">
+                <label for="experience-work-responsibilities">Work Resposibilities</label>
+                <textarea class="ckeditor form-control" name="work_responsibilities">{{$experience->work_responsibilities}}</textarea>
             </div>
-
-
-
-
-
-
-
-              
-
-              
               
             <div class="form-row">
              <div class="col-md-6 mb-3">
@@ -148,7 +116,9 @@
        </section>
  </main>
  <script type="text/javascript">
-   
+   $(document).ready(function () {
+  CKEDITOR.replace( 'work_responsibilities' );
+    });
      jQuery("#experience-startdate").datepicker( {
     format: "yyyy-mm",
     startView: "months", 
@@ -174,40 +144,6 @@ jQuery("#experience-enddate").datepicker( {
     jQuery('#experience-startdate').datepicker('setEndDate', new Date(jQuery(this).val()));
 });
 jQuery( window ).load(function() {
-
-  var maxField = 10; //Input fields increment limitation
-    var addButton = $('.add_button'); //Add button selector
-    var wrapper = $('.field_wrapper'); //Input field wrapper
-
-    var fieldHTML = '<div class="form-row"><div class="form-group col-md-4"><textarea class="form-control" placeholder="Work Responsibility" name="work_responsibilities[]"/></textarea></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-primary remove_button mt-2">Delete</a></div></div>'; //New input field html 
-    var x = jQuery('#resp_count').val(); //Initial field counter is 1
-    
-    //Once add button is clicked
-    $(addButton).click(function(){
-        //Check maximum number of input fields
-        if(x < maxField){ 
-            x++; //Increment field counter
-            jQuery('#resp_count').val(x);
-            $(wrapper).append(fieldHTML); //Add field html
-        }
-    });
-    
-    //Once remove button is clicked
-    $(wrapper).on('click', '.remove_button', function(e){
-        e.preventDefault();
-        $(this).parent('div').remove(); //Remove field html
-        x--; //Decrement field counter
-        jQuery('#resp_count').val(x);
-    });
-
-
-
-
-
-
-
-
-
   // Run code
   if(jQuery("#currently_working").is(':checked'))
   {
@@ -227,10 +163,6 @@ jQuery(function () {
                       jQuery(".exp-end-date").show();
                     }
                 });
-
-
-
-
 
             });
 

@@ -12,7 +12,7 @@
           </div>
         
           
-         
+          {{-- {{$value = session('resume_selected_template', 'default')}} --}}
           
           <div class="card mt-3">
             <div class="card-header">

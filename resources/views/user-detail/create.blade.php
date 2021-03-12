@@ -12,7 +12,7 @@
             <p>What's your contact information?</p>
           </div>
         
-          <form action="/user-detail" method='POST' class="form-horizontal">
+          <form action="/user-detail" method='POST' class="form-horizontal" id="user-detail-insert">
             @csrf
             <div class="form-row">
              <div class="col-md-6 mb-3">
@@ -90,7 +90,8 @@
             <div class="col-md-6 mb-3">
               <label for="user-detail-linkedin">LinkedIn</label>
                         <input type="text" class="form-control" id="user-detail-linkedin" name="linkedin" placeholder="linkedin" value="{{old('linkedin')}}">
-            </div>
+                        <span id="user_detail_linkedin_error" class="alert-message"></span>
+                      </div>
             <div class="col-md-6 mb-3">
              <label for="user-detail-guthub">Github</label>
                         <input type="text" class="form-control" id="user-detail-guthub" name="guthub" placeholder="guthub" value="{{old('guthub')}}">
@@ -106,4 +107,24 @@
          </div>
        </section>
  </main>
+ <script type="text/javascript">
+  $("#user-detail-insert").submit(function(e){
+    var status = true;
+    var linkedinURL = $('#user-detail-linkedin').val();
+    if(linkedinURL!="")
+    {
+      $('#user_detail_linkedin_error').text("");
+      if( /(ftp|http|https):\/\/?(?:www\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(linkedinURL) ) {
+
+
+}else{
+$('#user_detail_linkedin_error').text("Please provide Valid Linkedin URL");
+status = false;
+
+
+}
+    }
+    return status;
+  });
+ </script>
 @endsection

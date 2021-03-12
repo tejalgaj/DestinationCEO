@@ -50,7 +50,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Dest CEO</a></h1>
+      <h1 class="logo mr-auto"><a href="/">Dest CEO</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -95,9 +95,10 @@
        @endguest
           <li><a href="contact.html">Contact</a></li>
              <!-- Button trigger modal -->
+             <?php $selected_template = session('resume_selected_template', 'default')?>
              @auth
-             @if (Request::path()==='skills')
-             <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">
+             @if (Request::path()==='skills' && $selected_template!="default")
+             <button type="button" class="btn btn-outline-secondary btn-sm m-3" data-toggle="modal" data-target="#exampleModal">
                 Preview
                 </button>
                 @endif
@@ -113,14 +114,16 @@
   </header><!-- End Header -->
 
   @yield('main-content')
+  
   <script src="{{asset('boottheme/assets/vendor/jquery/jquery.min.js')}}"></script>
+  
   @stack('datepicker-js')
   
 
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-lg" role="document">
+<div class="modal-dialog modal-xl" role="document">
 <div class="modal-content">
 <div class="modal-header">
   <h5 class="modal-title" id="exampleModalLabel">Preview</h5>
@@ -225,7 +228,7 @@
   
   <!-- Template Main JS File -->
   <script src="{{asset('boottheme/assets/js/main.js')}}"></script>
- 
+  
 
 </body>
 
