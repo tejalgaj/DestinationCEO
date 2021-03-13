@@ -5,9 +5,11 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
@@ -31,9 +33,11 @@ h6 {
     font-family: "Raleway", sans-serif;
 }
 
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -60,9 +64,11 @@ h6 {
     color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+
 #preloader {
     position: fixed;
     top: 0;
@@ -107,18 +113,22 @@ h6 {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
+
 @media screen and (max-width: 768px) {
     [data-aos-delay] {
         transition-delay: 0 !important;
     }
 }
 
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
 #header {
     background: #fff;
     transition: all 0.5s;
@@ -152,21 +162,25 @@ h6 {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+
+
 /* Desktop Navigation */
+
 .nav-menu ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.nav-menu > ul {
+.nav-menu>ul {
     display: flex;
 }
 
-.nav-menu > ul > li {
+.nav-menu>ul>li {
     position: relative;
     white-space: nowrap;
     padding: 10px 0 10px 24px;
@@ -183,8 +197,8 @@ h6 {
 }
 
 .nav-menu a:hover,
-.nav-menu .active > a,
-.nav-menu li:hover > a {
+.nav-menu .active>a,
+.nav-menu li:hover>a {
     color: #5fcf80;
 }
 
@@ -203,7 +217,7 @@ h6 {
     border-radius: 4px;
 }
 
-.nav-menu .drop-down:hover > ul {
+.nav-menu .drop-down:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -223,12 +237,12 @@ h6 {
 }
 
 .nav-menu .drop-down ul a:hover,
-.nav-menu .drop-down ul .active > a,
-.nav-menu .drop-down ul li:hover > a {
+.nav-menu .drop-down ul .active>a,
+.nav-menu .drop-down ul li:hover>a {
     color: #5fcf80;
 }
 
-.nav-menu .drop-down > a:after {
+.nav-menu .drop-down>a:after {
     content: "\ea99";
     font-family: IcoFont;
     padding-left: 5px;
@@ -239,17 +253,17 @@ h6 {
     left: calc(100% - 30px);
 }
 
-.nav-menu .drop-down .drop-down:hover > ul {
+.nav-menu .drop-down .drop-down:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
 }
 
-.nav-menu .drop-down .drop-down > a {
+.nav-menu .drop-down .drop-down>a {
     padding-right: 35px;
 }
 
-.nav-menu .drop-down .drop-down > a:after {
+.nav-menu .drop-down .drop-down>a:after {
     content: "\eaa0";
     font-family: IcoFont;
     position: absolute;
@@ -260,15 +274,17 @@ h6 {
     .nav-menu .drop-down .drop-down ul {
         left: -90%;
     }
-    .nav-menu .drop-down .drop-down:hover > ul {
+    .nav-menu .drop-down .drop-down:hover>ul {
         left: -100%;
     }
-    .nav-menu .drop-down .drop-down > a:after {
+    .nav-menu .drop-down .drop-down>a:after {
         content: "\ea9d";
     }
 }
 
+
 /* Get Startet Button */
+
 .get-started-btn {
     margin-left: 22px;
     background: #5fcf80;
@@ -293,7 +309,9 @@ h6 {
     }
 }
 
+
 /* Mobile Navigation */
+
 .mobile-nav-toggle {
     position: fixed;
     top: 17px;
@@ -345,13 +363,13 @@ h6 {
 }
 
 .mobile-nav a:hover,
-.mobile-nav .active > a,
-.mobile-nav li:hover > a {
+.mobile-nav .active>a,
+.mobile-nav li:hover>a {
     color: #5fcf80;
     text-decoration: none;
 }
 
-.mobile-nav .drop-down > a:after {
+.mobile-nav .drop-down>a:after {
     content: "\ea99";
     font-family: IcoFont;
     padding-left: 10px;
@@ -359,11 +377,11 @@ h6 {
     right: 15px;
 }
 
-.mobile-nav .active.drop-down > a:after {
+.mobile-nav .active.drop-down>a:after {
     content: "\eaa1";
 }
 
-.mobile-nav .drop-down > a {
+.mobile-nav .drop-down>a {
     padding-right: 35px;
 }
 
@@ -402,9 +420,11 @@ h6 {
     color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 #hero {
     width: 100%;
     height: 80vh;
@@ -487,9 +507,11 @@ h6 {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
+
 section {
     padding: 60px 0;
     overflow: hidden;
@@ -558,9 +580,11 @@ section {
     margin-bottom: 0;
 }
 
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
 .about .content h3 {
     font-weight: 600;
     font-size: 26px;
@@ -604,9 +628,11 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
+
 .counts {
     padding: 30px 0;
 }
@@ -627,9 +653,11 @@ section {
     color: #37423b;
 }
 
+
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
+
 .why-us .content {
     padding: 30px;
     background: #5fcf80;
@@ -693,9 +721,11 @@ section {
     color: #848484;
 }
 
+
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/
+
 .features {
     padding-top: 0px;
 }
@@ -735,9 +765,11 @@ section {
     color: #5fcf80;
 }
 
+
 /*--------------------------------------------------------------
 # Courses
 --------------------------------------------------------------*/
+
 .courses .course-item {
     border-radius: 5px;
     border: 1px solid #eef0ef;
@@ -803,9 +835,11 @@ section {
     color: #657a6d;
 }
 
+
 /*--------------------------------------------------------------
 # Trainers
 --------------------------------------------------------------*/
+
 .trainers .member {
     text-align: center;
     margin-bottom: 20px;
@@ -858,9 +892,11 @@ section {
     margin: 0 2px;
 }
 
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
+
 .testimonials .testimonial-wrap {
     padding-left: 50px;
 }
@@ -953,9 +989,11 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Cource Details
 --------------------------------------------------------------*/
+
 .course-details h3 {
     font-size: 24px;
     margin: 30px 0 15px 0;
@@ -965,7 +1003,7 @@ section {
 }
 
 .course-details h3:before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
@@ -976,7 +1014,7 @@ section {
 }
 
 .course-details h3:after {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 60px;
@@ -1008,9 +1046,11 @@ section {
     color: #657a6d;
 }
 
+
 /*--------------------------------------------------------------
 # Cource Details Tabs
 --------------------------------------------------------------*/
+
 .cource-details-tabs {
     overflow: hidden;
     padding-top: 0;
@@ -1071,9 +1111,11 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Events
 --------------------------------------------------------------*/
+
 .events .card {
     border: 0;
     padding: 0 30px;
@@ -1143,9 +1185,11 @@ section {
     color: #5fcf80;
 }
 
+
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
+
 .pricing .box {
     padding: 20px;
     background: #fff;
@@ -1253,9 +1297,11 @@ section {
     color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
 .contact {
     padding-top: 5px;
 }
@@ -1332,7 +1378,7 @@ section {
     font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
     margin-top: 25px;
 }
 
@@ -1416,9 +1462,11 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 #footer {
     color: #37423b;
     font-size: 14px;
@@ -1579,9 +1627,250 @@ section {
     color: #fff;
     text-decoration: none;
 }
-/* --------------------alert message css--------------------- */
 
-.alert-message {
-    color: red;
+
+/*****Inderjit Singh*******/
+
+
+/***Resume scanning feature***/
+
+
+/*start*/
+
+
+/* Import Google Font */
+
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans);
+
+/* RESET */
+
+* {
+    padding: 0;
+    margin-top: 0;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans';
+    /*color: hsl(0, 0%, 50%);*/
+    color: rgb(67, 165, 97);
 }
 
+
+/* Containing areas */
+
+.container_scan {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+#container_scan_results {
+    width: 950px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.ta-container {
+    width: 100%;
+    border: 1px solid hsl(0, 0%, 70%);
+    border-radius: 0.25em;
+    margin: 0.25em 0 1.5em;
+}
+
+.hasfocus {
+    box-shadow: 0px 0px 6px hsl(210, 50%, 60%);
+}
+
+
+/* The textarea itself */
+
+textarea {
+    padding: 0.25em;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    vertical-align: bottom;
+    color: hsl(0, 0%, 50%);
+    border-radius: 0.25em;
+    outline: none;
+}
+
+
+/* matched results*/
+
+#scanning_results {
+    font-size: 30px;
+    color: rgb(95, 260, 128);
+    display: inline-flex;
+}
+
+
+/* The status bar */
+
+.status-bar {
+    background: hsl(0, 0%, 90%);
+    padding: 0.25em;
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 0.7em;
+    width: 100%;
+    font-weight: bolder;
+    /*color: hsl(0, 0%, 50%);*/
+    color: rgb(95, 207, 128);
+    border-radius: 0 0 0.25em 0.25em;
+}
+
+table {
+    width: auto;
+    margin-left: auto;
+    line-height: 1em;
+}
+
+.charcount,
+.remaining {
+    font-weight: bold;
+}
+
+.over {
+    color: hsl(0, 80%, 60%);
+}
+
+
+/* The submit button */
+
+#submitbtn {
+    padding: 0.4em 1.2em;
+    background: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 50%);
+    border-radius: 0.25em;
+    float: left;
+}
+
+#anotherbtn {
+    padding: 0.4em 1.2em;
+    background: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 50%);
+    border-radius: 0.25em;
+    float: right;
+}
+
+#submitbtn:enabled:hover {
+    background: hsl(0, 0%, 90%);
+}
+
+#submitbtn:enabled:active {
+    background: hsl(0, 0%, 30%);
+    color: hsl(0, 0%, 90%);
+}
+
+#submitbtn:disabled {
+    border: 1px solid hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 90%);
+}
+
+#match_title,
+#ats_match_average,
+#hard_skills_match,
+#soft_skills_match {
+    margin-top: 80px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(55, 99, 68);
+}
+
+#myTableHardSkills {
+    font-size: 18px;
+}
+
+#myTable td {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#myTableSoftSkills {
+    font-size: 18px;
+}
+
+#result_description {
+    font-size: 19px;
+    color: rgb(55, 99, 68);
+    font-weight: bolder;
+}
+
+#myTable {
+    font-size: 18px;
+}
+
+#title_scanning h1 {
+    color: rgb(55, 99, 68);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#title_scanning p {
+    color: rgb(55, 99, 68);
+    font-size: 18px;
+}
+
+#results_percentage {
+    color: rgb(55, 99, 68);
+}
+
+
+/*Card Layout*/
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    background-color: #F7F7F7;
+}
+
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 5;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    margin-top: 20px;
+}
+
+.card-title,
+.card-subtitle,
+#result_description {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+/*line*/
+
+#line_space {
+    display: block;
+    height: 5px;
+    border: 3;
+    border-top: 5px solid #413e3e;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+#line_space_next {
+    display: block;
+    height: 3px;
+    border: 1;
+    border-top: 2px solid #413e3e;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+
+/* Inderjit CSS ends*/

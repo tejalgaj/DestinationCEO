@@ -2,9 +2,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ 
 
-  <title>Keyword Scanning</title>
+<title>Keyword Scanning</title>
   <link href="{{asset('boottheme/assets/css/style.css')}}" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
   
   </head>
 <main>
@@ -15,6 +19,9 @@
     <h1>Scan your Resume and Job posting and land on more JOB interviews</h1>
 <p>To start, add your resume's content to the box on the top. Then paste the job description for your target role in the box on the bottom.</p>
   </div>
+
+  <div class="card">
+    <div class="card-block">
  <form id="theform" action="javascript:void(0);" >
     <label for="about-yourself">Paste Resume:</label>
     <div class="ta-container">
@@ -28,6 +35,9 @@
         </table>
       </div>
     </div>
+
+
+
     <label for="your-proposal">Paste Job Posting :</label>
     <div class="md-form mb-4 pink-textarea active-pink-textarea">
   <textarea id="job-title" class="md-textarea form-control" rows="1" placeholder="Paste Job Title here..." required></textarea>
@@ -38,25 +48,46 @@
     <div class="md-form mb-4 pink-textarea active-pink-textarea">
       <textarea id="your-proposal" class="ta" name="your-proposal" rows="6" cols="75" data-maxchars="1500" data-over="false" placeholder="Paste Job Description here..." required></textarea>
       </div>
-     
+
+      
     </div>
 
+    <button id="submitbtn"  type="submit"   onclick="myFunctionWordMatch()">Continue Scanning----</button>
     
-    <button id="submitbtn" type="submit"  onclick="myFunctionWordMatch()">Continue Scanning----</button>
-    
-  </form>
+    <button id="anotherbtn"  type="submit"  onclick="window.location.reload();">Scan Another Resume----</button>
  
-<div  id="container_scan">
+     
+    </form>
+</div>
+</div>
 
-<h3>Scanning Results Report:---</h3></br>
-<h4>Overall ATS match Percentage : <span id="results_percentage"></span></h4>
+</div>
+<div  id="container_scan_results">
+<div id="line_space"></div>
+<div class="card">
+  <div class="card-block">
+    <h1 class="card-title">Your Results</h1></br>
+    <h4 class="card-subtitle">Overall match Percentage : <span  id="results_percentage"></span> out of 100%</h4>
+  <p class="card-text" id="result_description"></p></br>
+ 
+  </div>
 
-<span id="result_description"></span></br>
-<button id="submitbtn" type="submit"  onclick="window.location.reload();">Scan Another Resume--</button>
-    
-<div id="match_title"><p>ATS Best Practices: </p> </div>
+  <div class="progress">    
+       
+  </div>
+  
+</br>
+</div> 
+
+ 
+<div id="line_space_next"></div>
+
+<div id="ats_best_practices_container">
+<div id="match_title"><p>ATS Best Practices Match:  <span id="ats_match_average"></span></p></div>
+</br>
+
 <h4>
-<table id="myTable" class="table table-striped">
+<table id="myTable" class="table">
   <tbody>
     <tr>
       
@@ -89,7 +120,6 @@
 
 
     <tr>
-     
       <td>Experience Match</td>
       <td></td>
       <td><span>&#10004;&#65039;</span></td>
@@ -110,73 +140,89 @@
       <td><span>&#10004;&#65039;</span></td>
       <td><span>&#10060;</span></td>
     </tr>
+    <!--
     <tr>
       <td>Average ATS Match</td>
       <td></td>
       <td></td>
     </tr>
-    
+-->
   </tbody>
 </table>
-
-<div id="match_title"><p>Hard Skills: </p> </div>
-<table id ="myTableHardSkills" class="table table-striped">
-
-  <tbody>
-    <tr>
-      <td>Job posting:</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-       <td>Resume: </td>
-      <td></td>
-      <td></td>
-    </tr>
-
-    <tr>
-    <td>Matched skills Average</td>
-      <td></td>
-      <td></td>
-    </tr>
-
-  </tbody>
-</table>
-
-
-<div id="match_title"><p>Soft Skills: </p> </div>
-<table id ="myTableSoftSkills" class="table table-striped">
-
-  <tbody>
-    <tr>
-      <td>Job posting:</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-       <td>Resume: </td>
-      <td></td>
-      <td></td>
-    </tr>
-
-    <tr>
-    <td>Matched skills Average</td>
-      <td></td>
-      <td></td>
-    </tr>
-
-  </tbody>
-</table>
-<div class="pie" data-pie='{ "percent": 82, "colorSlice": "#E91E63", "time": 30, "fontWeight": 400 }'></div>
 </div>
+
+<div id="line_space_next"></div>
+
+<div id="hard_skills_match_container">
+<!--<div id="match_title"><p>Hard Skills: </p> </div>-->
+<div id="match_title"><p>Hard Skills Match:  <span id="hard_skills_match"></span></p></div>
+
+</br>
+<table id ="myTableHardSkills" class="table">
+
+  <tbody>
+    <tr>
+      <td>Job posting:</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+       <td>Resume: </td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <!--
+    <tr>
+
+    <td>Matched skills Average</td>
+      <td></td>
+      <td></td>
+    </tr>
+-->
+  </tbody>
+</table>
+</div>
+<div id="line_space_next"></div>
+<div id="soft_skills_match_container">
+<div id="match_title"><p>Soft Skills Match:  <span id="soft_skills_match"></span></p></div>
+
+</br>
+<table id ="myTableSoftSkills" class="table">
+
+  <tbody>
+    <tr>
+      <td>Job posting:</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+       <td>Resume: </td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <!--
+    <tr>
+    <td>Matched skills Average</td>
+      <td></td>
+      <td></td>
+    </tr>
+-->
+  </tbody>
+</table>
+</div>
+<div class="pie" data-pie='{ "percent": 82, "colorSlice": "#E91E63", "time": 30, "fontWeight": 400 }'></div>
+
 </body>
+
 <!--<script src="{{asset('boottheme/assets/js/resumescanning.js')}}"></script>-->
 <script>
 /**
  * Functions to add/remove class on div.ta-container to emulate focus removed from textarea by CSS line 37 (outline:none)
  */
 
-document.getElementById('container_scan').style.display = "none";
+document.getElementById('container_scan_results').style.display = "none";
 
 function setFocus(ta_container) {
 
@@ -286,6 +332,8 @@ function initialise() {
 
 }
 
+
+
 function myFunctionWordMatch() {
 
 
@@ -294,7 +342,7 @@ function myFunctionWordMatch() {
 
     if(numChars>0)
     {
-    document.getElementById('container_scan').style.display = "block";
+    document.getElementById('container_scan_results').style.display = "block";
     }
     var myTable = document.getElementById("myTable");
     /*characters count*/
@@ -617,7 +665,8 @@ var arr_found_soft_skills_posting = [];
     } else {
         average_bestpractices_perc = 0;
     }
-    myTable.rows[7].cells[1].textContent = " " + average_bestpractices_perc + "% ";
+    //myTable.rows[7].cells[1].textContent = " " + average_bestpractices_perc + "% ";
+    document.getElementById('ats_match_average').innerHTML=" " + average_bestpractices_perc + "% ";
 
     //
   
@@ -641,9 +690,11 @@ var arr_found_soft_skills_posting = [];
         matched_perc_hard_skills = Math.round((matched_hard_skills_count / required_hard_skills_count) * 100);
     } else {
         matched_perc_hard_skills = 0;
-    }
-    myTableHardSkills.rows[2].cells[1].textContent = " " + matched_perc_hard_skills + "% ";
+    
+      }
 
+    //myTableHardSkills.rows[2].cells[1].textContent = " " + matched_perc_hard_skills + "% ";
+    document.getElementById('hard_skills_match').innerHTML=" " + matched_perc_hard_skills + "% ";
     ///displaying soft skills in table
     myTableSoftSkills.rows[0].cells[1].textContent = "";
     for (var i = 0; i < required_soft_skills_count; i++) {
@@ -660,8 +711,8 @@ var arr_found_soft_skills_posting = [];
     } else {
       matched_perc_soft_skills = 0;
     }
-    myTableSoftSkills.rows[2].cells[1].textContent = " " + matched_perc_soft_skills + "% ";
-
+    //myTableSoftSkills.rows[2].cells[1].textContent = " " + matched_perc_soft_skills + "% ";
+    document.getElementById('soft_skills_match').innerHTML=" " + matched_perc_soft_skills + "% ";
 
     ///final result
     var finalResult_perc = 0;
@@ -701,13 +752,31 @@ var arr_found_soft_skills_posting = [];
         document.getElementById('result_description').innerHTML = "The resume is the worst match for the corresponding job posting";
     }
 
-
-
-    //progress bar
+//progress bar
+var progressBarVal=finalResult_perc;    
+   var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal+"%'>"+progressBarVal+"%</div>";    
+   $(".progress").append(html);    
+  
+  //ats progress
+  
+  var progressBarVal_ats=average_bestpractices_perc;    
+   var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal_ats+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal_ats+"%'>"+progressBarVal_ats+"%</div>";    
+   $(".ats_progress").append(html);
    
+   //hard skills progress
+  
+  var progressBarVal_hardskills=matched_perc_hard_skills;    
+   var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal_hardskills+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal_hardskills+"%'>"+progressBarVal_hardskills+"%</div>";    
+   $(".hard_skills_progress").append(html);
 
+   //soft skills progress
+  
+  var progressBarVal_softskills=matched_perc_soft_skills;    
+   var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal_softskills+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal_softskills+"%'>"+progressBarVal_softskills+"%</div>";    
+   $(".soft_skills_progress").append(html);
   //  document.getElementById('percentage').innerHTML=50%;
 }
 initialise()
 </script>
+
 </main>
