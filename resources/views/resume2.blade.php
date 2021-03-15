@@ -17,7 +17,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>:: Resume ::</title>
+<title>Resume</title>
 <style>
     body{
         padding:0px;
@@ -39,76 +39,101 @@
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
     <td align="center" valign="top" style="background-color: #ffffff;" bgcolor="#ffffff;">
-        <table width="800px" cellpadding="0" cellspacing="0" border="0">
-            <!--  Repeated Row Start -->
-            <tr>
-                <td align="left" valign="top" bgcolor="#65c897" style="background-color: #65c897; padding:20px;">
-                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                        
-                        <tr>
-                            <td align="center" valign="top" style="text-align:center;font-size:42px; font-weight: bold; text-transform: uppercase; line-height: normal; background-color:#65c897; color:#ffffff">
-                                Jane Doe
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" valign="top" style="text-align:center; padding:20px; font-size:24px; font-weight: bold; line-height: normal; background-color:#65c897; color:#ffffff">
-                                <span style="width:80px; height: 3px; background-color: #ffffff; display: block; margin: 0 auto;"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" valign="top" style="text-align:center; font-size:24px; font-weight: normal; line-height: normal; background-color:#65c897; color:#ffffff">
-                                Web Developer
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+        <table width="1024px" cellpadding="0" cellspacing="0" border="0">
+            
             <!--  Repeated Row End -->
             <tr>
                 <td align="left" valign="top" style="padding:20px 0px;">
                     <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                        
+
+
+                        <!--  Repeated Row Start -->
+                        <tr>
+                            <td align="left" valign="top" style="padding:20px;">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        
+                                        <td align="center" valign="top" style="text-align:center;font-size:42px; font-weight: bold;  line-height: normal;">
+                                            {{ucfirst($user->details->firstname)}} {{ucfirst($user->details->lastname)}}
+                                        </td>
+                                     
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!--  Repeated Row End -->
+
+
                         <!--  Repeated Row Start -->
                         <tr>
                             <td>
                                 <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                     <tr>
-                                        <td align="left" width="50%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                       
+                                        <td align="center" width="20%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
                                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                 <tr>
-                                                    <td align="left" valign="top" width="24px" style="width: 24px;"><img src="images/email.png" alt="" width="24px" height="24px" style="max-width: 24px; max-height: 24px;"></td>
-                                                    <td align="left" valign="top" style="line-height: 24px; padding-left: 15px;">Jane.dow@gmail.com</td>
+                                                    
+                                                    <td align="center" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->address}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left" valign="top" width="24px" style="width: 24px;"><img src="images/phone.png" alt="" width="24px" height="24px" style="max-width: 24px; max-height: 24px;"></td>
-                                                    <td align="left" valign="top" style="line-height: 24px; padding-left: 15px;">(416) 111-2222</td>
+                                                                
+                                                    <td align="center" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->city}}, {{$user->details->state}}, {{$user->details->zipcode}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td align="left" valign="top" width="24px" style="width: 24px;"><img src="images/map.png" alt="" width="24px" height="24px" style="max-width: 24px; max-height: 24px;"></td>
-                                                    <td align="left" valign="top" style="line-height: 24px; padding-left: 15px;">250 Humber College Blvd., Toronto, ON M5A 3JL7</td>
-                                                </tr>
+                                                
                                                
                                                
                                             </table>
                                         </td>
-                                        <td align="left" width="50%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                        <td align="center" width="20%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
                                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                               
                                                
                                                 <tr>
-                                                    <td align="left" valign="top" width="24px" style="width: 24px;"><img src="images/facebook.png" alt="" width="24px" height="24px" style="max-width: 24px; max-height: 24px;"></td>
-                                                    <td align="left" valign="top" style="line-height: 24px; padding-left: 15px;">www.xyz.com</td>
+                                                    
+                                                    <td align="center" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->phone}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td align="left" valign="top" width="24px" style="width: 24px;"><img src="images/linkedin.png" alt="" width="24px" height="24px" style="max-width: 24px; max-height: 24px;"></td>
-                                                    <td align="left" valign="top" style="line-height: 24px; padding-left: 15px;">www.xyz.com</td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="left" valign="top" width="24px" style="width: 24px;"><img src="images/github.png" alt="" width="24px" height="24px" style="max-width: 24px; max-height: 24px;"></td>
-                                                    <td align="left" valign="top" style="line-height: 24px; padding-left: 15px;">www.xyz.com</td>
-                                                </tr>
+                                               
                                             </table>
                                         </td>
+                                        <td align="center" width="20%" valign="top" style=" font-weight:normal; line-height:28px;font-size: 12px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              
+                                               
+                                                <tr>
+                                                    
+                                                    <td align="center" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->email}}</td>
+                                                </tr>
+                                                
+                                            </table>
+                                        </td>
+                                        @if (!is_null($user->details->linkedin))
+                                        <td align="center" width="20%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              
+                                               
+                                                <tr>
+                                                    
+                                                    <td align="center" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->linkedin}}</td>
+                                                </tr>
+                                                
+                                            </table>
+                                        </td>
+                                        @endif
+                                        @if (!is_null($user->details->guthub))
+                                        <td align="center" width="20%" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              
+                                               
+                                                <tr>
+                                                  
+                                                    <td align="center" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->guthub}}</td>
+                                                </tr>
+                                                
+                                            </table>
+                                        </td>
+                                                                    @endif
+                                        
                                     </tr>
                                 </table>
                             </td>

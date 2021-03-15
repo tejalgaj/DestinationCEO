@@ -100,11 +100,15 @@
                                                             </tr>
                                                             <tr>
                                                                 
-                                                                <td align="right" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->github}}</td>
+                                                                <td align="right" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">@if (!is_null($user->details->github))
+                                                                    {{$user->details->github}}
+                                                                    @endif</td>
                                                             </tr>
                                                             <tr>
                                                                 
-                                                                <td align="right" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">{{$user->details->linkedin}}
+                                                                <td align="right" valign="top" style="line-height: 24px; padding-left: 15px;font-size: 12px;">@if (!is_null($user->details->linkedin))
+                                                                    {{$user->details->linkedin}}
+                                                                    @endif
                                                                 </td>
                                                             </tr>
                                                         </table>

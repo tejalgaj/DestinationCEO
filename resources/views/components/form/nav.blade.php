@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-4 mb-3">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item {{ (request()->segment(1) == 'user-detail')?'active':''}}">
