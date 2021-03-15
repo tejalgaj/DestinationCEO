@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Providers;
-
+//use App\Models\UserDetail;
+use View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,5 +25,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        
+        
+        View::composer('components.form.nav', 'App\Http\Controllers\UserDetailController');
     }
 }

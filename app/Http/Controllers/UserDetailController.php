@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class UserDetailController extends Controller
 {
@@ -167,4 +168,24 @@ class UserDetailController extends Controller
         $request->session()->forget('resume_selected_template');
         echo "Data has been removed from session.";
      }
+
+     public function compose(View $view)
+    {
+       $user_status = (!empty(auth()->user()->details)?auth()->user()->details->count():0);
+       $edu_status = (!empty(auth()->user()->education)?auth()->user()->education->count():0);
+       $exp_status = (!empty(auth()->user()->experiences)?auth()->user()->experiences->count():0);
+       $skill_status = (!empty(auth()->user()->skills)?auth()->user()->skills->count():0);
+       $add_exp_status = (!empty(auth()->user()->additionalExperience)?auth()->user()->additionalExperience->count():0);
+       $tech_exp_status = (!empty(auth()->user()->technicalExperience)?auth()->user()->technicalExperience->count():0);
+
+       $highlight_status = !empty(auth()->user()->highlight)?auth()->user()->highlight->count():0;
+        $view->with('userDetailstatus',  $user_status)
+             ->with('educationStatus', $edu_status)
+             ->with('experiencesStatus', $exp_status)
+             ->with('skillStatus', $skill_status)
+             ->with('additionalExperienceStatus', $add_exp_status)
+             ->with('technicalExperienceStatus', $tech_exp_status)
+             ->with('highlightStatus', $highlight_status);
+             
+    }
 }

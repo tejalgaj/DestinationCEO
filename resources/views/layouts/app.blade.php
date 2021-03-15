@@ -146,6 +146,7 @@
   
   @yield('content')
   <!-- ======= Footer ======= -->
+  
   <footer id="footer">
 
     <div class="footer-top">
