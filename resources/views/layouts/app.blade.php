@@ -61,6 +61,28 @@
           
           <li class={{ Request::path()==='resume-builder'?'active':''}}><a href="/resume-builder">Resume Builder</a></li>
        
+ <li class={{ Request::path()==='resume-scan'?'active':''}}><a href="/resume-scan">Scanning</a></li>
+           
+          <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact">Contact</a></li>
+
+	 <li class="drop-down"><a href="">More</a>
+            <ul>
+              <li><a href="/upload_template">upload templates</a></li>
+              <!-- <li class="drop-down"><a href="#">Deep Drop Down</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
+              <li><a href="/build_resume">choose a template</a></li>
+              <li><a href="/upload_template_form">Manage </a></li>
+              <li><a href="/admin/socialLinks">Add social widgets</a></li>
+              <li><a href="/contact_details">Manage contact details</a></li>
+            </ul>
+          </li>
            <!-- Authentication Links -->
            @guest
            @if (Route::has('login'))
@@ -237,6 +259,22 @@
   
   <!-- Template Main JS File -->
   <script src="{{asset('boottheme/assets/js/main.js')}}"></script>
+
+
+<script>
+  
+
+  @foreach($admin_address_details as $admin_address_detail)
+    {
+        
+    document.getElementById('footer_address').innerHTML='{{$admin_address_detail['address']}}' + " ,"+
+    '{{$admin_address_detail['city']}}'+ " ,"+ '{{$admin_address_detail['country']}}' + " ," +'{{$admin_address_detail['province']}}';
+    document.getElementById('footer_phone').innerHTML='{{$admin_address_detail['phone']}}';
+    document.getElementById('footer_email').innerHTML='{{$admin_address_detail['email']}}';
+    
+    }
+    @endforeach
+  </script>
   
 
 </body>
