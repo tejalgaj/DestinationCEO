@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('main-content')
+
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -8,7 +12,7 @@
   <link href="{{asset('boottheme/assets/css/resumescancss.css')}}" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
   
   </head>
 <main>
@@ -149,6 +153,7 @@
 -->
   </tbody>
 </table>
+
 </div>
 
 <div id="line_space_next"></div>
@@ -158,6 +163,7 @@
 <div id="match_title"><p>Hard Skills Match:  <span id="hard_skills_match"></span></p></div>
 
 </br>
+
 <table id ="myTableHardSkills" class="table">
 
   <tbody>
@@ -182,7 +188,10 @@
   </tbody>
 </table>
 </div>
+</br>
 <div id="line_space_next"></div>
+
+
 <div id="soft_skills_match_container">
 <div id="match_title"><p>Soft Skills Match:  <span id="soft_skills_match"></span></p></div>
 
@@ -211,9 +220,13 @@
   </tbody>
 </table>
 </div>
-<div class="pie" data-pie='{ "percent": 82, "colorSlice": "#E91E63", "time": 30, "fontWeight": 400 }'></div>
 
+<div id="line_space_next"></div>
+<div class="pie" data-pie='{ "percent": 82, "colorSlice": "#E91E63", "time": 30, "fontWeight": 400 }'></div>
+<div id="match_title"><p>Matched Skills Word Cloud</p></div>
+<div id="word-cloud"></div>
 </body>
+
 
 <!--<script src="{{asset('boottheme/assets/js/resumescanning.js')}}"></script>-->
 <script>
@@ -298,10 +311,13 @@ function initialise() {
 function myFunctionWordMatch() {
     //for counting matches in resume..like education, job posting etc
     var resume_match_count = 0;
+   
     if(numChars>0)
     {
     document.getElementById('container_scan_results').style.display = "block";
+    
     }
+    
     var myTable = document.getElementById("myTable");
     /*characters count*/
     if(numChars>=400)
@@ -342,50 +358,7 @@ function myFunctionWordMatch() {
     var arr_posting_previous = str_posting.split(' ');
     var arr_posting_withoutspaces = arr_posting_previous.filter(word => word.trim().length > 0);
     var arr_posting = arr_posting_withoutspaces.map(v => v.toLowerCase());
-    /////
-    var count = 0;
-    var result = [];
-    var finalResult = [];
-    var found = "false";
-    var flag = "true";
-    var c1 = 0;
-    var excluded_words = ["and", "then", "of", "to", "a", "an", "people", "them", "the", " ", "", ".", ",", ";", ":"];
-    for (var i = 0; i < arr_posting.length; i++) {
-        var word = arr_posting[i];
-        for (var j = 0; j < arr_resume.length; j++) {
-            if (word == arr_resume[j]) {
-                for (var k = 0; k < excluded_words.length; k++) {
-                    if (word == excluded_words[k]) {
-                        flag = "false";
-                        break;
-                    }
-                }
-                if (flag == "true") {
-                    count++;
-                    //console.log(word);
-                    result.push(word); {
-                        for (let z = 0; z < result.length; z++) {
-                            for (y = 0; y < finalResult.length; y++)
-                            {
-                                if (result[z] == finalResult[y]) {
-                                    found = true;
-                                }
-                            }
-                            c1++;
-                            if (c1 == 1 && found == false) {
-                                finalResult.push(result[z]);
-                            }
-                            c1 = 0;
-                            found = false;
-                        }
-                    }
-                } else {
-                    flag = "true";
-                    break;
-                }
-            }
-        }
-    }
+    
     //////To match job title
     var found_job_title = str_resume.search(str_job_title);
     if (found_job_title > 0) {
@@ -517,18 +490,18 @@ function myFunctionWordMatch() {
      keyword = '{{$hard_skills_keyword['hard_skill_keyword']}}';
      var found_posting = str_posting.search(keyword);
         if (found_posting > 0) {
-            arr_found_hard_skills_posting[arr_found_hard_skills_posting_index] = keyword +' ;';
+            arr_found_hard_skills_posting[arr_found_hard_skills_posting_index] = keyword +', ';
             arr_found_hard_skills_posting_index++;
             var found_resume = str_resume.search(keyword);
             if (found_resume > 0) {
-                arr_found_hard_skills_resume[arr_found_hard_skills_resume_index] = keyword + ' ;';
+                arr_found_hard_skills_resume[arr_found_hard_skills_resume_index] = keyword + ', ';
                 arr_found_hard_skills_resume_index++;
             }
         }
       }
     @endforeach
 
-    
+  
 //soft skills
 var arr_found_soft_skills_posting = [];
     var arr_found_soft_skills_posting_index = 0;
@@ -541,11 +514,11 @@ var arr_found_soft_skills_posting = [];
      keyword = '{{$soft_skills_keyword['soft_skill_keyword']}}';
      var found_posting = str_posting.search(keyword);
         if (found_posting > 0) {
-          arr_found_soft_skills_posting[arr_found_soft_skills_posting_index] = keyword +' ;';
+          arr_found_soft_skills_posting[arr_found_soft_skills_posting_index] = keyword +', ';
           arr_found_soft_skills_posting_index++;
             var found_resume = str_resume.search(keyword);
             if (found_resume > 0) {
-              arr_found_soft_skills_resume[arr_found_soft_skills_resume_index] = keyword + ' ;';
+              arr_found_soft_skills_resume[arr_found_soft_skills_resume_index] = keyword + ', ';
               arr_found_soft_skills_resume_index++;
             }
         }
@@ -553,6 +526,165 @@ var arr_found_soft_skills_posting = [];
     @endforeach
 
     
+    
+////Word cloud
+/*  ======================= SETUP ======================= */
+var config = {
+    trace: true,
+    spiralResolution: 1, //Lower = better resolution
+    spiralLimit: 360 * 5,
+    lineHeight: 0.8,
+    xWordPadding: 0,
+    yWordPadding: 3,
+    font: "sans-serif"
+}
+var word_cloud_array = arr_found_soft_skills_resume.concat(arr_found_hard_skills_resume);
+var words = word_cloud_array.map(function(word) {
+    return {
+        word: word,
+        freq: Math.floor(Math.random() * 50) + 10
+    }
+})
+
+word_cloud_array.sort(function(a, b) {
+    return -1 * (a.freq - b.freq);
+});
+
+var cloud = document.getElementById("word-cloud");
+cloud.style.position = "relative";
+cloud.style.fontFamily = config.font;
+
+var traceCanvas = document.createElement("canvas");
+traceCanvas.width = cloud.offsetWidth;
+traceCanvas.height = cloud.offsetHeight;
+var traceCanvasCtx = traceCanvas.getContext("2d");
+cloud.appendChild(traceCanvas);
+
+var startPoint = {
+    x: cloud.offsetWidth / 2,
+    y: cloud.offsetHeight / 2
+};
+
+var wordsDown = [];
+/* ======================= END SETUP ======================= */
+
+
+
+
+
+/* =======================  PLACEMENT FUNCTIONS =======================  */
+function createWordObject(word, freq) {
+    var wordContainer = document.createElement("div");
+    wordContainer.style.position = "absolute";
+    wordContainer.style.fontSize = freq + "px";
+    wordContainer.style.lineHeight = config.lineHeight;
+/*    wordContainer.style.transform = "translateX(-50%) translateY(-50%)";*/
+    wordContainer.appendChild(document.createTextNode(word));
+
+    return wordContainer;
+}
+
+function placeWord(word, x, y) {
+
+    cloud.appendChild(word);
+    word.style.left = x - word.offsetWidth/2 + "px";
+    word.style.top = y - word.offsetHeight/2 + "px";
+
+    wordsDown.push(word.getBoundingClientRect());
+}
+
+function trace(x, y) {
+//     traceCanvasCtx.lineTo(x, y);
+//     traceCanvasCtx.stroke();
+    traceCanvasCtx.fillRect(x, y, 1, 1);
+}
+
+function spiral(i, callback) {
+    angle = config.spiralResolution * i;
+    x = (1 + angle) * Math.cos(angle);
+    y = (1 + angle) * Math.sin(angle);
+    return callback ? callback() : null;
+}
+
+function intersect(word, x, y) {
+    cloud.appendChild(word);    
+    
+    word.style.left = x - word.offsetWidth/2 + "px";
+    word.style.top = y - word.offsetHeight/2 + "px";
+    
+    var currentWord = word.getBoundingClientRect();
+    
+    cloud.removeChild(word);
+    
+    for(var i = 0; i < wordsDown.length; i+=1){
+        var comparisonWord = wordsDown[i];
+        
+        if(!(currentWord.right + config.xWordPadding < comparisonWord.left - config.xWordPadding ||
+             currentWord.left - config.xWordPadding > comparisonWord.right + config.wXordPadding ||
+             currentWord.bottom + config.yWordPadding < comparisonWord.top - config.yWordPadding ||
+             currentWord.top - config.yWordPadding > comparisonWord.bottom + config.yWordPadding)){
+            
+            return true;
+        }
+    }
+    
+    return false;
+}
+/* =======================  END PLACEMENT FUNCTIONS =======================  */
+
+
+
+
+
+/* =======================  LETS GO! =======================  */
+(function placeWords() {
+    for (var i = 0; i < words.length; i += 1) {
+
+        var word = createWordObject(words[i].word, words[i].freq);
+
+        for (var j = 0; j < config.spiralLimit; j++) {
+            //If the spiral function returns true, we've placed the word down and can break from the j loop
+            if (spiral(j, function() {
+                    if (!intersect(word, startPoint.x + x, startPoint.y + y)) {
+                        placeWord(word, startPoint.x + x, startPoint.y + y);
+                        return true;
+                    }
+                })) {
+                break;
+            }
+        }
+    }
+})();
+/* ======================= WHEW. THAT WAS FUN. We should do that again sometime ... ======================= */
+
+
+
+/* =======================  Draw the placement spiral if trace lines is on ======================= */
+(function traceSpiral() {
+    
+    traceCanvasCtx.beginPath();
+    
+    if (config.trace) {
+        var frame = 1;
+
+        function animate() {
+            spiral(frame, function() {
+                trace(startPoint.x + x, startPoint.y + y);
+            });
+
+            frame += 1;
+
+            if (frame < config.spiralLimit) {
+                window.requestAnimationFrame(animate);
+            }
+        }
+
+        animate();
+    }
+})();
+
+////cloud ends
+
     //displying ATS average
     var average_bestpractices_perc = 0;
     if (resume_match_count>0) {
@@ -660,7 +792,10 @@ var progressBarVal=finalResult_perc;
    $(".soft_skills_progress").append(html);
   //  document.getElementById('percentage').innerHTML=50%;
 }
+
 initialise()
 </script>
-
 </main>
+</body>
+@endsection
+</html>
