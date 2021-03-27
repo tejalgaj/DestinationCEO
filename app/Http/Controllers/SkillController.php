@@ -44,12 +44,14 @@ class SkillController extends Controller
     {
         //
         request()->validate([
-            'name'=>'required'
+            'skill_title'=>'required',
+            'value'=>'required'
         ]);
 
         
         $skill = new Skill();
-         $skill->name = request('name');
+         $skill->skill_title = request('skill_title');
+         $skill->value = request('value');
          $skill->user_id = auth()->id();
      $skill->description = request('description');
         
@@ -93,12 +95,14 @@ class SkillController extends Controller
     {
         //
         request()->validate([
-            'name'=>'required'
+            'skill_title'=>'required',
+            'value'=>'required'
         ]);
 
         
        
-         $skill->name = request('name');
+        $skill->skill_title = request('skill_title');
+        $skill->value = request('value');
          $skill->user_id = auth()->id();
      $skill->description = request('description');
         

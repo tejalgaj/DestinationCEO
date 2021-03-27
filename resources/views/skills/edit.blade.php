@@ -19,11 +19,21 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-              <label for="skills-name">Skill Name</label>
-              <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : ''}}" id="skills-name" placeholder="Skill Name" name="name" value="{{$skill->name}}" required>
-               @error('name')
+              <label for="skills-name">Skill Title</label>
+              <input type="text" class="form-control {{ $errors->has('skill_title') ? 'is-invalid' : ''}}" id="skills-title" placeholder="Skill Title" name="skill_title" value="{{$skill->skill_title}}" required>
+               @error('skill_title')
                <div class="invalid-feedback">
-               {{$errors->first('name')}}
+               {{$errors->first('skill_title')}}
+              </div>
+                        @enderror
+            </div>
+
+            <div class="form-group">
+              <label for="skills-name">Skill Value</label>
+              <input type="text" class="form-control {{ $errors->has('value') ? 'is-invalid' : ''}}" id="skills-value" placeholder="Skill Value" name="value" value="{{$skill->value}}" required>
+               @error('value')
+               <div class="invalid-feedback">
+               {{$errors->first('value')}}
               </div>
                         @enderror
             </div>

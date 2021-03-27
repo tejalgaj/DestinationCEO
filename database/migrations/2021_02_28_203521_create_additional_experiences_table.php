@@ -16,8 +16,16 @@ class CreateAdditionalExperiencesTable extends Migration
         Schema::create('additional_experiences', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('role')->nullable();
-            $table->string('responsibilities')->nullable();
+            $table->string('role');
+            $table->text('responsibilities')->nullable();
+            $table->string('employer');
+            $table->date('startdate');
+            $table->date('enddate')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
+            $table->string('currently_working')->nullable();
+            
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('Users')->onDelete('cascade');
         });

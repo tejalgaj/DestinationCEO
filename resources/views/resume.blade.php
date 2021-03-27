@@ -31,6 +31,14 @@
         -moz-box-sizing: border-box;
         -ms-box-sizing: border-box
     }
+    .add_responsibility p {
+    margin: 0;
+    padding: 0;
+    
+}
+table{
+    border: 0px;
+}
 </style>
 <style type="text/css" media="print">
 	body {
@@ -43,7 +51,7 @@
 </head>
 
 <body>
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<table width="100%" cellpadding="0" cellspacing="0" >
 <tr>
     <td align="center" valign="top" style="background-color: #ffffff;" bgcolor="#ffffff;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -142,9 +150,9 @@
                                                     <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
                                                         <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                             <tr>
-                                                                <td align="left" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$work->job_title }}</td>
-                                                                <td align="center" width="30%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$work->employer }},{{$work->address }}, {{$work->city }} {{$work->state }} {{$work->zipcode }}</td>
-                                                                <td align="right" width="30%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+                                                                <td align="left" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">{{$work->job_title }}</td>
+                                                                <td align="center" width="30%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">{{$work->employer }},{{$work->address }}, {{$work->city }} {{$work->state }} {{$work->zipcode }}</td>
+                                                                <td align="right" width="30%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">
 																	<?php 
 																	$workstartdate = $work->startdate;
 																	$newworkstartdate = date("F Y", strtotime($workstartdate));
@@ -178,7 +186,7 @@
     
                                                     <tr>
 														
-                                                        <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+                                                        <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">
 															
 															
 																
@@ -216,9 +224,9 @@
                                                     <td align="left" valign="top" style="font-size: 14px; font-weight:normal; line-height:28px;">
                                                         <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                             <tr>
-                                                                <td align="left" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$education->city }} {{$education->state }} {{$education->country }}</td>
-                                                                <td align="center" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$education->schoolname }}</td>
-                                                                <td align="right" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+                                                                <td align="left" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">{{$education->city }} {{$education->state }} {{$education->country }}</td>
+                                                                <td align="center" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">{{$education->schoolname }}</td>
+                                                                <td align="right" width="33%" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">
 																	<?php $education_enddate = $education->enddate;
 																	$new_education_enddate = date("F Y", strtotime($education_enddate));?>
 																	@if (($education->graduated == 'still_enrolled'))
@@ -238,14 +246,14 @@
                                                     <!-- <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:14px; text-transform: uppercase; padding-top:10px;">Senior PHP Developer</td> -->
                                                 </tr>
                                                 <tr>
-                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">{{$education->degree }} in {{$education->fieldofstudy }}. 
+                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">{{$education->degree }} in {{$education->fieldofstudy }}. 
 														@if (!is_null($education->GPA))
 														Cumulative GPA: {{$education->GPA}};
 														@endif
 														 </td>
                                                 </tr>
 												<tr>
-                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:12px;">
+                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:14px;">
 														@if(count($education->awards)>0)
         <span>Awards:</span>
         
@@ -260,7 +268,7 @@
                                                     </td>
                                                 </tr>
 												<tr>
-                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:12px; padding-bottom: 10px;">
+                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:14px; padding-bottom: 10px;">
                                                         @if(count($education->relevant_courses)>0)
 Relevant Courses:
 
@@ -274,7 +282,7 @@ Relevant Courses:
                                                     </td>
                                                 </tr>
 												<tr>
-                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:12px; padding-bottom: 10px;">
+                                                    <td align="left" valign="top" style="line-height:18px; font-weight:normal; font-size:14px; padding-bottom: 10px;">
 														@if(count($education->extra_activity)>0)
 														<span>Extra Activity:</span>
 														
@@ -311,7 +319,7 @@ Relevant Courses:
                                                 </tr>
                                                 
                                                 <tr>
-                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">
                                                         <ul style="padding: 0 0 0 10px; margin: 0;">
 															@foreach ($user->technicalExperience as $technical_experience)
                                                             <li style="margin-bottom: 5px;">{{$technical_experience->project_title}} 
@@ -341,11 +349,11 @@ Relevant Courses:
 											
 
 <tr>
-	<td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+	<td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">
 		<ul style="padding: 0 0 0 10px; margin: 0;">
 			@foreach ($user->additionalExperience as $additional_experience)
 
-			<li style="margin-bottom: 5px;">{{$additional_experience->role}}: {{$additional_experience->responsibilities}}</li>
+			<li style="margin-bottom: 5px;" class="add_responsibility">{{$additional_experience->role}}: {!! $additional_experience->responsibilities!!}</li>
 			
 			@endforeach
 		
@@ -371,9 +379,9 @@ Relevant Courses:
                                                     <td align="left" valign="top" style="line-height:24px; font-weight: bold; font-size:18px; text-transform: uppercase; border-bottom: 2px solid #eeeeee; padding:10px 0px 5px 0px;">Languages and Technologies</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:12px; padding-top: 10px;">
+                                                    <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">
 														@foreach($user->skills as $skill)
-														{{$skill->name}} @if (!is_null($skill->description))({{$skill->description}}) @endif<br>
+														{{$skill->skill_title}}: {{$skill->value}}@if (!is_null($skill->description))({{$skill->description}}) @endif<br>
 														@endforeach
                                                        
                                                     </td>
@@ -394,7 +402,4 @@ Relevant Courses:
         </table>
     </td>
 </tr>
-</table>
-
-</body>
-</html>
+</table></body></html>

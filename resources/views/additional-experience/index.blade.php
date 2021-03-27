@@ -19,7 +19,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">{{$ad_exp->role}}</h5>
-              <p class="card-text">{{$ad_exp->responsibilities}}</p>
+              <p class="card-text">{!! $ad_exp->responsibilities !!}</p>
               <a href="{{route('additional-experience.edit',$ad_exp)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
               <form action={{route('additional-experience.destroy',$ad_exp)}} method="POST" class="mt-2" style="display: inline">
 @csrf

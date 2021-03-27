@@ -15,11 +15,11 @@
           @foreach ($skills as $skill)
           <div class="card mt-3">
             <div class="card-header">
-              {{$skill->name}}
+              {{$skill->skill_title}}
             </div>
             <div class="card-body">
-              <h5 class="card-title">{{$skill->name}}</h5>
-              <p class="card-text">{{$skill->description}}</p>
+              <h5 class="card-title">{{$skill->skill_title}}</h5>
+              <p class="card-text">{{$skill->value}}</p>
               <a href="{{route('skills.edit',$skill)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
               <form action={{route('skills.destroy',$skill)}} method="POST" class="mt-2" style="display: inline">
 @csrf

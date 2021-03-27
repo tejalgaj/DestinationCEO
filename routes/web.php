@@ -52,7 +52,9 @@ Route::resource('technical-experience', 'App\Http\Controllers\TechnicalExperienc
 
 Route::get('/resume', 'App\Http\Controllers\ResumeController@index')->name('resume.index');
 Route::get('/resume/download', 'App\Http\Controllers\ResumeController@download')->name('resume.download');
-Route::get('/resume/convert-word-to-pdf', 'App\Http\Controllers\ResumeController@convertWordToPDF')->name('resume.wordtopdf');
+Route::get('/resume/convert-html-to-word', 'App\Http\Controllers\ResumeController@wordExport');
+
+Route::get('/resume/direct-convert-html-to-word', 'App\Http\Controllers\ResumeController@directwordExport');
 
 
 Route::post('/set-selected-template', 'App\Http\Controllers\UserDetailController@storeSessionData');

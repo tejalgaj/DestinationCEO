@@ -50,7 +50,7 @@
               </div>
               <div class="form-group">
                 <label for="education-GPA">GPA</label>
-                <input type="number" class="form-control" min="0" step="any" id="education-GPA" placeholder="GPA" name="gpa" value="{{old('gpa')}}">
+                <input type="number" class="form-control" min="0" max ="4" step="any" id="education-GPA" placeholder="GPA" name="gpa" value="{{old('gpa')}}">
                 
               </div>
             <div class="form-row">
@@ -65,7 +65,7 @@
              </div>
              <div class="col-md-6 mb-3">
                <label for="education-enddate">End Date</label>
-               <input type="text" class="form-control {{ $errors->has('enddate') ? 'is-invalid' : ''}}" id="education-enddate" placeholder="End Date" name="enddate" required>
+               <input type="text" class="form-control {{ $errors->has('enddate') ? 'is-invalid' : ''}}" id="education-enddate" placeholder="End Date" name="enddate" onkeydown="return false" required>
                @error('enddate')
                 <div class="invalid-feedback">
                 {{$errors->first('enddate')}}

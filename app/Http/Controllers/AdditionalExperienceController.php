@@ -50,6 +50,24 @@ class AdditionalExperienceController extends Controller
          $additionalExperience->role = request('role');
          $additionalExperience->user_id = auth()->id();
      $additionalExperience->responsibilities = request('responsibilities');
+
+
+     $additionalExperience->employer = request('employer');
+         $additionalExperience->startdate = request('startdate').'-01';
+         
+         if(request('currently_working')=='yes')
+         {
+             $enddate_value = NULL;
+         }else{
+            $enddate_value = request('enddate').'-01';
+         }
+         
+         $additionalExperience->enddate = $enddate_value;
+         $additionalExperience->currently_working = request('currently_working');
+         $additionalExperience->city = request('city');
+         $additionalExperience->state = request('state');
+         $additionalExperience->country = request('country');
+
         
          $additionalExperience->save();
          
@@ -95,6 +113,23 @@ class AdditionalExperienceController extends Controller
          $additionalExperience->user_id = auth()->id();
      $additionalExperience->responsibilities = request('responsibilities');
         
+     $additionalExperience->employer = request('employer');
+     $additionalExperience->startdate = request('startdate').'-01';
+     
+     if(request('currently_working')=='yes')
+     {
+         $enddate_value = NULL;
+     }else{
+        $enddate_value = request('enddate').'-01';
+     }
+     
+     $additionalExperience->enddate = $enddate_value;
+     $additionalExperience->currently_working = request('currently_working');
+     $additionalExperience->city = request('city');
+     $additionalExperience->state = request('state');
+     $additionalExperience->country = request('country');
+
+
          $additionalExperience->save();
          
         return redirect()->route('additional-experience.index');

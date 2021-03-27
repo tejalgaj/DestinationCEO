@@ -59,6 +59,7 @@
                         <div class="form-group">
                           <label for="user-detail-phone">Phone</label>
                           <input type="text" class="form-control" id="user-detail-phone" name="phone" placeholder="Phone" value="{{$userDetail->phone}}">
+                          <span id="user_detail_phone_error" class="alert-message"></span>
                         </div>
                         <div class="form-group">
                           <label for="user-detail-address">Address</label>
@@ -131,23 +132,46 @@
  </main>
  
      <script type="text/javascript">
-      $("#user-detail-update").submit(function(e){
-        var status = true;
-        var linkedinURL = $('#user-detail-linkedin').val();
-        if(linkedinURL!="")
-        {
-          $('#user_detail_linkedin_error').text("");
-          if( /(ftp|http|https):\/\/?(?:www\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(linkedinURL) ) {
+     $("#user-detail-update").submit(function(e){
+    var linkedin_status = true;
+    var phone_status = true;
+    var linkedinURL = $('#user-detail-linkedin').val();
+    if(linkedinURL!="")
+    {
+      $('#user_detail_linkedin_error').text("");
+      if( /(ftp|http|https):\/\/?(?:www\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(linkedinURL) ) {
 
 
 }else{
-  $('#user_detail_linkedin_error').text("Please provide Valid Linkedin URL");
-  status = false;
-  
+$('#user_detail_linkedin_error').text("Please provide Valid Linkedin URL");
+linkedin_status = false;
+
 
 }
-        }
-        return status;
-      });
+    }
+    var phone = $('#user-detail-phone').val();
+    if(phone!="")
+    {
+      $('#user_detail_phone_error').text("");
+      var filter = /^[0-9-+]+$/;
+      if( filter.test(phone) ) {
+
+
+}else{
+$('#user_detail_phone_error').text("Please provide Valid Phone");
+phone_status = false;
+
+
+}
+    }
+  
+if(phone_status && linkedin_status)
+{
+  return true;
+}else{
+  return false;
+}
+   // return status;
+  });
      </script>
 @endsection

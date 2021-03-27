@@ -59,7 +59,7 @@
             <div class="form-row">
              <div class="col-md-6 mb-3">
                <label for="experience-startdate">Start Date</label>
-               <input type="text"  class="form-control {{ $errors->has('startdate') ? 'is-invalid' : ''}}" id="experience-startdate" placeholder="Start Date" name="startdate" value="{{old('startdate')}}" required>
+               <input type="text"  class="form-control {{ $errors->has('startdate') ? 'is-invalid' : ''}}" id="experience-startdate" placeholder="Start Date" name="startdate" value="{{old('startdate')}}" onkeydown="return false" required>
                 @error('startdate')
                 <div class="invalid-feedback">
                 {{$errors->first('startdate')}}
@@ -69,7 +69,7 @@
              </div>
              <div class="col-md-6 mb-3 exp-end-date">
                <label for="experience-enddate">End Date</label>
-               <input type="text" class="form-control {{ $errors->has('enddate') ? 'is-invalid' : ''}}" id="experience-enddate" placeholder="End Date" name="enddate" value="{{old('enddate')}}" required>
+               <input type="text" class="form-control {{ $errors->has('enddate') ? 'is-invalid' : ''}}" id="experience-enddate" placeholder="End Date" name="enddate" value="{{old('enddate')}}" onkeydown="return false" required>
                @error('enddate')
                 <div class="invalid-feedback">
                 {{$errors->first('enddate')}}

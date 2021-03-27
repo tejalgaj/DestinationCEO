@@ -36,7 +36,7 @@
                
                 <div class="col-md-4 mb-3">
                   <label for="technical-experience-project-year">Project Year</label>
-                  <input type="text" class="form-control" id="technical-experience-project-year" placeholder="Project Year" name="project_year" value="{{old('project_year')}}">
+                  <input type="text" class="form-control" id="technical-experience-project-year" placeholder="Project Year" name="project_year" value="{{old('project_year')}}" onkeydown="return false">
                   </div>
               </div>
              
