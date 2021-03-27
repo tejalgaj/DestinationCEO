@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\skills_scanning_controller;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\admin_address;
+use App\Http\Controllers\footer_address_detail;
+use App\Models\admin_address_detail;
+use App\Http\Controllers\update_footer_address;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +19,25 @@ use App\Http\Controllers\skills_scanning_controller;
 |
 */
 
+
+//Route::get('/contact', 'ContactController@contact')->name('contact');
+Route::get('/contact',[ContactController::class,'contact']);
+//Route::post('/contact', 'ContactController@contactPost')->name('contactPost');
+Route::post('/contact',[ContactController::class,'contactPost']);
+
+
 Route::get('/', function () {
     return view('main');
 });
+
+
+
+//admin contact address details
+Route::get('contact_details',[admin_address::class,'getAdminAddress']);
+Route::get('app',[update_footer_address::class,'getFooterAddress']);
+Route::post('/update/{id}',[admin_address::class,'update_function']);   
+
+//admin contact address details end
 
 Route::get('/resume-builder', function () {
     return view('resume_builder');
@@ -32,7 +53,7 @@ Route::get('/resume-scan', function () {
 });
 
 */
-Route::get('resume-scan',[skills_scanning_controller::class,'getSkills']);
+Route::get('resume-scan',[skills_scanning_controller::class,'getSkills'])->middleware('auth');;
 
 
 Auth::routes();

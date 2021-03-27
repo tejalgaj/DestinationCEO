@@ -61,6 +61,28 @@
           
           <li class={{ Request::path()==='resume-builder'?'active':''}}><a href="/resume-builder">Resume Builder</a></li>
        
+ <li class={{ Request::path()==='resume-scan'?'active':''}}><a href="/resume-scan">Scanning</a></li>
+           
+          <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact">Contact</a></li>
+
+	 <li class="drop-down"><a href="">More</a>
+            <ul>
+              <li><a href="/upload_template">upload templates</a></li>
+              <!-- <li class="drop-down"><a href="#">Deep Drop Down</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
+              <li><a href="/build_resume">choose a template</a></li>
+              <li><a href="/upload_template_form">Manage </a></li>
+              <li><a href="/admin/socialLinks">Add social widgets</a></li>
+              <li><a href="/contact_details">Manage contact details</a></li>
+            </ul>
+          </li>
            <!-- Authentication Links -->
            @guest
            @if (Route::has('login'))
@@ -146,7 +168,6 @@
   
   @yield('content')
   <!-- ======= Footer ======= -->
- 
   <footer id="footer">
 
     <div class="footer-top">
@@ -156,14 +177,16 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Mentor</h3>
             <p>
-              A108 Adam Street <br>
+              <!--A108 Adam Street <br>
               New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              United States <br><br>-->
+            <b> Address:</b> <span id='footer_address'></span></br>
+             <b>Phone: </b><span id='footer_phone'></span></br>
+             <b> Email: </b><span id='footer_email'></span> </br>
             </p>
           </div>
 
+<!--
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
@@ -186,6 +209,7 @@
             </ul>
           </div>
 
+
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
@@ -193,7 +217,13 @@
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
-
+      -->
+      <div class="footer-text" style="width: 40rem;">
+            <h2>City of Mississauga</h2>
+            <h3>Director, Tourism (CEO, Tourism Mississauga)</h3>
+           <p> Director, Tourism (CEO, Tourism Mississauga) you will act as the main conduit with regional, provincial, and national stakeholders as a partner in the development and implementation
+            of tourism initiatives for the City to raise the profile of tourism in Mississauga. </p>
+          </div>
         </div>
       </div>
     </div>
@@ -229,6 +259,22 @@
   
   <!-- Template Main JS File -->
   <script src="{{asset('boottheme/assets/js/main.js')}}"></script>
+
+
+<script>
+  
+
+  @foreach($admin_address_details as $admin_address_detail)
+    {
+        
+    document.getElementById('footer_address').innerHTML='{{$admin_address_detail['address']}}' + " ,"+
+    '{{$admin_address_detail['city']}}'+ " ,"+ '{{$admin_address_detail['country']}}' + " ," +'{{$admin_address_detail['province']}}';
+    document.getElementById('footer_phone').innerHTML='{{$admin_address_detail['phone']}}';
+    document.getElementById('footer_email').innerHTML='{{$admin_address_detail['email']}}';
+    
+    }
+    @endforeach
+  </script>
   
 
 </body>
