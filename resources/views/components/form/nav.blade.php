@@ -20,18 +20,18 @@
         </li>
         @endif
         <li class="nav-item {{ (request()->segment(1)== 'additional-experience')?'active':''}}">
-          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1)?'disabled':''}}" href="{{route('additional-experience.index')}}">Additional Experience</a>
+          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1 || ($value=="Resume Template 2" && $highlightStatus < 1))?'disabled':''}}" href="{{route('additional-experience.index')}}">Additional Experience</a>
         </li>
         <li class="nav-item {{ (request()->segment(1)== 'skills')?'active':''}}">
-          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1)?'disabled':''}}" href="{{route('skills.index')}}" >Skills</a>
+          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1 || ($value=="Resume Template 2" && $highlightStatus < 1))?'disabled':''}}" href="{{route('skills.index')}}" >Skills</a>
         </li>
       </ul>
     </div>
   </nav>
-   {{$userDetailstatus}}
+   {{-- {{$userDetailstatus}}
   {{$educationStatus}}
   {{$experiencesStatus}}
   {{$skillStatus}}
   {{$additionalExperienceStatus}}
   {{$technicalExperienceStatus}}
-  {{$highlightStatus}} 
+  {{$highlightStatus}}  --}}

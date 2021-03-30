@@ -20,16 +20,16 @@ use PhpOffice\PhpWord\Element\ListItemRun;
 class ResumeController extends Controller
 {
     //
-    public function index()
+    public function preview()
     {
         //
         $user = auth()->user();
         $selected_template = session('resume_selected_template', 'default');
         if($selected_template == "Resume Template 2")
         {
-            return view('resume2',compact('user'));
+            return view('resume-format.resume2',compact('user'));
         }else{
-            return view('resume',compact('user'));
+            return view('resume-format.resume',compact('user'));
         }
         
     }
@@ -41,36 +41,30 @@ class ResumeController extends Controller
         $selected_template = session('resume_selected_template', 'default');
         if($selected_template == "Resume Template 2")
         {
-            $pdf = \PDF::loadView('resume2',compact('user'));
+            $pdf = \PDF::loadView('resume-format.resume2',compact('user'));
         }else{
-            $pdf = \PDF::loadView('resume',compact('user'));
+            $pdf = \PDF::loadView('resume-format.resume',compact('user'));
         }
         //$pdf = \PDF::loadView('resume', compact('user'));
-        return $pdf->download('your_resume.pdf');
+        $fileName = $user->name;
+        return $pdf->download($fileName.'.pdf');
     }
 
     public function directwordExport()
     {
         $user = auth()->user();
-        return view('resume1_word',compact('user'));
+        return view('resume-format.resume1_word',compact('user'));
        
     }
 
-    public function convertWordToPDF()
+    public function directtextExport()
     {
-            /* Set the PDF Engine Renderer Path */
-        $domPdfPath = base_path('vendor/dompdf/dompdf');
-        \PhpOffice\PhpWord\Settings::setPdfRendererPath($domPdfPath);
-        \PhpOffice\PhpWord\Settings::setPdfRendererName('DomPDF');
-         
-        //Load word file
-        $Content = \PhpOffice\PhpWord\IOFactory::load(public_path()."/resume_template/Standard Resume template.docx"); 
- 
-        //Save it into PDF
-        $PDFWriter = \PhpOffice\PhpWord\IOFactory::createWriter($Content,'PDF');
-        $PDFWriter->save(public_path()."/resume_template/Resume_Example_2pg.pdf"); 
-        echo 'File has been successfully converted';
+        $user = auth()->user();
+        return view('resume-format.resume1_txt',compact('user'));
+       
     }
+
+    
 
     public function wordExport()
     {
@@ -449,5 +443,12 @@ class ResumeController extends Controller
         return response()->download($fileName . '.docx')->deleteFileAfterSend(true);
 
        
+    }
+
+    public function previewURL()
+    {
+       $preview_url = route('resume-format.resume.preview');
+       return response()->json(['code'=>200, 'data' => $preview_url], 200); 
+             
     }
 }

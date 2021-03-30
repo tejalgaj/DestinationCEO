@@ -115,12 +115,12 @@
                </div>
            </li>
        @endguest
-          <li><a href="contact.html">Contact</a></li>
+         
              <!-- Button trigger modal -->
-             <?php $selected_template = session('resume_selected_template', 'default')?>
+             <?php  $selected_template = session('resume_selected_template', 'default')?>
              @auth
              @if (Request::path()==='skills' && $selected_template!="default")
-             <button type="button" class="btn btn-outline-secondary btn-sm m-3" data-toggle="modal" data-target="#exampleModal">
+             <button type="button" class="btn btn-outline-secondary btn-sm m-3 preview-iframe" data-toggle="modal" data-target="#exampleModal">
                 Preview
                 </button>
                 @endif
@@ -154,12 +154,16 @@
   </button>
 </div>
 <div class="modal-body" >
-  <iframe src="{{route('resume.index')}}" width="100%" height="900"> </iframe> 
+  <iframe src="" width="100%" height="900" id="ifrm"> </iframe> 
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  <a name="" id="" class="btn btn-primary" href="{{route('resume.download')}}"
-  role="button">Download</a> 
+  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.download')}}"
+  role="button">PDF</a>
+  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.DOCdownload')}}"
+  role="button">DOC</a> 
+  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.TXTdownload')}}"
+  role="button">TXT</a>
   
 </div>
 </div>
@@ -263,8 +267,7 @@
 
 <script>
   
-
-  @foreach($admin_address_details as $admin_address_detail)
+    @foreach($admin_address_details as $admin_address_detail)
     {
         
     document.getElementById('footer_address').innerHTML='{{$admin_address_detail['address']}}' + " ,"+
@@ -274,6 +277,31 @@
     
     }
     @endforeach
+
+  $( ".preview-iframe" ).click(function() {
+    let _url     = '/resume/getPreviewUrl';
+    let _token   = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+        url: _url,
+        type: "GET",
+       
+        success: function(response) {
+            if(response.code == 200) {
+              
+              //window.location = "/technical-experience";
+             let preview_url = response.data;
+             $("#ifrm").attr("src", preview_url);
+            }
+        },
+        error: function(response) {
+          console.log(response.responseJSON);
+        }
+      });
+    //
+});
+
+
+  
   </script>
   
 

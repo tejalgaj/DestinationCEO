@@ -165,12 +165,29 @@
                                     </tr>
                                     <tr>
                                         <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">
-                                            <ul style="padding: 0 0 0 0px; margin: 0; list-style: none;">
-                                            <li style="margin-bottom: 10px;">Recent graduate of the _____________ Diploma program at Humber College (May 2021)</li>
-                                            <li style="margin-bottom: 10px;">Masters / Bachelor Degree in __________</li>
-                                            <li style="margin-bottom: 10px;">2 bullets on “Must Have” Hard/Technical Skills</li>
-                                            <li style="margin-bottom: 10px;">1 bullet on “Key-words” Soft/Transferrable Skills</li>
-                                            <li style="margin-bottom: 10px;">1 bullet on communication languages</li>
+                                            <ul style="padding: 0 0 0 10px; margin: 10px;">
+
+                                                @foreach($user->education as $education)
+                                                <?php $highlight_education_enddate = $education->enddate;
+                                                $new_highlight_education_enddate = date("F Y", strtotime($highlight_education_enddate));?>
+                                                @if (($education->graduated == 'still_enrolled'))
+                                                <li style="margin-bottom: 10px;">Recent graduate of the {{$education->fieldofstudy }} {{$education->degree }} program at {{$education->schoolname }} ({{$new_highlight_education_enddate}})</li>
+                                                @endif
+                                                @endforeach
+                                            
+                                            
+                                            
+                                            @if(count($user->highlight->hard_skills)>0)
+                                                @foreach ($user->highlight->hard_skills as $key=>$value)
+                                                <li style="margin-bottom: 10px;">{{$value}}</li>
+                                                @endforeach
+                                            @endif
+                                            @if(count($user->highlight->soft_skills)>0)
+                                                @foreach ($user->highlight->soft_skills as $key=>$value)
+                                                <li style="margin-bottom: 10px;">{{$value}}</li>
+                                                @endforeach
+                                            @endif
+                                            <li style="margin-bottom: 10px;">Languages: {{$user->highlight->communication_language}}</li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -369,7 +386,7 @@
                                                 
                                                 <tr>
                                                     <td align="left" valign="top" style="padding:5px 0px; line-height:18px; font-weight:normal; font-size:14px; padding-top: 10px;">
-                                                        <ul style="padding: 0 0 0 10px; margin: 0;">
+                                                        <ul style="padding: 0 0 0 10px; margin: 10px;">
 															@foreach ($user->technicalExperience as $technical_experience)
                                                             <li style="margin-bottom: 5px;">{{$technical_experience->project_title}} 
 																@if (!is_null($technical_experience->project_year))

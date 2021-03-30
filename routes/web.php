@@ -18,6 +18,9 @@ use App\Http\Controllers\update_footer_address;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('main');
+});
 
 
 //Route::get('/contact', 'ContactController@contact')->name('contact');
@@ -26,15 +29,12 @@ Route::get('/contact',[ContactController::class,'contact']);
 Route::post('/contact',[ContactController::class,'contactPost']);
 
 
-Route::get('/', function () {
-    return view('main');
-});
 
 
 
 //admin contact address details
 Route::get('contact_details',[admin_address::class,'getAdminAddress']);
-Route::get('app',[update_footer_address::class,'getFooterAddress']);
+//Route::get('app',[update_footer_address::class,'getFooterAddress']);
 Route::post('/update/{id}',[admin_address::class,'update_function']);   
 
 //admin contact address details end
@@ -71,12 +71,14 @@ Route::resource('skills', 'App\Http\Controllers\SkillController')->middleware('a
 Route::resource('additional-experience', 'App\Http\Controllers\AdditionalExperienceController')->middleware('auth');
 Route::resource('technical-experience', 'App\Http\Controllers\TechnicalExperienceController')->middleware('auth');
 
-Route::get('/resume', 'App\Http\Controllers\ResumeController@index')->name('resume.index');
-Route::get('/resume/download', 'App\Http\Controllers\ResumeController@download')->name('resume.download');
-Route::get('/resume/convert-html-to-word', 'App\Http\Controllers\ResumeController@wordExport');
+Route::get('/resume', 'App\Http\Controllers\ResumeController@preview')->name('resume-format.resume.preview')->middleware('auth');
+Route::get('/resume/download', 'App\Http\Controllers\ResumeController@download')->name('resume-format.resume.download')->middleware('auth');
+//Route::get('/resume/convert-html-to-word', 'App\Http\Controllers\ResumeController@wordExport');
 
-Route::get('/resume/direct-convert-html-to-word', 'App\Http\Controllers\ResumeController@directwordExport');
+Route::get('/resume/direct-convert-html-to-word', 'App\Http\Controllers\ResumeController@directwordExport')->name('resume-format.resume.DOCdownload')->middleware('auth');
+Route::get('/resume/direct-convert-html-to-text', 'App\Http\Controllers\ResumeController@directtextExport')->name('resume-format.resume.TXTdownload');
 
+Route::get('/resume/getPreviewUrl', 'App\Http\Controllers\ResumeController@previewURL');
 
 Route::post('/set-selected-template', 'App\Http\Controllers\UserDetailController@storeSessionData');
 

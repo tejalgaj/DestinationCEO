@@ -188,4 +188,6 @@ class UserDetailController extends Controller
              ->with('highlightStatus', $highlight_status);
              
     }
+
+    
 }
