@@ -15,10 +15,10 @@ class CreateAdminAddressDetailsTable extends Migration
     {
         Schema::create('admin_address_details', function (Blueprint $table) {
             $table->id();
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('city');
             $table->string('province');
-            $table->string('postcode');
+            $table->string('postcode')->nullable();
             $table->string('country');
             $table->string('email');
             $table->string('phone');
