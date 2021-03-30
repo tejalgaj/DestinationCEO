@@ -4,6 +4,9 @@ namespace App\Providers;
 //use App\Models\UserDetail;
 use View;
 use Illuminate\Support\ServiceProvider;
+use App\Models\admin_address_detail;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\update_footer_address;
 
 class AppServiceProvider extends ServiceProvider
 {
