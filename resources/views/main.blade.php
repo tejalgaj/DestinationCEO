@@ -4,9 +4,10 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-content-center align-items-center">
   <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-    <h1>Learning Todayssss,<br>Leading Tomorrow</h1>
-    <h2>We are team of talented designers making websites with Bootstrap</h2>
-    <a href="courses.html" class="btn-get-started">Get Started</a>
+    <h1>You are the CEO of <br>YOUR DESTINY</h1>
+    <h2>Achieve your career success with us</h2>
+    
+   <!-- <a href="/home" class="btn-get-started">Get Started</a>-->
   </div>
 </section><!-- End Hero -->
 
@@ -26,19 +27,19 @@
           <img src="{{asset('bootthemeassets/img/about.jpg')}}" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <h3>WHAT WE DO</h3>
           <p class="font-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+          We are specialized in job coaching, mentoring and job development. We provide jobseekers with tools, guidance by industry leaders & assist with employment opportunities to start their Canadian Career Journey. Destination CEO constantly hosts free Mentoring, Networking and Master Class Events. 
+          To learn more and get involved, please email us at destinationceo.org@gmail.com.
           </p>
           <ul>
-            <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            <li><i class="icofont-check-circled"></i> Intensive Job Search Bootcamps
+1-1 with Job Coach and Job Developers</li>
+            <li><i class="icofont-check-circled"></i> 1- ON -1 Coaching with Industry Leaders
+Master Classes taught by Mentors</li>
+            <li><i class="icofont-check-circled"></i> Insight into the Hidden Job Market in Canada: Personal Introductions to the 100's of Employers within the Destination CEO Employer Network</li>
           </ul>
-          <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          </p>
+         
           <a href="about.html" class="learn-more-btn">Learn More</a>
         </div>
       </div>
@@ -53,13 +54,13 @@
       <div class="row counters">
 
         <div class="col-lg-3 col-6 text-center">
-          <span data-toggle="counter-up">1232</span>
-          <p>Students</p>
+          <span data-toggle="counter-up">100</span>
+          <p>Employees</p>
         </div>
 
         <div class="col-lg-3 col-6 text-center">
-          <span data-toggle="counter-up">64</span>
-          <p>Courses</p>
+          <span data-toggle="counter-up">20</span>
+          <p>Mentors</p>
         </div>
 
         <div class="col-lg-3 col-6 text-center">
@@ -83,15 +84,15 @@
 
       <div class="row">
         <div class="col-lg-4 d-flex align-items-stretch">
-          <div class="content">
-            <h3>Why Choose Mentor?</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-            </p>
-            <div class="text-center">
+          
+        <div class="content">
+          <h3>Meena Dowlwani</h3>
+          <h4>(FOUNDER) </h4>
+          <img src="{{asset('boottheme/assets/img/meena.jpg')}}" alt=".." width="300" height="300">
+           
+            <!--<div class="text-center">
               <a href="about.html" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-            </div>
+            </div>-->
           </div>
         </div>
         <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -100,22 +101,21 @@
               <div class="col-xl-4 d-flex align-items-stretch">
                 <div class="icon-box mt-4 mt-xl-0">
                   <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                </div>
+                  <h4>Career's Highlight</h4>
+                  <p>Sponsored the development of an auction-based web & mobile app to engage businesses 
+                    in team-fundraising activities and raise funds for homeless shelters</div>
               </div>
               <div class="col-xl-4 d-flex align-items-stretch">
                 <div class="icon-box mt-4 mt-xl-0">
                   <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris ladore pan</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                </div>
+                  <h4>Success Insight</h4>
+                  <p>Successfully launched a collaboration initiative which helped with employment of 250+ at-risk and unemployed individuals, in the Etobicoke community, by engaging with NGOs</div>
               </div>
               <div class="col-xl-4 d-flex align-items-stretch">
                 <div class="icon-box mt-4 mt-xl-0">
                   <i class="bx bx-images"></i>
-                  <h4>Labore consequatur</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  <h4>Current Profession</h4>
+                  <p>Currently, I work as a part-time professor at Humber College, run a social enterprise called Destination CEO</p>
                 </div>
               </div>
             </div>
@@ -130,77 +130,82 @@
   <section id="features" class="features">
     <div class="container" data-aos="fade-up">
 
+    <div class="section-title">
+        <h2>Our Mentors</h2>
+       
+      </div>
       <div class="row" data-aos="zoom-in" data-aos-delay="100">
         <div class="col-lg-3 col-md-4">
           <div class="icon-box">
-            <i class="ri-store-line" style="color: #ffbb2c;"></i>
-            <h3><a href="">Lorem Ipsum</a></h3>
+          <!--  <i class="ri-store-line" style="color: #ffbb2c;"></i>-->
+          <img src="{{asset('boottheme/assets/img/Amir-Syed.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Amir Syed</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
           <div class="icon-box">
-            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-            <h3><a href="">Dolor Sitema</a></h3>
+          <img src="{{asset('boottheme/assets/img/mayuri.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Mayuri</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
           <div class="icon-box">
-            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-            <h3><a href="">Sed perspiciatis</a></h3>
+          <img src="{{asset('boottheme/assets/img/Orren-Johnson.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Orren Johnson</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
           <div class="icon-box">
-            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-            <h3><a href="">Magni Dolores</a></h3>
+          <img src="{{asset('boottheme/assets/img/pawan.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Pawandeep </h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-database-2-line" style="color: #47aeff;"></i>
-            <h3><a href="">Nemo Enim</a></h3>
+          <img src="{{asset('boottheme/assets/img/sayali.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Sayali</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-            <h3><a href="">Eiusmod Tempor</a></h3>
+          <img src="{{asset('boottheme/assets/img/Seena-Foley.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Seena Foley</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-            <h3><a href="">Midela Teren</a></h3>
+          <img src="{{asset('boottheme/assets/img/Shuresh-Shams.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Shuresh Shams</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-            <h3><a href="">Pira Neve</a></h3>
+          <img src="{{asset('boottheme/assets/img/stephanie.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp; <h3>Stephanie</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-anchor-line" style="color: #b2904f;"></i>
-            <h3><a href="">Dirada Pack</a></h3>
+          <img src="{{asset('boottheme/assets/img/vanda.jpg')}}" alt=".." width="100" height="100">
+           &nbsp;&nbsp; <h3>Vanda</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-disc-line" style="color: #b20969;"></i>
-            <h3><a href="">Moton Ideal</a></h3>
+          <img src="{{asset('boottheme/assets/img/Ruchika-Gandotra-Yadav.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp; <h3>Ruchika Gandotra</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-base-station-line" style="color: #ff5828;"></i>
-            <h3><a href="">Verdo Park</a></h3>
+          <img src="{{asset('boottheme/assets/img/Dr-Alauddin-Ahmed.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Dr Alauddin Ahmed</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-            <h3><a href="">Flavor Nivelanda</a></h3>
+          <img src="{{asset('boottheme/assets/img/Vinay-Paramanand.jpg')}}" alt=".." width="100" height="100">
+          &nbsp;&nbsp;  <h3>Vinay Paramanand</h3>
           </div>
         </div>
       </div>
@@ -213,8 +218,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Courses</h2>
-        <p>Popular Courses</p>
+        <h2>Professions</h2>
+        <p>Our collaborations</p>
       </div>
 
       <div class="row" data-aos="zoom-in" data-aos-delay="100">
@@ -224,13 +229,13 @@
             <img src="{{asset('boottheme/assets/img/course-1.jpg')}}" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>Web Development</h4>
-                <p class="price">$169</p>
+                <h4>Business Collaboration</h4>
+                
               </div>
 
-              <h3><a href="course-details.html">Website Design</a></h3>
-              <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-              <div class="trainer d-flex justify-content-between align-items-center">
+              <!--<h3><a href="course-details.html">Website Design</a></h3>-->
+              <p>Business collaboration is creating purposeful connections, both internally and externally, to
+                 achieve goals or solve problems through sharing varied skill sets, strengths, and perspectives</p>   <!--<div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                   <img src="{{asset('boottheme/assets/img/trainers/trainer-1.jpg')}}" class="img-fluid" alt="">
                   <span>Antonio</span>
@@ -241,6 +246,7 @@
                   <i class="bx bx-heart"></i>&nbsp;65
                 </div>
               </div>
+-->
             </div>
           </div>
         </div> <!-- End Course Item-->
@@ -250,23 +256,24 @@
             <img src="{{asset('boottheme/assets/img/course-2.jpg')}}" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>Marketing</h4>
-                <p class="price">$250</p>
+                <h4>Non Profit Collaboration</h4>
+                
               </div>
 
-              <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-              <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-              <div class="trainer d-flex justify-content-between align-items-center">
+             <!-- <h3><a href="course-details.html">Search Engine Optimization</a></h3>-->
+              <p>Many traditional nonprofits form short-term partnerships with superficially similar organizations to execute a single program, exchange a few resources, or attract funding.  </p>    <!--   <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                   <img src="{{asset('boottheme/assets/img/trainers/trainer-2.jpg')}}" class="img-fluid" alt="">
                   <span>Lana</span>
                 </div>
-                <div class="trainer-rank d-flex align-items-center">
+             
+                  <div class="trainer-rank d-flex align-items-center">
                   <i class="bx bx-user"></i>&nbsp;35
                   &nbsp;&nbsp;
                   <i class="bx bx-heart"></i>&nbsp;42
                 </div>
               </div>
+              -->
             </div>
           </div>
         </div> <!-- End Course Item-->
@@ -276,23 +283,24 @@
             <img src="{{asset('boottheme/assets/img/course-3.jpg')}}" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>Content</h4>
-                <p class="price">$180</p>
+                <h4>Academic Collaboration</h4>
+                
               </div>
 
-              <h3><a href="course-details.html">Copywriting</a></h3>
-              <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-              <div class="trainer d-flex justify-content-between align-items-center">
+              <!--<h3><a href="course-details.html">Copywriting</a></h3>-->
+              <p> Academic research is usually thought to mean an equal partnership between two academic faculty members who are pursuing mutually interesting and beneficial research.</p><!--  <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                   <img src="{{asset('bootthemeassets/img/trainers/trainer-3.jpg')}}" class="img-fluid" alt="">
                   <span>Brandon</span>
                 </div>
-                <div class="trainer-rank d-flex align-items-center">
+              <div class="trainer-rank d-flex align-items-center">
                   <i class="bx bx-user"></i>&nbsp;20
                   &nbsp;&nbsp;
                   <i class="bx bx-heart"></i>&nbsp;85
                 </div>
+
               </div>
+              -->
             </div>
           </div>
         </div> <!-- End Course Item-->
@@ -303,6 +311,7 @@
   </section><!-- End Popular Courses Section -->
 
   <!-- ======= Trainers Section ======= -->
+  <!--
   <section id="trainers" class="trainers">
     <div class="container" data-aos="fade-up">
 
@@ -372,7 +381,9 @@
       </div>
 
     </div>
-  </section><!-- End Trainers Section -->
+  </section>
+  End Trainers Section -->
+
 
 </main><!-- End #main -->
 @endsection
