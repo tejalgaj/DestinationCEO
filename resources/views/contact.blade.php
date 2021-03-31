@@ -14,16 +14,39 @@
 <body>
 
 <style>
-    .container-contact-form{
-        margin-left: 400px;
-    margin-top: 100px;
+    .contact-form{
+    margin-top: 50px;
     width:500px;
+    font-size:20px;
     margin-bottom:20px;
-
+   padding:50px;
+    align-items:flex-start;
+   
+    
+    }
+    .contact-form-image{
+    margin-top: 50px;
+    width:500px;
+    font-size:20px;
+    margin-bottom:20px;
+    
+    align-items:flex-end;
+    
+    }
+    .container-contact-form{
+        margin-top: 50px;
+ 
+    font-size:20px;
+    margin-bottom:20px;
+    display: flex;
+    align-items: center;
+  justify-content: center;
     
     }
 </style>
+
     <div class="container-contact-form">
+    <div class="contact-form">
         @if(session('success'))
         <div class="alert alert-success">
           {{ session('success') }}
@@ -45,6 +68,12 @@
 
             </div>
             <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                <label for="phone">Your Cell Number:</label>
+                <input name="phone" type="phone" class="form-control" id="phone"  placeholder="Your Phone number">
+                <span class="text-danger">{{ $errors->first('phone') }}</span>
+
+            </div>
+            <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                 <label for="exampleInputPassword1">Your Message:</label>
                 <textarea name="query" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 <span class="text-danger">{{ $errors->first('query') }}</span>
@@ -53,7 +82,10 @@
             </br>
             
         </form>
-        
+        </div>
+        <div class="contact-form-image">
+        <img src="{{asset('boottheme/assets/img/contactUS.jpg')}}" alt=".." width="450" height="400">
+      </div>
     </div>
 
 </body>
