@@ -18,7 +18,8 @@ public function contactPost(Request $request){
     $this->validate($request, [
                     'name' => 'required',
                     'email' => 'required|email',
-                    'query' => 'required'
+                    'query' => 'required',
+                    'phone' => 'required'
             ]);
 
     
@@ -26,11 +27,12 @@ public function contactPost(Request $request){
         'name' => $request->get('name'),
         'email' => $request->get('email'),
         'query' => $request->get('query'),
+        'phone' => $request->get('phone'),
     ), function($message) use ($request){
         $message->from($request->email);
         $message->to('destinationceo12@gmail.com', 'Admin')->subject($request->get('query'));
     });
-    return back()->with('success', 'Thanks for contacting me, I will get back to you soon!');
+    return back()->with('success', 'Thanks for contacting Admin!');
     
 
    
