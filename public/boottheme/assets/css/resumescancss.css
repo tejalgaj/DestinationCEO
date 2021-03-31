@@ -235,7 +235,15 @@ table {
     margin: 0 auto;
     background-color: rgb(234, 247, 234);
     margin-bottom: 30px;
-    ;
+}
+
+#myprogressBar {
+    width: 1%;
+    height: 35px;
+    background-color: rgb(95, 207, 128);
+    text-align: center;
+    line-height: 32px;
+    color: black;
 }
 
 

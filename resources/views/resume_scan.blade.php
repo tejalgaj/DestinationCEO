@@ -56,16 +56,23 @@
       
     </div>
 
-    <button id="submitbtn"  type="submit"   onclick="myFunctionWordMatch()">Continue Scanning----</button>
+    <button id="submitbtn"  type="submit"   onclick="update()">Continue Scanning----</button>
     
     <button id="anotherbtn"  type="submit"  onclick="window.location.reload();">Scan Another Resume----</button>
  
-     
+ </br>
+ <br>
+    <div id="Progress_Status">
+  <div id="myprogressBar"></div>
+</div>
+
+<br>
     </form>
 </div>
 </div>
 
 </div>
+<form id="skills-form">
 <div  id="container_scan_results">
 <div id="line_space"></div>
 <div class="card">
@@ -220,7 +227,7 @@
   </tbody>
 </table>
 </div>
-
+</form>
 <div id="line_space_next"></div>
 <div class="pie" data-pie='{ "percent": 82, "colorSlice": "#E91E63", "time": 30, "fontWeight": 400 }'></div>
 <div id="match_title"><p>Matched Skills Word Cloud</p></div>
@@ -233,6 +240,8 @@
 /**
  * Functions to add/remove class on div.ta-container to emulate focus removed from textarea by CSS line 37 (outline:none)
  */
+document.getElementById('Progress_Status').style.display = "none";
+
 document.getElementById('container_scan_results').style.display = "none";
 function setFocus(ta_container) {
     ta_container.classList.add('hasfocus')
@@ -308,8 +317,36 @@ function initialise() {
         })
     })
 }
+
+
+function update() {
+  document.getElementById('Progress_Status').style.display = "block";
+  var element = document.getElementById("myprogressBar");   
+  var width = 1;
+  var identity = setInterval(scene, 10);
+  function scene() {
+    if (width >= 100) {
+     clearInterval(identity);
+    myFunctionWordMatch();
+      
+    } 
+    
+  else {
+      width++; 
+
+      element.style.width = width + '%'; 
+      element.innerHTML = "Scanning " + width * 1  + '%';
+    }
+    
+  }
+ 
+ 
+    
+}
+
 function myFunctionWordMatch() {
     //for counting matches in resume..like education, job posting etc
+    
     var resume_match_count = 0;
    
     if(numChars>0)
