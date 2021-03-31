@@ -36,16 +36,16 @@
       
               
           
-           
+       
          
       <div class="row mt-3">
        
     
         <div class="col text-right">
-            <a class=" btn btn-primary" href=" {{route('education.index')}} " role="button">Next Section</a>
+            <a class=" btn btn-primary {{ ($user_status_count < 1)?'disabled':''}}" href=" {{route('education.index')}} " role="button">Next Section</a>
         </div>
     </div>
-     
+       
        
      
          </div>

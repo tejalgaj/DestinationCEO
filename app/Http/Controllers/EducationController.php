@@ -17,8 +17,9 @@ class EducationController extends Controller
         //
         if (Education::where('user_id', '=', auth()->user()->id)->exists()) {
             $education = auth()->user()->education;
+            $user_status_count = (!empty(auth()->user()->details)?auth()->user()->details->count():0);
             // Education Detail found
-            return view('education.index',compact('education'));
+            return view('education.index')->with(compact('education'))->with(compact('user_status_count'));
          }else{
             return view('education.create');
          }

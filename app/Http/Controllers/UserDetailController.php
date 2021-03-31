@@ -20,7 +20,9 @@ class UserDetailController extends Controller
             // user Detail found
            
             $userdetail = auth()->user()->details;
-            return view('user-detail.index',compact('userdetail'));
+            $user_status_count = (!empty(auth()->user()->details)?auth()->user()->details->count():0);
+            //return view('user-detail.index',compact('userdetail'));
+            return view('user-detail.index')->with(compact('userdetail'))->with(compact('user_status_count'));
          }else{
             return view('user-detail.create');
          }

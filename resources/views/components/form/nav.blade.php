@@ -11,7 +11,7 @@
           <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1)?'disabled':''}}" href="{{route('experience.index')}}" >Work Experience</a>
         </li>
         <li class="nav-item {{ (request()->segment(1)== 'technical-experience')?'active':''}}">
-          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1)?'disabled':''}}" href="{{route('technical-experience.index')}}">Technical Experience</a>
+          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 ||  $experiencesStatus < 1)?'disabled':''}}" href="{{route('technical-experience.index')}}">Technical Experience</a>
         </li>
         <?php $value = session('resume_selected_template', 'default') ?>
       @if ($value=="Resume Template 2")

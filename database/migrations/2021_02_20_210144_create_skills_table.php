@@ -14,6 +14,7 @@ class CreateSkillsTable extends Migration
     public function up()
     {
         Schema::create('skills', function (Blueprint $table) {
+            //latest skill code
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('skill_title');
