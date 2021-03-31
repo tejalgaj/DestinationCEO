@@ -17,7 +17,9 @@ class HighlightController extends Controller
         //
         if (Highlight::where('user_id', '=', auth()->user()->id)->exists()) {
             $highlight = auth()->user()->highlight;
-            return view('highlight.index',compact('highlight'));
+            //return view('highlight.index',compact('highlight'));
+            $highlight_status_count = !empty(auth()->user()->highlight)?auth()->user()->highlight->count():0;
+            return view('highlight.index')->with(compact('highlight'))->with(compact('highlight_status_count'));
          }else{
             return view('highlight.create');
          }

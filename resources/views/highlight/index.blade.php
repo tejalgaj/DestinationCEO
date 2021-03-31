@@ -43,7 +43,7 @@
        
     
         <div class="col text-right">
-          <a class=" btn btn-primary" href=" {{route('additional-experience.index')}} " role="button">Skip</a>
+          <a class=" btn btn-primary {{ ($highlight_status_count < 1)?'disabled':''}}" href=" {{route('additional-experience.index')}} " role="button">Additional Experience</a>
         </div>
     </div>
      

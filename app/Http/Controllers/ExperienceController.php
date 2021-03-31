@@ -20,7 +20,9 @@ class ExperienceController extends Controller
         if (Experience::where('user_id', '=', auth()->user()->id)->exists()) {
             $experiences = auth()->user()->experiences;
             // Education Detail found
-            return view('experience.index',compact('experiences'));
+            $exp_status_count = (!empty(auth()->user()->experiences)?auth()->user()->experiences->count():0);
+            //return view('experience.index',compact('experiences'));
+            return view('experience.index')->with(compact('experiences'))->with(compact('exp_status_count'));
          }else{
             return view('experience.create');
          }

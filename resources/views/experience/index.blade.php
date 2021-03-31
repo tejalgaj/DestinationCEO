@@ -47,7 +47,7 @@
     
         <div class="col text-right">
          
-          <a class=" btn btn-primary" href=" {{route('technical-experience.index')}} " role="button">Technical Experience</a>
+          <a class=" btn btn-primary {{ ($exp_status_count < 1)?'disabled':''}}" href=" {{route('technical-experience.index')}} " role="button">Technical Experience</a>
       
             
         </div>
