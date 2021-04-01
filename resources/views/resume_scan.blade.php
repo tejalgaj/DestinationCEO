@@ -14,6 +14,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
   
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   </head>
 <main>
 
@@ -88,6 +93,8 @@
   </div>
   
 </br>
+
+<button  id="convert_pdf" onclick="genPDFfunction(); return false;">Export Results to PDF</button>
 </div> 
 
  
@@ -232,11 +239,28 @@
 <div class="pie" data-pie='{ "percent": 82, "colorSlice": "#E91E63", "time": 30, "fontWeight": 400 }'></div>
 <div id="match_title"><p>Matched Skills Word Cloud</p></div>
 <div id="word-cloud"></div>
+
+
+<!--<a href="/print">Print----</a>-->
+
+
+<script type="text/javascript" src="{{asset('boottheme/assets/js/scanningResultsPDF.js')}}"></script>
+<script>
+function genPDFfunction()
+{
+  genPDF();
+}
+
+</script>
 </body>
 
 
 <!--<script src="{{asset('boottheme/assets/js/resumescanning.js')}}"></script>-->
 <script>
+
+
+
+
 /**
  * Functions to add/remove class on div.ta-container to emulate focus removed from textarea by CSS line 37 (outline:none)
  */
@@ -299,6 +323,8 @@ function countChars(ta_container, ta, maxLength) {
  * Initialisation function
  */
 function initialise() {
+  localStorage.clear();
+
     var ta_containers = theform.querySelectorAll('.ta-container')
     ta_containers.forEach(function(ta_container) {
         var ta = ta_container.querySelector('.ta')
@@ -345,6 +371,10 @@ function update() {
 }
 
 function myFunctionWordMatch() {
+
+
+
+
     //for counting matches in resume..like education, job posting etc
     
     var resume_match_count = 0;
@@ -352,7 +382,7 @@ function myFunctionWordMatch() {
     if(numChars>0)
     {
     document.getElementById('container_scan_results').style.display = "block";
-    
+    localStorage.setItem('number Chars', numChars); 
     }
     
     var myTable = document.getElementById("myTable");
@@ -403,10 +433,13 @@ function myFunctionWordMatch() {
         myTable.rows[2].cells[1].textContent = "The job title described : " + str_job_title + " matches with the resume. Excellent!";
         resume_match_count = resume_match_count + 1;
         myTable.rows[2].cells[3].textContent = "";
+
+        localStorage.setItem('job title','The job title described : ' + str_job_title + '; matches with the resume. Excellent!'); 
     } else {
         //  console.log("Not Found");
         myTable.rows[2].cells[1].textContent = "The job title described does not match with resume. ";
         myTable.rows[2].cells[2].textContent = "";
+        localStorage.setItem('job title', 'The job title described does not match with resume.'); 
     }
     // console.log(job_title_keywords);
     //Matching Education//
@@ -439,15 +472,22 @@ function myFunctionWordMatch() {
             myTable.rows[3].cells[1].textContent = "Education is found in the resume. Professional degree is there. Excellent job!";
             myTable.rows[3].cells[3].textContent = "";
             resume_match_count = resume_match_count + 1;
+
+            localStorage.setItem('education','Education is found in the resume. Professional degree is there. Excellent job!');
         } else {
             //  console.log("Professional degree not found");
             myTable.rows[3].cells[1].textContent = "Education is found in the resume. Professional degree is not there.";
             myTable.rows[3].cells[3].textContent = "";
+
+            localStorage.setItem('education','Education is found in the resume. Professional degree is not there.');
+      
         }
     } else {
         //  console.log("Education Not Found");
         myTable.rows[3].cells[1].textContent = "No Education related information found. ";
         myTable.rows[3].cells[2].textContent = "";
+
+        localStorage.setItem('education','No Education related information found.');
     }
     //experience
     var found_experience = str_resume.search("experience");
@@ -456,10 +496,16 @@ function myFunctionWordMatch() {
         myTable.rows[4].cells[1].textContent = "Valid Experience is found in the resume. Excellent job!";
         myTable.rows[4].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
+
+        
+        localStorage.setItem('experience','Valid Experience is found in the resume. Excellent job!');
     } else {
         //  console.log("Experience not found");
         myTable.rows[4].cells[1].textContent = "No Valid Experience found in the resume.";
         myTable.rows[4].cells[2].textContent = "";
+
+        
+        localStorage.setItem('experience','No Valid Experience found in the resume.');
     }
     //Certifications
     var found_certification1 = str_resume.search("certification");
@@ -470,10 +516,17 @@ function myFunctionWordMatch() {
         myTable.rows[5].cells[1].textContent = "Valid Certifications/Trainings are found in the resume. Excellent job!";
         myTable.rows[5].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
+
+
+        localStorage.setItem('certification','Valid Certifications/Trainings are found in the resume. Excellent job!');
+
     } else {
         
         myTable.rows[5].cells[1].textContent = "No Valid certifications/Trainings found in the resume.";
         myTable.rows[5].cells[2].textContent = "";
+
+        localStorage.setItem('certification','No Valid certifications/Trainings found in the resume.');
+
     }
     //linked in match/
     var check_linkedin = false;
@@ -491,9 +544,15 @@ function myFunctionWordMatch() {
         myTable.rows[1].cells[1].textContent = "The resume shows linkedin link " + result_linkedin[0] + "; This is highly appreciated!";
         myTable.rows[1].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
+
+        localStorage.setItem('linkedin','The resume shows linkedin link ' + result_linkedin[0] + ' This is highly appreciated!'); 
+  
     } else {
         myTable.rows[1].cells[1].textContent = "The resume does not shows any linkedin link; This is disappointing!";
         myTable.rows[1].cells[2].textContent = "";
+
+        localStorage.setItem('linkedin','The resume does not shows any linkedin link; This is disappointing!'); 
+  
     }
     /*email*/
     var check_email = false;
@@ -505,15 +564,24 @@ function myFunctionWordMatch() {
             check_email = true;
             //console.log("success"); 
             // console.log(result[0]);
+
+
         }
     })
     if (check_email == true) {
         myTable.rows[0].cells[1].textContent = "The resume shows email address " + result_email[0] + "; This is highly appreciated!";
         myTable.rows[0].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
+
+        localStorage.setItem('email','The resume shows email address ' + result_email[0] + ' This is highly appreciated!'); 
+  
+        
     } else {
         myTable.rows[0].cells[1].textContent = "The resume does not shows any email address; This is disappointing!";
         myTable.rows[0].cells[2].textContent = "";
+
+        localStorage.setItem('email','The resume does not shows any email address; This is disappointing!'); 
+  
     }
     /////hard skills/////
     var arr_found_hard_skills_posting = [];
@@ -732,7 +800,8 @@ function intersect(word, x, y) {
     //myTable.rows[7].cells[1].textContent = " " + average_bestpractices_perc + "% ";
     document.getElementById('ats_match_average').innerHTML=" " + average_bestpractices_perc + "% ";
     //
-  
+    localStorage.setItem('ats_match',average_bestpractices_perc + "% ");
+
     required_hard_skills_count = arr_found_hard_skills_posting.length;
     matched_hard_skills_count = arr_found_hard_skills_resume.length;
     required_soft_skills_count = arr_found_soft_skills_posting.length;
@@ -810,6 +879,8 @@ function intersect(word, x, y) {
 var progressBarVal=finalResult_perc;    
    var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal+"%'>"+progressBarVal+"%</div>";    
    $(".progress").append(html);    
+
+   localStorage.setItem('overallmatch',finalResult_perc + '%');
   
   //ats progress
   
@@ -822,12 +893,24 @@ var progressBarVal=finalResult_perc;
   var progressBarVal_hardskills=matched_perc_hard_skills;    
    var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal_hardskills+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal_hardskills+"%'>"+progressBarVal_hardskills+"%</div>";    
    $(".hard_skills_progress").append(html);
+   localStorage.setItem('hard_skills_match',matched_perc_hard_skills + '%');
+   hard_skills_match
    //soft skills progress
   
   var progressBarVal_softskills=matched_perc_soft_skills;    
    var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal_softskills+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal_softskills+"%'>"+progressBarVal_softskills+"%</div>";    
    $(".soft_skills_progress").append(html);
+
+   localStorage.setItem('soft_skills_match',matched_perc_soft_skills + '%');
   //  document.getElementById('percentage').innerHTML=50%;
+
+
+
+  ////storing arrays in local storage
+  localStorage.setItem("hard_skills_posting", JSON.stringify(arr_found_hard_skills_posting));
+  localStorage.setItem("soft_skills_posting", JSON.stringify(arr_found_soft_skills_posting));
+  localStorage.setItem("hard_skills_resume", JSON.stringify(arr_found_hard_skills_resume));
+  localStorage.setItem("soft_skills_resume", JSON.stringify(arr_found_soft_skills_resume));
 }
 
 initialise()
