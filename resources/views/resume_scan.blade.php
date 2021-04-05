@@ -589,6 +589,11 @@ function myFunctionWordMatch() {
     var arr_found_hard_skills_resume = [];
     var arr_found_hard_skills_resume_index = 0;
     var keyword="";
+   
+    
+    localStorage.setItem("hard_skills_posting",JSON.stringify(["Required Keywords: "]));
+    
+    localStorage.setItem("hard_skills_resume",JSON.stringify(["Matched Keywords: "]));
     @foreach($hard_skills_keywords as $hard_skills_keyword)
     {
      
@@ -597,16 +602,25 @@ function myFunctionWordMatch() {
         if (found_posting > 0) {
             arr_found_hard_skills_posting[arr_found_hard_skills_posting_index] = keyword +', ';
             arr_found_hard_skills_posting_index++;
+           
+            var hard_skills_posting= JSON.parse(localStorage.getItem("hard_skills_posting"));
+            hard_skills_posting.push(keyword);
+            localStorage.setItem("hard_skills_posting",JSON.stringify(hard_skills_posting));
             var found_resume = str_resume.search(keyword);
             if (found_resume > 0) {
                 arr_found_hard_skills_resume[arr_found_hard_skills_resume_index] = keyword + ', ';
                 arr_found_hard_skills_resume_index++;
+
+                var hard_skills_resume= JSON.parse(localStorage.getItem("hard_skills_resume"));
+                hard_skills_resume.push(keyword);
+              localStorage.setItem("hard_skills_resume",JSON.stringify(hard_skills_resume));
             }
         }
       }
     @endforeach
 
-  
+   
+    
 //soft skills
 var arr_found_soft_skills_posting = [];
     var arr_found_soft_skills_posting_index = 0;
@@ -614,15 +628,29 @@ var arr_found_soft_skills_posting = [];
     var arr_found_soft_skills_resume_index = 0;
     var keyword="";
 
+    localStorage.setItem("soft_skills_posting",JSON.stringify(["Required Keywords: "]));
+    
+    localStorage.setItem("soft_skills_resume",JSON.stringify(["Matched Keywords: "]));
     @foreach($soft_skills_keywords as $soft_skills_keyword)
     {
      keyword = '{{$soft_skills_keyword['soft_skill_keyword']}}';
      var found_posting = str_posting.search(keyword);
         if (found_posting > 0) {
+
+          var soft_skills_posting= JSON.parse(localStorage.getItem("soft_skills_posting"));
+          soft_skills_posting.push(keyword);
+            localStorage.setItem("soft_skills_posting",JSON.stringify(soft_skills_posting));
+
           arr_found_soft_skills_posting[arr_found_soft_skills_posting_index] = keyword +', ';
           arr_found_soft_skills_posting_index++;
             var found_resume = str_resume.search(keyword);
             if (found_resume > 0) {
+
+              var soft_skills_resume= JSON.parse(localStorage.getItem("soft_skills_resume"));
+              soft_skills_resume.push(keyword);
+            localStorage.setItem("soft_skills_resume",JSON.stringify(soft_skills_resume));
+
+
               arr_found_soft_skills_resume[arr_found_soft_skills_resume_index] = keyword + ', ';
               arr_found_soft_skills_resume_index++;
             }
@@ -847,34 +875,57 @@ function intersect(word, x, y) {
     finalResult_perc= Math.round((matched_perc_soft_skills+ matched_perc_hard_skills + average_bestpractices_perc) / 3);
     document.getElementById('results_percentage').innerHTML =finalResult_perc + "%";
     //result description
+
+    var comment_result;
+    
     if(finalResult_perc==100)
     {
-        document.getElementById('result_description').innerHTML = "The resume is the absolute match for the corresponding job posting";
+      comment_result= "The resume is the absolute match for the corresponding job posting";
+        document.getElementById('result_description').innerHTML =comment_result.value;
     }
     else if(finalResult_perc>=90 && finalResult_perc<100 )
     {
-        document.getElementById('result_description').innerHTML = "The resume is the excellent match for the corresponding job posting";
+
+      comment_result= "The resume is the excellent match for the corresponding job posting";
+        document.getElementById('result_description').innerHTML =comment_result;
+        
     }
     else if(finalResult_perc>=75 && finalResult_perc<90)
     {
-        document.getElementById('result_description').innerHTML = "The resume is the best match for the corresponding job posting";
+
+      comment_result= "The resume is the best match for the corresponding job posting";
+        document.getElementById('result_description').innerHTML =comment_result;
+       
+       
     }
     else if(finalResult_perc>= 50 && finalResult_perc<75)
     {
-        document.getElementById('result_description').innerHTML = "The resume is the good match for the corresponding job posting";
+      comment_result=  "The resume is the good match for the corresponding job posting";
+        document.getElementById('result_description').innerHTML =comment_result;
+       
     }
     else if(finalResult_perc>= 30 && finalResult_perc<50)
     {
-        document.getElementById('result_description').innerHTML = "The resume is the average match for the corresponding job posting";
+
+      comment_result= "The resume is the average match for the corresponding job posting";
+        document.getElementById('result_description').innerHTML =comment_result;
+       
+        
     }
     else if(finalResult_perc>=10 && finalResult_perc<30)
     {
-        document.getElementById('result_description').innerHTML = "The resume is not good match for the corresponding job posting";
+
+      comment_result= "The resume is not good match for the corresponding job posting";
+        document.getElementById('result_description').innerHTML =comment_result;
+       
     }
     else if(finalResult_perc>=0 && finalResult_perc<10)
     {
-        document.getElementById('result_description').innerHTML = "The resume is the worst match for the corresponding job posting";
+      comment_result="The resume is the worst match for the corresponding job posting";
+        document.getElementById('result_description').innerHTML =comment_result;
+        
     }
+
 //progress bar
 var progressBarVal=finalResult_perc;    
    var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal+"%'>"+progressBarVal+"%</div>";    
@@ -905,12 +956,8 @@ var progressBarVal=finalResult_perc;
   //  document.getElementById('percentage').innerHTML=50%;
 
 
-
-  ////storing arrays in local storage
-  localStorage.setItem("hard_skills_posting", JSON.stringify(arr_found_hard_skills_posting));
-  localStorage.setItem("soft_skills_posting", JSON.stringify(arr_found_soft_skills_posting));
-  localStorage.setItem("hard_skills_resume", JSON.stringify(arr_found_hard_skills_resume));
-  localStorage.setItem("soft_skills_resume", JSON.stringify(arr_found_soft_skills_resume));
+  localStorage.setItem('result_description', comment_result);
+ 
 }
 
 initialise()
