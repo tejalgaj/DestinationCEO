@@ -52,6 +52,12 @@ class UserDetailController extends Controller
             'firstname'=>'required',
             'lastname'=>'required',
             'email'=>'required',
+            'phone'=>'required',
+            'country'=>'required',
+            'zipcode'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'address'=>'required',
             'credibleintro'=>'required',
            // 'tags'=>'exist:tags,id',
         ]);
@@ -63,18 +69,18 @@ class UserDetailController extends Controller
          $user_detail->firstname = request('firstname');
          $user_detail->user_id = auth()->id();
      $user_detail->lastname = request('lastname');
-         $user_detail->country = request('country');
+         $user_detail->country = ucfirst(request('country'));
 
-         $user_detail->zipcode = request('zipcode');
-         $user_detail->city = request('city');
-         $user_detail->state = request('state');
+         $user_detail->zipcode = ucfirst(request('zipcode'));
+         $user_detail->city = ucfirst(request('city'));
+         $user_detail->state = ucfirst(request('state'));
          $user_detail->email = request('email');
          $user_detail->phone = request('phone');
          $user_detail->credibleintro = request('credibleintro');
          $user_detail->github = request('github');
          $user_detail->linkedin = request('linkedin');
 
-         $user_detail->address = request('address');
+         $user_detail->address = ucfirst(request('address'));
 
          $user_detail->save();
          
@@ -118,6 +124,12 @@ class UserDetailController extends Controller
             'firstname'=>'required',
             'lastname'=>'required',
             'email'=>'required',
+            'phone'=>'required',
+            'country'=>'required',
+            'zipcode'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'address'=>'required',
             'credibleintro'=>'required',
            // 'tags'=>'exist:tags,id',
         ]);
@@ -129,17 +141,17 @@ class UserDetailController extends Controller
          $userDetail->firstname = request('firstname');
          $userDetail->user_id = auth()->id();
      $userDetail->lastname = request('lastname');
-         $userDetail->country = request('country');
+         $userDetail->country = ucfirst(request('country'));
 
-         $userDetail->zipcode = request('zipcode');
-         $userDetail->city = request('city');
-         $userDetail->state = request('state');
+         $userDetail->zipcode = ucfirst(request('zipcode'));
+         $userDetail->city = ucfirst(request('city'));
+         $userDetail->state = ucfirst(request('state'));
          $userDetail->email = request('email');
          $userDetail->phone = request('phone');
          $userDetail->credibleintro = request('credibleintro');
          $userDetail->github = request('github');
          $userDetail->linkedin = request('linkedin');
-         $userDetail->address = request('address');
+         $userDetail->address = ucfirst(request('address'));
 
          $userDetail->save();
          

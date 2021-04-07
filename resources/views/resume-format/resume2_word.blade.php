@@ -1,3 +1,7 @@
+<?php
+header("Content-type: application/vnd.ms-word");
+header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc");
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -49,8 +53,8 @@
 body{
     width: var(--page-width);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-font-size: 14px;
+  font-family: 'Times New Roman', Times, serif;
+font-size: px18;
 color: #000;
   line-height: 1.3;
   color: #444;
@@ -64,15 +68,15 @@ color: #000;
         -ms-box-sizing: border-box
     }
     .resume-box {
-	font-family: 'Poppins', sans-serif;
-	font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
 	color: #000;
 	padding: 15px;
 }
    
    
 .heading {
-	font-size: 16px;
+	font-size: 20px;
 	border-top: 1px solid #65c897;
 	border-bottom: 3px solid #65c897;
 	padding: 5px 0;
@@ -97,7 +101,7 @@ color: #000;
 .detail-box  .details {
 	text-align: center;
 	padding: 10px;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: normal;
 	width: 20%;
 	float: left;
@@ -157,9 +161,8 @@ ul li span, ol li span {
 .relavant-experience-box .topbar li {
 	width: 33.33%;
 	float: left;
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: 700;
-  
 }
 .relavant-experience-box .topbar li:nth-child(1) {
 
@@ -173,6 +176,8 @@ ul li span, ol li span {
 h4 {
     margin-top: 0px;
     margin-bottom:5px;
+    font-family: 'Times New Roman', Times, serif;
+
 }
 .education-row {
 	position: relative;
@@ -190,7 +195,8 @@ h4 {
 .applicant-name h2 {
 	margin: 0;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .display-content-text p{
     margin: 0;
@@ -267,10 +273,10 @@ h4 {
             <li>
                 {{$work->employer.', ' }}
                 @if (!is_null($work->city))
-                {{$work->city.', ' }}
+                {{$work->city.' ,' }}
                 @endif
                 @if (!is_null($work->state))
-                {{$work->state.', ' }}
+                {{$work->state.' ,' }}
                 @endif
                 {{$work->country }}
             </li>
@@ -293,9 +299,7 @@ h4 {
                     @endif
             </li>
         </ul>
-       
         {!! $work->work_responsibilities; !!}
-        
     </div>
     @endforeach
     <div class="heading">
@@ -305,14 +309,16 @@ h4 {
         @foreach($user->education as $education)
         <div class="education-row">
             <h4>{{$education->fieldofstudy }}, {{$education->degree }}</h4>
-            <span>{{$education->schoolname.', ' }} 
+            <span>
+                {{$education->schoolname.', ' }} 
                 @if (!is_null($education->city))
-                {{$education->city.', ' }}
+                {{$education->city.' ,' }}
                 @endif
                 @if (!is_null($education->state))
-                {{$education->state.', ' }}
+                {{$education->state.' ,' }}
                 @endif
-                {{$education->country }}</span>
+                {{$education->country }}
+            </span>
             <div class="education-year">
                 <?php $education_enddate = $education->enddate;
                 $new_education_enddate = date("F Y", strtotime($education_enddate));?>
@@ -384,12 +390,12 @@ h4 {
                 <h4>{{$additional_experience->role}},{{$additional_experience->employer}}</h4>
                 <span>
                     @if (!is_null($additional_experience->city))
-            {{$additional_experience->city.', ' }}
-            @endif
-            @if (!is_null($additional_experience->state))
-            {{$additional_experience->state.', ' }}
-            @endif
-            {{$additional_experience->country }}
+                    {{$additional_experience->city.' ,' }}
+                    @endif
+                    @if (!is_null($additional_experience->state))
+                    {{$additional_experience->state.' ,' }}
+                    @endif
+                    {{$additional_experience->country }}
                 </span>
                 <div class="education-year">
                     <?php 
@@ -416,11 +422,5 @@ h4 {
             @endforeach
         </div>
         @endif
-
-   
-  
-
     </div>
-
-
 </body></html>

@@ -110,10 +110,15 @@ class HighlightController extends Controller
             'objective'=>'required'
         ]);
 
+        $filter_hard_skills = $highlight->getArrayFiltered(request('hard_skills'));
+        $highlight->hard_skills = json_encode($filter_hard_skills);
+
+        $filter_soft_skills = $highlight->getArrayFiltered(request('soft_skills'));
+        $highlight->soft_skills = json_encode($filter_soft_skills);
        
-         $highlight->hard_skills = request('hard_skills');
+         
          $highlight->user_id = auth()->id();
-         $highlight->soft_skills = request('soft_skills');
+        
      $highlight->communication_language = request('communication_language');
      $highlight->objective = request('objective');
          $highlight->save();

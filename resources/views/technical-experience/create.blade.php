@@ -27,7 +27,7 @@
           
               <div class="form-row">
                 <div class="col-md-8 mb-3">
-                <label for="technical-experience-project-title">Project Title</label>
+                <label for="technical-experience-project-title">Project Title<span class="alert-message">*</span></label>
                 <input type="text" class="form-control " id="technical-experience-project-title" placeholder="Project Title" name="project_title" value="{{old('project_title')}}" required>
                 <span id="project_title_error" class="alert-message"></span>
                 
@@ -41,14 +41,14 @@
               </div>
              
               <div class="form-group">
-                <label for="technical-experience-project-description">Project Description</label>
+                <label for="technical-experience-project-description">Project Description<span class="alert-message">*</span></label>
                 <textarea class="form-control " id="technical-experience-project-description" rows="3" name="project_description" required>{{old('project_description')}}</textarea>
               
                 <span id="project_description_error" class="alert-message"></span>
               </div>
               
               <div class="form-group">
-                <label for="technical-experience-technology-stack">Technology Stack</label>
+                <label for="technical-experience-technology-stack">Technology Stack<span class="alert-message">*</span></label>
                 <input type="text" class="form-control {{ $errors->has('technology_stack') ? 'is-invalid' : ''}}" id="technical-experience-technology-stack" placeholder="Technology Stack (Sperate with , )" name="technology_stack" value="{{old('technology_stack')}}" required>
                 <span id="project_technology_stack_error" class="alert-message"></span>
               </div>
@@ -97,7 +97,7 @@ $("#technical-exp-form").submit(function(e){
         success: function(response) {
             if(response.code == 200) {
               window.location = "/technical-experience";
-             alert(response.message);
+            
             }
         },
         error: function(response) {

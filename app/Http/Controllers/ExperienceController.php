@@ -51,7 +51,8 @@ class ExperienceController extends Controller
         request()->validate([
             'job_title'=>'required',
             'employer'=>'required',
-            
+            'startdate'=>'required',
+            'country'=>'required',
             
             
            // 'tags'=>'exist:tags,id',
@@ -79,9 +80,9 @@ class ExperienceController extends Controller
          $experience->work_responsibilities = request('work_responsibilities');
 
 
-         $experience->city = request('city');
-         $experience->state = request('state');
-         $experience->country = request('country');
+         $experience->city = ucfirst(request('city'));
+         $experience->state = ucfirst(request('state'));
+         $experience->country = ucfirst(request('country'));
         //  dd(request('startdate'));
         //  dd(request('enddate'));
          $experience->save();
@@ -125,7 +126,8 @@ class ExperienceController extends Controller
         request()->validate([
             'job_title'=>'required',
             'employer'=>'required',
-            
+            'startdate'=>'required',
+            'country'=>'required',
             
            // 'tags'=>'exist:tags,id',
         ]);
@@ -149,9 +151,9 @@ class ExperienceController extends Controller
         
          $experience->work_responsibilities = request('work_responsibilities');
 
-         $experience->city = request('city');
-         $experience->state = request('state');
-         $experience->country = request('country');
+         $experience->city = ucfirst(request('city'));
+         $experience->state = ucfirst(request('state'));
+         $experience->country = ucfirst(request('country'));
         //  dd(request('startdate'));
         //  dd(request('enddate'));
          $experience->save();

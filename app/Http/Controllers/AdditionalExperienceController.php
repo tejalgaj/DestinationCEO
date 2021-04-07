@@ -45,7 +45,15 @@ class AdditionalExperienceController extends Controller
     public function store(Request $request)
     {
         //
-      
+        request()->validate([
+            'role'=>'required',
+            'employer'=>'required',
+            'startdate'=>'required',
+            'country'=>'required',
+            
+            
+           // 'tags'=>'exist:tags,id',
+        ]);
         $additionalExperience = new AdditionalExperience();
          $additionalExperience->role = request('role');
          $additionalExperience->user_id = auth()->id();
@@ -64,9 +72,9 @@ class AdditionalExperienceController extends Controller
          
          $additionalExperience->enddate = $enddate_value;
          $additionalExperience->currently_working = request('currently_working');
-         $additionalExperience->city = request('city');
-         $additionalExperience->state = request('state');
-         $additionalExperience->country = request('country');
+         $additionalExperience->city = ucfirst(request('city'));
+         $additionalExperience->state = ucfirst(request('state'));
+         $additionalExperience->country = ucfirst(request('country'));
 
         
          $additionalExperience->save();
@@ -108,7 +116,15 @@ class AdditionalExperienceController extends Controller
     public function update(Request $request, AdditionalExperience $additionalExperience)
     {
         //
-        
+        request()->validate([
+            'role'=>'required',
+            'employer'=>'required',
+            'startdate'=>'required',
+            'country'=>'required',
+            
+            
+           // 'tags'=>'exist:tags,id',
+        ]);
          $additionalExperience->role = request('role');
          $additionalExperience->user_id = auth()->id();
      $additionalExperience->responsibilities = request('responsibilities');
@@ -125,9 +141,9 @@ class AdditionalExperienceController extends Controller
      
      $additionalExperience->enddate = $enddate_value;
      $additionalExperience->currently_working = request('currently_working');
-     $additionalExperience->city = request('city');
-     $additionalExperience->state = request('state');
-     $additionalExperience->country = request('country');
+     $additionalExperience->city = ucfirst(request('city'));
+     $additionalExperience->state = ucfirst(request('state'));
+     $additionalExperience->country = ucfirst(request('country'));
 
 
          $additionalExperience->save();

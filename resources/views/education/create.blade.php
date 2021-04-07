@@ -26,7 +26,7 @@
             @csrf
           
               <div class="form-group">
-                <label for="education-schoolname">School Name</label>
+                <label for="education-schoolname">School Name<span class="alert-message">*</span></label>
                 <input type="text" class="form-control {{ $errors->has('schoolname') ? 'is-invalid' : ''}}" id="education-schoolname" placeholder="School name" name="schoolname" value="{{old('schoolname')}}" required>
                  @error('schoolname')
                  <div class="invalid-feedback">
@@ -35,7 +35,7 @@
                           @enderror
               </div>
               <div class="form-group">
-                <label for="education-degree">Degree/Course</label>
+                <label for="education-degree">Degree/Course<span class="alert-message">*</span></label>
                 <input type="text" class="form-control {{ $errors->has('degree') ? 'is-invalid' : ''}}" id="education-degree" placeholder="Degree" name="degree" value="{{old('degree')}}" required>
                  @error('degree')
                  <div class="invalid-feedback">
@@ -44,9 +44,13 @@
                           @enderror
               </div>
               <div class="form-group">
-                <label for="education-fieldofstudy">Field Of Study</label>
-                <input type="text" class="form-control" id="education-fieldofstudy" placeholder="Feild Of Study" name="fieldofstudy" value="{{old('fieldofstudy')}}">
-                
+                <label for="education-fieldofstudy">Field Of Study<span class="alert-message">*</span></label>
+                <input type="text" class="form-control {{ $errors->has('fieldofstudy') ? 'is-invalid' : ''}}" id="education-fieldofstudy" placeholder="Feild Of Study" name="fieldofstudy" value="{{old('fieldofstudy')}}" required>
+                @error('fieldofstudy')
+                <div class="invalid-feedback">
+                {{$errors->first('fieldofstudy')}}
+               </div>
+                         @enderror
               </div>
               <div class="form-group">
                 <label for="education-GPA">GPA</label>
@@ -55,16 +59,21 @@
               </div>
             <div class="form-row">
              <div class="col-md-6 mb-3">
-               <label for="education-graduated">Graduated</label>
-               <select class="form-control" id="education-graduated" name="graduated" required>
+               <label for="education-graduated">Graduated<span class="alert-message">*</span></label>
+               <select class="form-control {{ $errors->has('graduated') ? 'is-invalid' : ''}}" id="education-graduated" name="graduated" required>
                 <option value="">Please Select Option</option>
                 <option {{ (old('graduated')) == 'still_enrolled' ? 'selected' : '' }} value="still_enrolled">Still Enrolled</option>
                 <option {{ (old('graduated')) == 'yes' ? 'selected' : '' }} value="yes">Yes</option>
                 <option {{ (old('graduated')) == 'no' ? 'selected' : '' }} value="no">No</option>
               </select>
+              @error('graduated')
+              <div class="invalid-feedback">
+              {{$errors->first('graduated')}}
+             </div>
+                       @enderror
              </div>
              <div class="col-md-6 mb-3">
-               <label for="education-enddate">End Date</label>
+               <label for="education-enddate">End Date<span class="alert-message">*</span></label>
                <input type="text" class="form-control {{ $errors->has('enddate') ? 'is-invalid' : ''}}" id="education-enddate" placeholder="End Date" name="enddate" onkeydown="return false" required>
                @error('enddate')
                 <div class="invalid-feedback">
@@ -76,17 +85,24 @@
            </div>
            <div class="form-row">
              <div class="col-md-4 mb-3">
-               <label for="education-country">Country</label>
-                         <input type="text" class="form-control" id="education-country" name="country" placeholder="Country" value="{{old('country')}}">
-             </div>
+               <label for="education-country">Country<span class="alert-message">*</span></label>
+                         <input type="text" class="form-control {{ $errors->has('country') ? 'is-invalid' : ''}}" id="education-country" name="country" placeholder="Country" value="{{old('country')}}" required>
+                         @error('country')
+                         <div class="invalid-feedback">
+                         {{$errors->first('country')}}
+                        </div>
+                                  @enderror
+                        </div>
              <div class="col-md-4 mb-3">
                 <label for="education-state">State/Province</label>
                           <input type="text" class="form-control" id="education-state" name="state" placeholder="State" value="{{old('state')}}">
-              </div>
+                          
+                        </div>
              <div class="col-md-4 mb-3">
               <label for="education-city">City</label>
                          <input type="text" class="form-control" id="education-city" name="city" placeholder="City" value="{{old('city')}}">
-             </div>
+                         
+                        </div>
              
            </div>
 

@@ -1,6 +1,6 @@
 <?php
 header("Content-type: application/vnd.ms-word");
-header("Content-Disposition: attachment;Filename=".$user->name.".doc");
+header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -194,7 +194,7 @@ header("Content-Disposition: attachment;Filename=".$user->name.".doc");
                 {{$user->details->address}}
               </p>
               <p>
-                {{$user->details->city}}, {{$user->details->state}}, {{$user->details->zipcode}}
+                {{$user->details->city.', '}} {{$user->details->state.', '}} {{$user->details->zipcode}}
               </p>
             </div>
             <div id="center_header">
@@ -240,7 +240,13 @@ header("Content-Disposition: attachment;Filename=".$user->name.".doc");
             </div>
              <div class="centre_content_section">{{$work->employer }}</div>
             </div>
-            <p>{{$work->address }}, {{$work->city }} {{$work->state }} {{$work->zipcode }}</p>
+            <p> @if (!is_null($work->city))
+                {{$work->city.' ,' }}
+                @endif
+                @if (!is_null($work->state))
+                {{$work->state.' ,' }}
+                @endif
+                {{$work->country }}</p>
             <div class="experience_content">
                 {!! $work->work_responsibilities; !!}
            
@@ -251,7 +257,15 @@ header("Content-Disposition: attachment;Filename=".$user->name.".doc");
             </div>
             @foreach($user->education as $education)
             <div class="container">
-            <div class="left_content_section">{{$education->city }} {{$education->state }} {{$education->country }}</div> 
+            <div class="left_content_section">
+                @if (!is_null($education->city))
+                {{$education->city.' ,' }}
+                @endif
+                @if (!is_null($education->state))
+                {{$education->state.' ,' }}
+                @endif
+                {{$education->country }}
+            </div> 
              <div class="right_content_section">
                 <?php $education_enddate = $education->enddate;
                 $new_education_enddate = date("F Y", strtotime($education_enddate));?>

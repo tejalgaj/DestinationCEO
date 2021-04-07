@@ -52,14 +52,17 @@ class EducationController extends Controller
             'degree'=>'required',
             'graduated'=>'required',
             'enddate'=>'required',
+            'fieldofstudy'=>'required',
+            'country'=>'required',
+            
            // 'tags'=>'exist:tags,id',
         ]);
 
         
         $education = new Education();
-         $education->schoolname = request('schoolname');
+         $education->schoolname = ucfirst(request('schoolname'));
          $education->user_id = auth()->id();
-     $education->degree = request('degree');
+     $education->degree = ucfirst(request('degree'));
          $education->enddate = request('enddate').'-01';
          $education->gpa = request('gpa');
          $education->graduated = request('graduated');
@@ -75,10 +78,10 @@ class EducationController extends Controller
          $education->extra_activity = json_encode($filter_extra_activity);
 
          
-         $education->city = request('city');
-         $education->state = request('state');
-         $education->fieldofstudy = request('fieldofstudy');
-         $education->country = request('country');
+         $education->city = ucfirst(request('city'));
+         $education->state = ucfirst(request('state'));
+         $education->fieldofstudy = ucfirst(request('fieldofstudy'));
+         $education->country = ucfirst(request('country'));
         //  dd(request('startdate'));
         //  dd(request('enddate'));
          $education->save();
@@ -128,14 +131,16 @@ class EducationController extends Controller
             'degree'=>'required',
             'graduated'=>'required',
             'enddate'=>'required',
+            'fieldofstudy'=>'required',
+            'country'=>'required',
            // 'tags'=>'exist:tags,id',
         ]);
 
         
         
-         $education->schoolname = request('schoolname');
+         $education->schoolname = ucfirst(request('schoolname'));
          $education->user_id = auth()->id();
-     $education->degree = request('degree');
+     $education->degree = ucfirst(request('degree'));
      $education->gpa = request('gpa');
      $education->graduated = request('graduated');
 
@@ -150,10 +155,10 @@ class EducationController extends Controller
 
     
          $education->enddate = request('enddate').'-01';
-         $education->city = request('city');
-         $education->state = request('state');
-         $education->fieldofstudy = request('fieldofstudy');
-         $education->country = request('country');
+         $education->city = ucfirst(request('city'));
+         $education->state = ucfirst(request('state'));
+         $education->fieldofstudy = ucfirst(request('fieldofstudy'));
+         $education->country = ucfirst(request('country'));
         //  dd(request('startdate'));
         //  dd(request('enddate'));
          $education->save();

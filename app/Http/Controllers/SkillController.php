@@ -50,8 +50,8 @@ class SkillController extends Controller
 
         
         $skill = new Skill();
-         $skill->skill_title = request('skill_title');
-         $skill->value = request('value');
+         $skill->skill_title = ucfirst(request('skill_title'));
+         $skill->value = ucfirst(request('value'));
          $skill->user_id = auth()->id();
      $skill->description = request('description');
         
@@ -101,8 +101,8 @@ class SkillController extends Controller
 
         
        
-        $skill->skill_title = request('skill_title');
-        $skill->value = request('value');
+        $skill->skill_title = ucfirst(request('skill_title'));
+        $skill->value = ucfirst(request('value'));
          $skill->user_id = auth()->id();
      $skill->description = request('description');
         

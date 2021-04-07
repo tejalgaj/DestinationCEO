@@ -51,7 +51,7 @@ class TechnicalExperienceController extends Controller
 
         
         $technicalExperience = new TechnicalExperience();
-         $technicalExperience->project_title = request('project_title');
+         $technicalExperience->project_title = ucfirst(request('project_title'));
          $technicalExperience->user_id = auth()->id();
          $technicalExperience->project_year = request('project_year');
      $technicalExperience->project_description = request('project_description');
@@ -103,7 +103,7 @@ class TechnicalExperienceController extends Controller
 
         
         $technicalExperience = TechnicalExperience::find($request->id);
-         $technicalExperience->project_title = request('project_title');
+         $technicalExperience->project_title = ucfirst(request('project_title'));
          $technicalExperience->user_id = auth()->id();
          $technicalExperience->project_year = request('project_year');
      $technicalExperience->project_description = request('project_description');

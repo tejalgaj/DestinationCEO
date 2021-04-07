@@ -28,7 +28,7 @@
             <input type="hidden" name="te_id" id="te_id" value="{{$technicalExperience->id}}" >
             <div class="form-row">
               <div class="col-md-8 mb-3">
-              <label for="technical-experience-project-title">Project Title</label>
+              <label for="technical-experience-project-title">Project Title<span class="alert-message">*</span></label>
               <input type="text" class="form-control" id="technical-experience-project-title" placeholder="Project Title" name="project_title" value="{{$technicalExperience->project_title}}" required>
               <span id="project_title_error" class="alert-message"></span> 
             </div>
@@ -40,13 +40,13 @@
             </div>
            
             <div class="form-group">
-              <label for="technical-experience-project-description">Project Description</label>
+              <label for="technical-experience-project-description">Project Description<span class="alert-message">*</span></label>
               <textarea class="form-control {{ $errors->has('project_description') ? 'is-invalid' : ''}}" id="technical-experience-project-description" rows="3" name="project_description" required>{{$technicalExperience->project_description}}</textarea>
               <span id="project_description_error" class="alert-message"></span>
             </div>
             
             <div class="form-group">
-              <label for="technical-experience-technology-stack">Technology Stack</label>
+              <label for="technical-experience-technology-stack">Technology Stack<span class="alert-message">*</span></label>
               <input type="text" class="form-control {{ $errors->has('technology_stack') ? 'is-invalid' : ''}}" id="technical-experience-technology-stack" placeholder="Technology Stack (Sperate with , )" name="technology_stack" value="{{$technicalExperience->technology_stack}}" required>
               <span id="project_technology_stack_error" class="alert-message"></span>
             </div>
@@ -81,7 +81,7 @@
       var project_year = $('#technical-experience-project-year').val();
       var technology_stack = $('#technical-experience-technology-stack').val();
       var id = $('#te_id').val();
-      alert(id);
+     
       let _url     = '/technical-experience.update';
       let _token   = $('meta[name="csrf-token"]').attr('content');
   

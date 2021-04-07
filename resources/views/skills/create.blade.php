@@ -19,7 +19,7 @@
             @csrf
           
               <div class="form-group">
-                <label for="skills-name">Skill Title</label>
+                <label for="skills-name">Skill Title<span class="alert-message">*</span></label>
                 <input type="text" class="form-control {{ $errors->has('skill_title') ? 'is-invalid' : ''}}" id="skills-title" placeholder="Skill Title" name="skill_title" value="{{old('skill_title')}}" required>
                  @error('skill_title')
                  <div class="invalid-feedback">
@@ -29,7 +29,7 @@
               </div>
 
               <div class="form-group">
-                <label for="skills-name">Skill Value</label>
+                <label for="skills-name">Skill Value<span class="alert-message">*</span></label>
                 <input type="text" class="form-control {{ $errors->has('value') ? 'is-invalid' : ''}}" id="skills-value" placeholder="Skill Value" name="value" value="{{old('value')}}" required>
                  @error('value')
                  <div class="invalid-feedback">

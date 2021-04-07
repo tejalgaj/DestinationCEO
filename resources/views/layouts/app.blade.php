@@ -120,7 +120,7 @@
              <?php  $selected_template = session('resume_selected_template', 'default')?>
              @auth
              @if (Request::path()==='skills' && $selected_template!="default")
-             <button type="button" class="btn btn-outline-secondary btn-sm m-3 preview-iframe" data-toggle="modal" data-target="#exampleModal">
+             <button type="button" class="btn btn-outline-secondary btn-sm m-3 preview-iframe" data-toggle="modal" data-target="#exampleModal" style="background-color:  #6c757d;color:#fff">
                 Preview
                 </button>
                 @endif
@@ -153,8 +153,8 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<div class="modal-body" >
-  <iframe src="" width="100%" height="900" id="ifrm"> </iframe> 
+<div class="modal-body">
+  <iframe src="" width="100%" height="900" id="ifrm"></iframe> 
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

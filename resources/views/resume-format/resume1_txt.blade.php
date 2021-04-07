@@ -1,6 +1,6 @@
 <?php
 
-$file = $user->name.".txt";
+$file = $user->name.'_'.time().".txt";
 $txt = fopen($file, "w") or die("Unable to open file!");
 
 
@@ -58,7 +58,7 @@ $worddaywords = $newworkenddate;
 $htmlcontent .=$newworkstartdate.' - '.$worddaywords.'</div>
 <div class="centre_content_section">'.$work->employer.'</div>
 </div>
-<p>'.$work->address.' , '.$work->city.' '.$work->state.' '.$work->zipcode.'</p>
+<p>'.$work->address.' , '.$work->city.' '.$work->state.' '.$work->country.'</p>
 <div class="experience_content">
 <p>'.$work->work_responsibilities.'</p>
 </div>';

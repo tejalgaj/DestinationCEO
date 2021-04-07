@@ -42,10 +42,16 @@
         <div class="col text-left">
             <a class="btn btn-secondary" href=" {{route('additional-experience.index')}} " role="button">Back</a>
         </div>
-    
-        <div class="col text-right">
-            <a class=" btn btn-primary" href=" {{route('experience.index')}} " role="button">none</a>
+        <?php  $selected_template = session('resume_selected_template', 'default')?>
+        
+        @if ( $selected_template!="default")
+        
+          <div class="col text-right">
+            <a class=" btn btn-primary skill_preview">Preview</a>
         </div>
+        
+        @endif
+        
     </div>
      
        
@@ -56,5 +62,10 @@
        </section>
  </main>
 
-
+<script>
+  $( ".skill_preview" ).on( "click", function() {
+    $( ".preview-iframe" ).trigger( "click" );
+});
+  
+  </script>
 @endsection

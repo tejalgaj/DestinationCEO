@@ -28,7 +28,7 @@
             @method('PUT')
             
               <div class="form-group">
-                <label for="experience-job_title">Job Title</label>
+                <label for="experience-job_title">Job Title<span class="alert-message">*</span></label>
                 <input type="text" class="form-control {{ $errors->has('job_title') ? 'is-invalid' : ''}}" id="experience-job_title" placeholder="School name" name="job_title" value="{{$experience->job_title}}" required>
                  @error('job_title')
                  <div class="invalid-feedback">
@@ -37,7 +37,7 @@
                           @enderror
               </div>
               <div class="form-group">
-                <label for="experience-employer">Employer</label>
+                <label for="experience-employer">Employer<span class="alert-message">*</span></label>
                 <input type="text" class="form-control {{ $errors->has('employer') ? 'is-invalid' : ''}}" id="experience-employer" placeholder="employer" name="employer" value="{{$experience->employer}}" required>
                  @error('employer')
                  <div class="invalid-feedback">
@@ -53,7 +53,7 @@
               
             <div class="form-row">
              <div class="col-md-6 mb-3">
-               <label for="experience-startdate">Start Date</label>
+               <label for="experience-startdate">Start Date<span class="alert-message">*</span></label>
                <input type="text"  class="form-control {{ $errors->has('startdate') ? 'is-invalid' : ''}}" id="experience-startdate" placeholder="Start Date" name="startdate" value="{{$experience->startdate}}" onkeydown="return false"  required>
                 @error('startdate')
                 <div class="invalid-feedback">
@@ -92,16 +92,21 @@
 
            <div class="form-row">
              <div class="col-md-4 mb-3">
-               <label for="experience-country">Country</label>
-                         <input type="text" class="form-control" id="experience-country" name="country" placeholder="Country" value={{$experience->country}}>
-             </div>
+               <label for="experience-country">Country<span class="alert-message">*</span></label>
+                         <input type="text" class="form-control {{ $errors->has('country') ? 'is-invalid' : ''}}" id="experience-country" name="country" placeholder="Country" value="{{$experience->country}}" required>
+                         @error('country')
+                         <div class="invalid-feedback">
+                         {{$errors->first('country')}}
+                        </div>
+                                  @enderror
+                        </div>
              <div class="col-md-4 mb-3">
                 <label for="experience-state">State/Province</label>
-                          <input type="text" class="form-control" id="experience-state" name="state" placeholder="State" value={{$experience->state}}>
+                          <input type="text" class="form-control" id="experience-state" name="state" placeholder="State" value="{{$experience->state}}">
               </div>
              <div class="col-md-4 mb-3">
               <label for="experience-city">City</label>
-                         <input type="text" class="form-control" id="experience-city" name="city" placeholder="City" value={{$experience->city}}>
+                         <input type="text" class="form-control" id="experience-city" name="city" placeholder="City" value="{{$experience->city}}">
              </div>
              
            </div>
