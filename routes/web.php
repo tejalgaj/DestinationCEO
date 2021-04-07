@@ -86,3 +86,9 @@ Route::resource('highlight', 'App\Http\Controllers\HighlightController')->middle
 
 
 //Route::get('/dynamic_dependent', 'DynamicDependent@index');
+//ADMIN
+
+
+//Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('user');
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Auth::routes();

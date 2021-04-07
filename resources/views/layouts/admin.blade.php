@@ -56,14 +56,23 @@
 
       <nav class="nav-menu d-none d-lg-block">
       <ul>
-          <li class={{ Request::path()==='/'?'active':''}}><a href="/">Home</a></li>
-          <li class={{ Request::path()==='about'?'active':''}}><a href="#">About</a></li>
-          <li class={{ Request::path()==='resume-builder'?'active':''}}><a href="/resume-builder">Resume Builder</a></li>
-          <li class={{ Request::path()==='resume-scan'?'active':''}}><a href="/resume-scan">Scanning</a></li>
-           
-          <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact">Contact</a></li>
-
-        
+      <li class={{ Request::path()==='/'?'active':''}}><a href="/admin">Home</a></li>
+          
+          <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact_details">Address/Contact</a></li>
+         <li class={{ Request::path()==='/admin/socialLinks'?'active':''}}><a href="/admin/socialLinks">Social Widgets</a></li>
+       
+          
+           <li class="drop-down"><a href="">Templates</a>
+             <ul>
+               <li><a href="/upload_template">upload templates</a></li>
+              
+               <li><a href="/build_resume">Choose a template</a></li>
+               <li><a href="/upload_template_form">Manage templates</a></li>
+               
+             </ul>
+           </li>
+           <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact_details">About US</a></li>
+       
          
            <!-- Authentication Links -->
            @guest

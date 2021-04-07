@@ -33,5 +33,9 @@ class AppServiceProvider extends ServiceProvider
             $view->with(['admin_address_details'=>admin_address_detail::all()]);
              });
         View::composer('components.form.nav', 'App\Http\Controllers\UserDetailController');
+
+        View()->composer('layouts.admin',function($view){
+            $view->with(['admin_address_details'=>admin_address_detail::all()]);
+             });
     }
 }
