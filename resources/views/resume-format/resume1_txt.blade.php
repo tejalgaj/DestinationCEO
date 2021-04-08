@@ -151,53 +151,7 @@ $htmlcontent .='</p>
 </body>
 </html>';
 
-// $htmlcontent = '<p>'.$user->details->address.'</p>
-// <p>'.$user->details->city.' , '.$user->details->state.' , '.$user->details->zipcode.'</p>';
 
-// $namevalue = ucfirst($user->details->firstname).' '.ucfirst($user->details->lastname);
-// $htmlcontent .='
-// <p>'.$namevalue.'</p>
-// <p>'.$user->details->phone.'</p>
-// <p>'.$user->details->email.'</p>';
-
-// if (!is_null($user->details->github))
-// $htmlcontent .='
-// <p>'.$user->details->github.'</p>';
-
-
-//           if (!is_null($user->details->linkedin))
-// $htmlcontent .='
-// <p>'.$user->details->linkedin.'</p>
-
-
-// <p>EMPLOYMENT</p>
-
-
-// ';
-// foreach($user->experiences as $work)
-// {
-//     $workstartdate = $work->startdate;
-//             $newworkstartdate = date("F Y", strtotime($workstartdate));
-//             $newworkenddate = '';
-//             if(!is_null($work->enddate))
-//             {
-//                 $workenddate = $work->enddate;
-//             $newworkenddate = date("F Y", strtotime($workenddate));
-//             }
-//             if (($work->currently_working == 'yes'))
-//            $worddaywords =  'Present';
-//         else
-//         $worddaywords = $newworkenddate;
-        
-//     $htmlcontent .='
-//     <p>'.$work->job_title.'</p>
-//     <p>'.$newworkstartdate.' - '.$worddaywords.'</p>
-//     <p>'.$work->employer.'</p>
-//     <p>'.$work->address.' , '.$work->city.' '.$work->state.' '.$work->zipcode.'</p>
-//     <p>'.$work->work_responsibilities.'</p>';       
-// }
-
-//die($htmlcontent);
 $expected_output = strip_tags($htmlcontent,'<br>');
 
 fwrite($txt, $expected_output);

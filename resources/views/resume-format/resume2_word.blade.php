@@ -77,13 +77,14 @@ color: #000;
    
 .heading {
 	font-size: 20px;
-	border-top: 1px solid #65c897;
-	border-bottom: 3px solid #65c897;
+	/* border-top: 1px solid #65c897;
+	border-bottom: 3px solid #65c897; */
 	padding: 5px 0;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: #000;
     margin:10px 0px;
+    text-decoration: underline;
 }
 .resume-right ul {
 	padding: 0 0 0 10px;
@@ -158,6 +159,9 @@ ul li span, ol li span {
 	width: 200px;
 	display: inline-block;
 }
+.relavant-experience-box .topbar ul {
+	display:inline-block;
+}
 .relavant-experience-box .topbar li {
 	width: 33.33%;
 	float: left;
@@ -229,7 +233,7 @@ h4 {
         OBJECTIVE : {{$user->highlight->objective}}
     </div>
     <h4>HIGHLIGHTS OF QUALIFICATIONS – 7 Bullets</h4>
-    <ul>
+    <ul style="list-style: disc;">
         @foreach($user->education as $education)
                     <?php $highlight_education_enddate = $education->enddate;
                         $new_highlight_education_enddate = date("F Y", strtotime($highlight_education_enddate));?>

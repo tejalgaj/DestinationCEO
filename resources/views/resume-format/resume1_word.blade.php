@@ -35,7 +35,7 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
         background:#f4f5f4;
     }
     .applicant-name {
-        background: #65c897;
+      
         padding: 15px;
         color:#ffffff;
         line-height: normal;
@@ -53,51 +53,25 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
         float: left;
         padding:20px;
     }
-    .applicant-profile {
-	padding: 15px;
-}
-
-.applicant-profile ul {
-	padding: 0;
-	list-style: none;
-	margin: 0;
-}
-.applicant-profile ul li {
-	margin-bottom: 15px;
-}
-.applicant-profile ul li span {
-	float: left;
-	margin-right: 10px;
-}
-.left-info-box {
-    border-top: 1px solid #dddddd;
-    padding: 15px;
-}
-.left-info-box h3 {
-	text-transform: uppercase;
-	margin: 0;
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 10px;
-	color: #222222;
-}
-.left-info-box h4,
+    
 .resume-right h4 {
 	text-transform: uppercase;
 	margin: 10px 0px;
     font-weight:600;
     font-size: 20px;
-	color: #222222;
+	color: #000;
     font-family: 'Times New Roman', Times, serif;
 }
 .heading {
 	font-size: 20px;
 	/* border-bottom: 1px solid #000; */
-	padding-bottom: 10px;
+	padding: 10px 0px;
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	font-weight: 700;
-	color: #222222;
+	color: #000;
+    text-decoration: underline;
+    line-height: 32px;
 }
 .resume-right ul {
 	padding-left: 12px;
@@ -141,12 +115,13 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
 
 .display-content-text
 {
-    padding-bottom: 10px;
+    padding: 10px 0px;
 }
 .display-content-text p,#container_header p,.resume-right p{
     margin: 10px 0;
     padding:10px 0px;
 }
+
 .experience_content
 {
     padding-left: 15px;
@@ -241,10 +216,10 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
              <div class="centre_content_section">{{$work->employer }}</div>
             </div>
             <p> @if (!is_null($work->city))
-                {{$work->city.' ,' }}
+                {{$work->city.', ' }}
                 @endif
                 @if (!is_null($work->state))
-                {{$work->state.' ,' }}
+                {{$work->state.', ' }}
                 @endif
                 {{$work->country }}</p>
             <div class="experience_content">
@@ -259,10 +234,10 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
             <div class="container">
             <div class="left_content_section">
                 @if (!is_null($education->city))
-                {{$education->city.' ,' }}
+                {{$education->city.', ' }}
                 @endif
                 @if (!is_null($education->state))
-                {{$education->state.' ,' }}
+                {{$education->state.', ' }}
                 @endif
                 {{$education->country }}
             </div> 
@@ -335,7 +310,8 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
            
             <ul>
                 @foreach ($user->additionalExperience as $additional_experience)
-                <li>{{$additional_experience->role}}: {!! $additional_experience->responsibilities!!}</li>
+                <li>{{$additional_experience->role}}: </li>
+                {!! $additional_experience->responsibilities!!}
                 @endforeach
             </ul>
             @endif

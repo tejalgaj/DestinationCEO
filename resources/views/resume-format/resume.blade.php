@@ -20,9 +20,39 @@
 
 <title>Resume</title>
 <style type="text/css" media="all">
+ @page{
+  size: letter portrait;
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --page-width:100%;
+  --main-width:100%;
+  --decorator-horizontal-margin: 0.2in;
+
+  --sidebar-horizontal-padding: 0.2in;
+
+  /* XXX: using px for very good precision control */
+  --decorator-outer-offset-top: 10px;
+  --decorator-outer-offset-left: -5.5px;
+  --decorator-border-width: 1px;
+  --decorator-outer-dim: 9px;
+  --decorator-border: 1px solid #ccc;
+
+  --row-blocks-padding-top: 5pt;
+  --date-block-width: 0.6in;
+
+  --main-blocks-title-icon-offset-left: -19pt;
+}
+
     body{
-        padding:0px;
-        margin:0px;
+        width: var(--page-width);
+  margin: 0;
+  
+font-size: 14px;
+color: #000;
+  line-height: 1.3;
+  hyphens: auto;
     }
     *
     {
@@ -44,7 +74,6 @@
         background:#f4f5f4;
     }
     .applicant-name {
-        background: #65c897;
         padding: 15px;
         color:#ffffff;
         line-height: normal;
@@ -62,41 +91,13 @@
         float: left;
         padding:20px;
     }
-    .applicant-profile {
-	padding: 15px;
-}
-
-.applicant-profile ul {
-	padding: 0;
-	list-style: none;
-	margin: 0;
-}
-.applicant-profile ul li {
-	margin-bottom: 15px;
-}
-.applicant-profile ul li span {
-	float: left;
-	margin-right: 10px;
-}
-.left-info-box {
-    border-top: 1px solid #dddddd;
-    padding: 15px;
-}
-.left-info-box h3 {
-	text-transform: uppercase;
-	margin: 0;
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 10px;
-	color: #222222;
-}
-.left-info-box h4,
+   
 .resume-right h4 {
 	text-transform: uppercase;
 	margin: 0;
     font-weight:600;
     font-size: 14px;
-	color: #222222;
+	color: #000;
 }
 .heading {
 	font-size: 18px;
@@ -105,7 +106,8 @@
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	font-weight: 700;
-	color: #222222;
+	color: #000;
+    text-decoration: underline;
 }
 .resume-right ul {
 	padding-left: 12px;
@@ -151,7 +153,7 @@
 }
 .display-content-text
 {
-    padding-bottom: 10px;
+    padding: 10px 0px;
 }
 .display-content-text p,#container_header p{
     margin: 0;
@@ -255,10 +257,10 @@
         </div>
         <p>
             @if (!is_null($work->city))
-            {{$work->city.' ,' }}
+            {{$work->city.', ' }}
             @endif
             @if (!is_null($work->state))
-            {{$work->state.' ,' }}
+            {{$work->state.', ' }}
             @endif
             {{$work->country }}</p>
         <div class="experience_content">
@@ -273,10 +275,10 @@
         <div class="container">
         <div class="left_content_section">
             @if (!is_null($education->city))
-            {{$education->city.' ,' }}
+            {{$education->city.', ' }}
             @endif
             @if (!is_null($education->state))
-            {{$education->state.' ,' }}
+            {{$education->state.', ' }}
             @endif
             {{$education->country }}
             </div> 
@@ -289,7 +291,7 @@
             {{$new_education_enddate }}
             @endif
             </div>
-         <div class="centre_content_section">{{$education->schoolname }}</div>
+         <div class="centre_content_section">{{$education->schoolname}}</div>
         </div>
         <div class="display-content-text">
         <p>{{$education->degree }} in {{$education->fieldofstudy }}.

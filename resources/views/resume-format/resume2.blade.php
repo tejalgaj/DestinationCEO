@@ -73,13 +73,14 @@ color: #000;
    
 .heading {
 	font-size: 16px;
-	border-top: 1px solid #65c897;
-	border-bottom: 3px solid #65c897;
+	/* border-top: 1px solid #65c897;
+	border-bottom: 3px solid #65c897; */
 	padding: 5px 0;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: #000;
     margin:10px 0px;
+    text-decoration: underline;
 }
 .resume-right ul {
 	padding: 0 0 0 10px;
@@ -148,12 +149,21 @@ ul li, ol li {
     padding:0;
     margin-bottom: 5px;
 }
+.experience_content ul
+{
+    list-style: disc;
+}
+.experience_content ol
+{
+    list-style: decimal;
+}
 ul li span, ol li span {
 	padding: 0;
 	font-weight: 700;
 	width: 200px;
 	display: inline-block;
 }
+
 .relavant-experience-box .topbar li {
 	width: 33.33%;
 	float: left;
@@ -196,6 +206,10 @@ h4 {
     margin: 0;
     padding:2px 0px;
 }
+.experience_content
+{
+    padding-left: 15px;
+}
 </style>
 
 </head>
@@ -223,7 +237,7 @@ h4 {
         OBJECTIVE : {{$user->highlight->objective}}
     </div>
     <h4>HIGHLIGHTS OF QUALIFICATIONS – 7 Bullets</h4>
-    <ul>
+    <ul style="list-style: disc;margin-left: 14px;">
         @foreach($user->education as $education)
                     <?php $highlight_education_enddate = $education->enddate;
                         $new_highlight_education_enddate = date("F Y", strtotime($highlight_education_enddate));?>
@@ -262,7 +276,7 @@ h4 {
     </div>
     @foreach($user->experiences as $work)
     <div class="relavant-experience-box">
-        <ul class="topbar">
+        <ul class="topbar" style="height: 30px">
             <li>{{$work->job_title }}</li>
             <li>
                 {{$work->employer.', ' }}
@@ -293,8 +307,11 @@ h4 {
                     @endif
             </li>
         </ul>
+        <div class="experience_content">
+            {!! $work->work_responsibilities; !!}
        
-        {!! $work->work_responsibilities; !!}
+        </div>
+        
         
     </div>
     @endforeach
