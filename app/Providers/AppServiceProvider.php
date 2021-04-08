@@ -37,5 +37,9 @@ class AppServiceProvider extends ServiceProvider
         View()->composer('layouts.admin',function($view){
             $view->with(['admin_address_details'=>admin_address_detail::all()]);
              });
+
+             View()->composer('contact',function($view){
+                $view->with(['admin_address_details'=>admin_address_detail::all()]);
+                 });
     }
 }
