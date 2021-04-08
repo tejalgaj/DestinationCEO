@@ -7,7 +7,7 @@
 <div class="breadcrumbs" data-aos="fade-in">
   <div class="container">
     <h2>Contact Us</h2>
-    <p>We here here to serve you in a better way</p>
+    <p>We are here to serve you in a better way</p>
   </div>
 </div><!-- End Breadcrumbs -->
 
