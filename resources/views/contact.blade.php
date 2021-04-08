@@ -84,7 +84,7 @@
         </form>
         </div>
         <div class="contact-form-image">
-        <img src="{{asset('boottheme/assets/img/contactUS.jpg')}}" alt=".." width="450" height="400">
+        <img src="{{asset('boottheme/assets/img/contactUS.jfif')}}" alt=".." width="500" height="400">
       </div>
     </div>
 
