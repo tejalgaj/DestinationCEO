@@ -449,11 +449,14 @@ function myFunctionWordMatch() {
     //Matching Education//
     var found_education1 = str_resume.search("qualification");
     var found_education2 = str_resume.search("education");
+    var found_education3 = str_resume.search("academic");
+    var found_education4 = str_resume.search("graduation");
+    var found_education5 = str_resume.search("graduate");
     var education_level = ["bachelor’s", "bachelor", "bachelors", "master's", "master", "doctorate", "graduate", "postgraduate", "postgraduation", "graduation"];
     var arr_resume_previous_education = str_resume.split('\n');
     var arr_resume_final_education = arr_resume_previous_education.map(v => v.toLowerCase());
     var education_degree = false;
-    if (found_education1 > 0 || found_education2 > 0) {
+    if (found_education1 > 0 || found_education2 > 0 || found_education3 > 0 || found_education4 > 0 || found_education5 > 0) {
         // console.log("Education found");
         var arr_resume_previous_hard_skills = str_resume.split('\n');
         var arr_resume_withoutspaces_hard_skills = arr_resume_previous_hard_skills.map(el => el.trim());

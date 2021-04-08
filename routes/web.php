@@ -53,7 +53,7 @@ Route::get('/resume-scan', function () {
 });
 
 */
-Route::get('resume-scan',[skills_scanning_controller::class,'getSkills'])->middleware('auth');;
+Route::get('resume-scan',[skills_scanning_controller::class,'getSkills']);
 
 
 Auth::routes();
