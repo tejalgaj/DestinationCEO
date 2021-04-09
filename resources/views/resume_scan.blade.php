@@ -120,7 +120,7 @@
 
     <tr>
     
-      <td>Linkedin Profile</td>
+      <td>LinkedIn Profile</td>
       <td></td>
       <td><span>&#10004;&#65039;</span></td>
       <td><span>&#10060;</span></td>
@@ -548,17 +548,17 @@ function myFunctionWordMatch() {
         }
     })
     if (check_linkedin == true) {
-        myTable.rows[1].cells[1].textContent = "The resume shows linkedin link " + result_linkedin[0] + "; This is highly appreciated!";
+        myTable.rows[1].cells[1].textContent = "The resume shows linkedIn link " + result_linkedin[0] + "; This is highly appreciated!";
         myTable.rows[1].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
 
-        localStorage.setItem('linkedin','The resume shows linkedin link ' + result_linkedin[0] + ' This is highly appreciated!'); 
+        localStorage.setItem('linkedin','The resume shows linkedIn link ' + result_linkedin[0] + ' This is highly appreciated!'); 
   
     } else {
-        myTable.rows[1].cells[1].textContent = "The resume does not shows any linkedin link; This is disappointing!";
+        myTable.rows[1].cells[1].textContent = "The resume does not shows any linkedIn link; This is disappointing!";
         myTable.rows[1].cells[2].textContent = "";
 
-        localStorage.setItem('linkedin','The resume does not shows any linkedin link; This is disappointing!'); 
+        localStorage.setItem('linkedin','The resume does not shows any linkedIn link; This is disappointing!'); 
   
     }
     /*email*/
