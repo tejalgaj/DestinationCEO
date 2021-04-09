@@ -4,7 +4,7 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-content-center align-items-center">
   <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-    <h1>You are the CEO of <br>YOUR DESTINY</h1>
+    <h1>YOU are the CEO of YOUR destiny</h1>
     <h2>Achieve your career success with us</h2>
     
    <!-- <a href="/home" class="btn-get-started">Get Started</a>-->
