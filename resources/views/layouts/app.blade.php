@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Destination CEO') }}</title> --}}
+    <title>Destination CEO</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
