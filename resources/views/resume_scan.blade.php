@@ -25,10 +25,14 @@
 <body>
 <div class="container_scan">
   <div id='title_scanning'>
-    <h1>Scan your Resume and Job posting and land on more JOB interviews</h1>
-<p>To start, add your resume's content to the box on the top. Then paste the job description for your target role in the box on the bottom.</p>
-  </div>
 
+  <div class="section-title">
+            <h2>Welcome to Resume and Job Posting Scanning </h2>
+            <p>RESUME SCAN</p>
+          </div>
+    
+</div>
+<p>Scan your Resume and Job posting and land on more JOB interviews</p>
   <div class="card">
     <div class="card-block">
  <form id="theform" action="javascript:void(0);" >
