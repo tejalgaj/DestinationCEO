@@ -24,15 +24,15 @@
 
 <body>
 <div class="container_scan">
-<div class="section-title">
-            <h2>Welcome to Resume Scanning Feature</h2>
-            
-            <p>Resume Scan</p>
-    </div>
-    
-<p>To start, add your resume's content to the box on the top. Then paste the job description for your target role.</p>
-  
+  <div id='title_scanning'>
 
+  <div class="section-title">
+            <h2>Welcome to Resume and Job Posting Scanning </h2>
+            <p>RESUME SCAN</p>
+          </div>
+    
+</div>
+<p>Scan your Resume and Job posting and land on more JOB interviews</p>
   <div class="card">
     <div class="card-block">
  <form id="theform" action="javascript:void(0);" >
@@ -52,11 +52,11 @@
 
 
     <label for="your-proposal">Paste Job Posting :</label>
-    <div class="md-form mb-4 pink-textarea active-pink-textarea">
+   <!-- <div class="md-form mb-4 pink-textarea active-pink-textarea">
   <textarea id="job-title" class="md-textarea form-control" rows="1" placeholder="Paste Job Title here..." required></textarea>
  
 </div>
-   
+   -->
     <div class="ta-container">
     <div class="md-form mb-4 pink-textarea active-pink-textarea">
       <textarea id="your-proposal" class="ta" name="your-proposal" rows="6" cols="75" data-maxchars="1500" data-over="false" placeholder="Paste Job Description here..." required></textarea>
@@ -124,6 +124,8 @@
       <td></td>
       <td><span>&#10004;&#65039;</span></td>
       <td><span>&#10060;</span></td>
+      </tr>
+      <!--
     <tr>
      
       <td>Job Title Match</td>
@@ -131,7 +133,7 @@
       <td><span>&#10004;&#65039;</span></td>
       <td><span>&#10060;</span></td>
     </tr>
-
+-->
     <tr>
       
       <td>Education Match</td>
@@ -393,19 +395,19 @@ function myFunctionWordMatch() {
     /*characters count*/
     if(numChars>=400)
     {
-    myTable.rows[6].cells[1].textContent = "Character count of resume: " + numChars;
-    myTable.rows[6].cells[3].textContent = "";
+    myTable.rows[5].cells[1].textContent = "Character count of resume: " + numChars;
+    myTable.rows[5].cells[3].textContent = "";
     }
     else if (numChars<400 && numChars>0)
     {
-      myTable.rows[6].cells[1].textContent = "Character count of resume: " + numChars;
-    myTable.rows[6].cells[2].textContent = "";
+      myTable.rows[5].cells[1].textContent = "Character count of resume: " + numChars;
+    myTable.rows[5].cells[2].textContent = "";
     }
     else
     {
       numChars=0;
-      myTable.rows[6].cells[1].textContent = "Character count of resume: " + numChars;
-    myTable.rows[6].cells[2].textContent = "";
+      myTable.rows[5].cells[1].textContent = "Character count of resume: " + numChars;
+    myTable.rows[5].cells[2].textContent = "";
       
     }
     var str_resume_match = document.getElementById('about-yourself').value;
@@ -417,11 +419,13 @@ function myFunctionWordMatch() {
     var str_posting = document.getElementById('your-proposal').value;
     var str_posting = str_posting.toLocaleLowerCase();
     /*for job titile*/
+    /*
     var str_job_title = document.getElementById('job-title').value;
     var str_job_title = str_job_title.toLocaleLowerCase();
     var job_title_keywords = str_job_title.split(' ');
     var job_title_keywords = job_title_keywords.map(v => v.toLowerCase());
     /////
+    */
     /* for education*/
     var arr_resume_previous = str_resume.split(' ');
     var arr_resume_withoutspaces = arr_resume_previous.filter(word => word.trim().length > 0);
@@ -430,6 +434,7 @@ function myFunctionWordMatch() {
     var arr_posting_withoutspaces = arr_posting_previous.filter(word => word.trim().length > 0);
     var arr_posting = arr_posting_withoutspaces.map(v => v.toLowerCase());
     
+    /*
     //////To match job title
     var found_job_title = str_resume.search(str_job_title);
     if (found_job_title > 0) {
@@ -445,18 +450,17 @@ function myFunctionWordMatch() {
         myTable.rows[2].cells[2].textContent = "";
         localStorage.setItem('job title', 'The job title described does not match with resume.'); 
     }
+
+    */
     // console.log(job_title_keywords);
     //Matching Education//
     var found_education1 = str_resume.search("qualification");
     var found_education2 = str_resume.search("education");
-    var found_education3 = str_resume.search("academic");
-    var found_education4 = str_resume.search("graduation");
-    var found_education5 = str_resume.search("graduate");
     var education_level = ["bachelor’s", "bachelor", "bachelors", "master's", "master", "doctorate", "graduate", "postgraduate", "postgraduation", "graduation"];
     var arr_resume_previous_education = str_resume.split('\n');
     var arr_resume_final_education = arr_resume_previous_education.map(v => v.toLowerCase());
     var education_degree = false;
-    if (found_education1 > 0 || found_education2 > 0 || found_education3 > 0 || found_education4 > 0 || found_education5 > 0) {
+    if (found_education1 > 0 || found_education2 > 0) {
         // console.log("Education found");
         var arr_resume_previous_hard_skills = str_resume.split('\n');
         var arr_resume_withoutspaces_hard_skills = arr_resume_previous_hard_skills.map(el => el.trim());
@@ -476,23 +480,23 @@ function myFunctionWordMatch() {
         }
         if (education_degree == true) {
             //    console.log("Professional degree found");
-            myTable.rows[3].cells[1].textContent = "Education is found in the resume. Professional degree is there. Excellent job!";
-            myTable.rows[3].cells[3].textContent = "";
+            myTable.rows[2].cells[1].textContent = "Education is found in the resume. Professional degree is there. Excellent job!";
+            myTable.rows[2].cells[3].textContent = "";
             resume_match_count = resume_match_count + 1;
 
             localStorage.setItem('education','Education is found in the resume. Professional degree is there. Excellent job!');
         } else {
             //  console.log("Professional degree not found");
-            myTable.rows[3].cells[1].textContent = "Education is found in the resume. Professional degree is not there.";
-            myTable.rows[3].cells[3].textContent = "";
+            myTable.rows[2].cells[1].textContent = "Education is found in the resume. Professional degree is not there.";
+            myTable.rows[2].cells[3].textContent = "";
 
             localStorage.setItem('education','Education is found in the resume. Professional degree is not there.');
       
         }
     } else {
         //  console.log("Education Not Found");
-        myTable.rows[3].cells[1].textContent = "No Education related information found. ";
-        myTable.rows[3].cells[2].textContent = "";
+        myTable.rows[2].cells[1].textContent = "No Education related information found. ";
+        myTable.rows[2].cells[2].textContent = "";
 
         localStorage.setItem('education','No Education related information found.');
     }
@@ -500,16 +504,16 @@ function myFunctionWordMatch() {
     var found_experience = str_resume.search("experience");
     if (found_experience > 0) {
         //  console.log("Experience found");
-        myTable.rows[4].cells[1].textContent = "Valid Experience is found in the resume. Excellent job!";
-        myTable.rows[4].cells[3].textContent = "";
+        myTable.rows[3].cells[1].textContent = "Valid Experience is found in the resume. Excellent job!";
+        myTable.rows[3].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
 
         
         localStorage.setItem('experience','Valid Experience is found in the resume. Excellent job!');
     } else {
         //  console.log("Experience not found");
-        myTable.rows[4].cells[1].textContent = "No Valid Experience found in the resume.";
-        myTable.rows[4].cells[2].textContent = "";
+        myTable.rows[3].cells[1].textContent = "No Valid Experience found in the resume.";
+        myTable.rows[3].cells[2].textContent = "";
 
         
         localStorage.setItem('experience','No Valid Experience found in the resume.');
@@ -520,8 +524,8 @@ function myFunctionWordMatch() {
     var found_certification3 = str_resume.search("training");
     var found_certification4 = str_resume.search("trainings");
     if (found_certification1 > 0 || found_certification2 > 0 || found_certification3 > 0 ||found_certification4 > 0) {       
-        myTable.rows[5].cells[1].textContent = "Valid Certifications/Trainings are found in the resume. Excellent job!";
-        myTable.rows[5].cells[3].textContent = "";
+        myTable.rows[4].cells[1].textContent = "Valid Certifications/Trainings are found in the resume. Excellent job!";
+        myTable.rows[4].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
 
 
@@ -529,8 +533,8 @@ function myFunctionWordMatch() {
 
     } else {
         
-        myTable.rows[5].cells[1].textContent = "No Valid certifications/Trainings found in the resume.";
-        myTable.rows[5].cells[2].textContent = "";
+        myTable.rows[4].cells[1].textContent = "No Valid certifications/Trainings found in the resume.";
+        myTable.rows[4].cells[2].textContent = "";
 
         localStorage.setItem('certification','No Valid certifications/Trainings found in the resume.');
 
@@ -828,7 +832,7 @@ function intersect(word, x, y) {
     //displying ATS average
     var average_bestpractices_perc = 0;
     if (resume_match_count>0) {
-        average_bestpractices_perc = Math.round((resume_match_count / 6) * 100);
+        average_bestpractices_perc = Math.round((resume_match_count / 5) * 100);
     } else {
         average_bestpractices_perc = 0;
     }
@@ -888,7 +892,7 @@ function intersect(word, x, y) {
     if(finalResult_perc==100)
     {
       comment_result= "The resume is the absolute match for the corresponding job posting";
-        document.getElementById('result_description').innerHTML =comment_result.value;
+        document.getElementById('result_description').innerHTML =comment_result;
     }
     else if(finalResult_perc>=90 && finalResult_perc<100 )
     {

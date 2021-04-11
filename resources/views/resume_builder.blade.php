@@ -18,15 +18,15 @@
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
           <ul class="hiw-ul">
             <li class="hiw-li">
-              <h3 class="list-title">Select a Template</h3>
+              <h3 class="list-title">1. Select a Template</h3>
               <p class="list-text">First, pick one of our approved templates to personalize and format your resume.</p>
             </li>
             <li class="hiw-li">
-              <h3 class="list-title">Enter Your Information</h3>
+              <h3 class="list-title">2. Enter Your Information</h3>
               <p class="list-text">You can enter your details to enhance your resume.</p>
             </li>
             <li class="hiw-li">
-              <h3 class="list-title">Download and Print</h3>
+              <h3 class="list-title">3. Download and Print</h3>
               <p class="list-text">Your resume is ready to share!</p>
             </li>
           </ul>

@@ -139,7 +139,8 @@ h6 {
 }
 
 #header .logo a {
-    color: #5fcf80;
+    /* color: #5fcf80; */
+    color: #474a48;
 }
 
 #header .logo img {

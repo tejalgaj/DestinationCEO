@@ -26,7 +26,7 @@
             @csrf
             @method('PUT')
               <div class="form-group">
-                <label for="education-schoolname">School Name<span class="alert-message">*</span></label>
+                <label for="education-schoolname">School/College/University Name<span class="alert-message">*</span></label>
                 <input type="text" class="form-control {{ $errors->has('schoolname') ? 'is-invalid' : ''}}" id="education-schoolname" placeholder="School name" name="schoolname" value="{{$education->schoolname}}" required>
                  @error('schoolname')
                  <div class="invalid-feedback">

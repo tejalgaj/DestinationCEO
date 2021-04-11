@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+<script src="https://use.fontawesome.com/6bb3f96480.js"></script>
 <head>
   <meta charset="utf-8">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Destination CEO') }}</title> --}}
+    <title>Destination CEO</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
