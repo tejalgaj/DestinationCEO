@@ -18,8 +18,14 @@
               {{$highlight->communication_language}}
             </div>
             <div class="card-body">
-              <h5 class="card-title">{{$highlight->communication_language}}</h5>
-              <p class="card-text">{{$highlight->communication_language}}</p>
+              <h5 class="card-title">
+                @if(count($highlight->hard_skills)>0)
+                @foreach ($highlight->hard_skills as $key=>$value)
+                        {{$value}}
+                @endforeach
+                @endif
+              </h5>
+              <p class="card-text">{{$highlight->objective}}</p>
              
               <a href="{{route('highlight.edit',$highlight)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
               

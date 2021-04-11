@@ -64,8 +64,8 @@ color: #000;
     .resume-box {
         width:100%;
         margin:0 auto;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 13px;
+        font-family: 'Poppins', sans-serif;
+	font-size: 14px;
        
     }
     .resume-left {
