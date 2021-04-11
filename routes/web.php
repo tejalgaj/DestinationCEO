@@ -7,6 +7,8 @@ use App\Http\Controllers\admin_address;
 use App\Http\Controllers\footer_address_detail;
 use App\Models\admin_address_detail;
 use App\Http\Controllers\update_footer_address;
+use App\Http\Controllers\TestimonialController;
+use App\Models\Testimonial;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +48,34 @@ Route::get('/resume-builder', function () {
 Route::get('/resume-template', function () {
     return view('template_select');
 })->middleware('auth');
+
+Route::get('/testimonial', function () {
+    return view('testimonial');
+});
+
+Route::get('/testimonialform', function () {
+    return view('testimonialform');
+})->middleware('auth');
+
+Route::get('/googlereviews', function () {
+    return view('googlereviews');
+});
+
+Route::get('/scraper', function () {
+    return view('scraper');
+});
+
+Route::get('/testimonialform','App\Http\Controllers\TestimonialController@index')->middleware('auth');
+Route::post('/addimage','App\Http\Controllers\TestimonialController@store')->name('addimage');
+
+
+Route::get('/testimonialpage','App\Http\Controllers\TestimonialController@display');
+
+Route::get('/editimage/{id}', 'App\Http\Controllers\TestimonialController@edit');
+Route::put('/updateimage/{id}', 'App\Http\Controllers\TestimonialController@update');
+
+Route::get('/googlereviews','App\Http\Controllers\TestimonialController@show');
+Route::get('/deleteimage/{id}', 'App\Http\Controllers\TestimonialController@delete');
 
 /*
 Route::get('/resume-scan', function () {

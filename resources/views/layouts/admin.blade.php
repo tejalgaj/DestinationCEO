@@ -60,8 +60,8 @@
           
           <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact_details">Address/Contact</a></li>
          <li class={{ Request::path()==='/admin/socialLinks'?'active':''}}><a href="/admin/socialLinks">Social Widgets</a></li>
-       
-          
+        
+         <li class={{ Request::path()==='googlereviews'?'active':''}}><a href="googlereviews">Testimonial</a></li>
            <li class="drop-down"><a href="">Templates</a>
              <ul>
                <li><a href="/upload_template">upload templates</a></li>
