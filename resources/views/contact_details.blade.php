@@ -22,6 +22,12 @@
             <p>Admin Address Details </p>
           </div>
        <table class="table table-striped">
+         
+@if(session('success'))
+<div class="alert alert-success">
+  {{ session('success') }}
+</div> 
+@endif
           <tbody>
              <tr>
                 
@@ -40,7 +46,7 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">City</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="City" class="form-control" required="true" value="" type="text"></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="City" required="true" class="form-control" required="true" value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
