@@ -58,20 +58,21 @@
       <ul>
       <li class={{ Request::path()==='/'?'active':''}}><a href="/admin">Home</a></li>
           
-          <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact_details">Address/Contact</a></li>
-         <li class={{ Request::path()==='/admin/socialLinks'?'active':''}}><a href="/admin/socialLinks">Social Widgets</a></li>
-        
+          <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact_details">Edit Address</a></li>
+
+         <li class="drop-down"><a href="#">Manage Information</a>
+          <ul>
+            <li><a href="/upload_template">Upload templates</a></li>
+            <li><a href="/upload_template_form">Manage templates</a></li>
+            <li><a href="/admin/socialLinks">Manage social widgets</a></li>
+            <li ><a href="/admin/aboutUs">Manage AboutUs</a></li>
+
+          </ul>
+        </li>
+         
          <li class={{ Request::path()==='googlereviews'?'active':''}}><a href="googlereviews">Testimonial</a></li>
-           <li class="drop-down"><a href="">Templates</a>
-             <ul>
-               <li><a href="/upload_template">upload templates</a></li>
-              
-               <li><a href="/build_resume">Choose a template</a></li>
-               <li><a href="/upload_template_form">Manage templates</a></li>
-               
-             </ul>
-           </li>
-           <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact_details">About US</a></li>
+           
+          
        
          
            <!-- Authentication Links -->
@@ -230,12 +231,14 @@
        
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
+        @foreach ($admin_social_links_files as $adminSocialLinksFile)
+          <a href="{{$adminSocialLinksFile['twitter'] }}" class="twitter"><i class="bx bxl-twitter"></i></a>  
+          <a href="{{$adminSocialLinksFile['facebook'] }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="{{$adminSocialLinksFile['instagram'] }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="{{$adminSocialLinksFile['google'] }}" class="google-plus"><i class="bx bxl-google"></i></a>
+          <a href="{{$adminSocialLinksFile['linkedIn'] }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          @endforeach
+        </div>
     </div>
   </footer><!-- End Footer -->
 

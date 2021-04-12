@@ -1,16 +1,21 @@
 @extends('layouts.app')
-
-<html>
+@section('content')
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<link href="{{asset('boottheme/assets/css/testimonial.css')}}" rel="stylesheet">
-<body>
-<div class= "container">
- <div class="section-title">
+<main id="main">
+    <section id="about" class="about">
+         <div class="container" data-aos="fade-up">
+          
+          <div class="section-title mt-5">
             <h2>Welcome to Google Reviews</h2>
             
-           
-</div>
-<div class="elfsight-app-b3795a46-5434-44da-b0ff-e9d66cab1557"></div>
-</div>
-</body>
-</html>
+            <p>Reviews</p>
+          </div>
+        
+          <div class="elfsight-app-b3795a46-5434-44da-b0ff-e9d66cab1557"></div>
+    
+         </div>
+         
+         
+       </section>
+ </main>
+@endsection

@@ -9,6 +9,9 @@ use App\Models\admin_address_detail;
 use App\Http\Controllers\update_footer_address;
 use App\Http\Controllers\TestimonialController;
 use App\Models\Testimonial;
+use App\Http\Controllers\UploadTemplatesController;
+use App\Http\Controllers\adminSocialLinks;
+use App\Http\Controllers\aboutUsControllerAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,3 +125,60 @@ Route::resource('highlight', 'App\Http\Controllers\HighlightController')->middle
 //Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('user');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Auth::routes();
+
+
+
+//gurvir's routes
+Route::get('/upload_template', function () {
+    return view('upload_template');
+})->middleware('auth');
+Route::get('/admin/socialLinks', function () {
+    return view('admin/socialLinks');
+})->middleware('auth');
+
+// Route::get('/layouts/app', function () {
+//     return view('layouts/app');
+// })->middleware('auth');
+
+Route::get('/admin/aboutUs', function () {
+    return view('admin/aboutUs');
+})->middleware('auth');
+Route::get('/{{$template->filenames}}', function () {
+    return view('{{$template->filenames}}');
+})->middleware('auth');
+Route::get('/{{$twitter1->twitter}}', function () {
+    return view('{{$twitter1->twitter}}');
+})->middleware('auth');
+Route::get('/upload_template_form', function () {
+    return view('upload_template_form');
+})->middleware('auth');
+Route::get('/view_aboutUs', 'App\Http\Controllers\aboutUsControllerAdmin@display');
+Route::get('/admin/aboutUs', 'App\Http\Controllers\aboutUsControllerAdmin@index')->middleware('auth');
+Route::get('/admin/socialLinks', 'App\Http\Controllers\adminSocialLinks@index')->middleware('auth');
+
+//Route::get('admin/aboutUs',[aboutUsControllerAdmin::class,'getAdminAddress']);
+//Route::get('app',[update_footer_address::class,'getFooterAddress']);
+Route::post('/update/{id}',[aboutUsControllerAdmin::class,'addData'])->middleware('auth');   
+Route::post('/update/{id}',[adminSocialLinks::class,'addData'])->middleware('auth');   
+
+Route::get('/upload_template_form', 'App\Http\Controllers\UploadTemplatesController@display')->middleware('auth');
+
+Route::get('/deleteFile/{id}', 'App\Http\Controllers\UploadTemplatesController@delete')->middleware('auth');
+
+
+Route::get('UploadTemplateFile', [UploadTemplatesController::class, 'create'])->middleware('auth'); 
+Route::post('UploadTemplateFile', [UploadTemplatesController::class, 'store'])->middleware('auth');
+
+Route::get('adminSocialLinksFile', [adminSocialLinks::class, 'index'])->middleware('auth'); 
+Route::post('adminSocialLinksFile', [adminSocialLinks::class, 'addData'])->middleware('auth');
+
+Route::get('adminAboutUsFile', [aboutUsControllerAdmin::class, 'index'])->middleware('auth');
+Route::post('adminAboutUsFile', [aboutUsControllerAdmin::class, 'addData'])->middleware('auth');
+//Route::post('adminAboutUsFile', [aboutUsControllerAdmin::class, 'showData']);
+
+Route::get('/admin/aboutUs/{id}', 'App\Http\Controllers\aboutUsControllerAdmin@showData')->middleware('auth');
+
+
+Route::get('/document/convert', 'App\Http\Controllers\UploadTemplatesController@convertWordToPDF1')->name('wordtopdf')->middleware('auth');
+//Route::get('#', 'App\Http\Controllers\adminSocialLinks@redirect');
+Route::get('/layouts/app', 'App\Http\Controllers\adminSocialLinks@redirect')->middleware('auth');

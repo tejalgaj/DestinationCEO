@@ -58,17 +58,17 @@
       <nav class="nav-menu d-none d-lg-block">
       <ul>
           <li class={{ Request::path()==='/'?'active':''}}><a href="/">Home</a></li>
-          <li class={{ Request::path()==='about'?'active':''}}><a href="#">About</a></li>
+          <li class={{ Request::path()==='view_aboutUs'?'active':''}}><a href="/view_aboutUs">About Us</a></li>
           <li class={{ Request::path()==='resume-builder'?'active':''}}><a href="/resume-builder">Resume Builder</a></li>
           <li class={{ Request::path()==='resume-scan'?'active':''}}><a href="/resume-scan">Scanning</a></li>
-          <li class={{ Request::path()==='testimonialform'?'active':''}}><a href="/testimonialform">Testimonial</a></li>
+         
           <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact">Contact</a></li>
           <li class="drop-down"><a href="">Reviews</a>
              <ul>
              <li class={{ Request::path()==='scraper'?'active':''}}><a href="/scraper">Google Reviews</a></li>
               
              <li class={{ Request::path()==='testimonialpage'?'active':''}}><a href="/testimonialpage">Testimonials</a></li>
-               
+             <li class={{ Request::path()==='testimonialform'?'active':''}}><a href="/testimonialform">Post Testimonial</a></li>
                
              </ul>
           </li>
