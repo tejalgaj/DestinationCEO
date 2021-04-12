@@ -7,6 +7,8 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\admin_address_detail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\update_footer_address;
+use App\Models\adminAboutUsFile;
+use App\Models\adminSocialLinksFile;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -41,5 +43,18 @@ class AppServiceProvider extends ServiceProvider
              View()->composer('contact',function($view){
                 $view->with(['admin_address_details'=>admin_address_detail::all()]);
                  });
+
+                 View()->composer('view_aboutUs',function($view){
+                    $view->with(['view_aboutUs'=>adminAboutUsFile::all()]);
+                    
+                     });
+        
+                     View()->composer('layouts.app',function($view){
+                        $view->with(['admin_social_links_files'=>adminSocialLinksFile::all()]);
+                     });
+        
+                     View()->composer('layouts.admin',function($view){
+                        $view->with(['admin_social_links_files'=>adminSocialLinksFile::all()]);
+                     });
     }
 }

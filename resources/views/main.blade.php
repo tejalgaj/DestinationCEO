@@ -19,7 +19,7 @@
 
       <div class="section-title">
         <h2>About</h2>
-        <p>About Us</p>
+        <p>Who We Are</p>
       </div>
 
       <div class="row">

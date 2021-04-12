@@ -2,28 +2,63 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item {{ (request()->segment(1) == 'user-detail')?'active':''}}">
-          <a class="nav-link" href="{{route('user-detail.index')}}">Personal Details</a>
+          <a class="nav-link" href="{{route('user-detail.index')}}">
+             @if($userDetailstatus > 0) 
+             <i class="fa fa-check-circle" aria-hidden="true"></i>
+              @endif
+             Personal Details
+            </a>
         </li>
         <li class="nav-item {{ (request()->segment(1)== 'education')?'active':''}} ">
-          <a class="nav-link {{ ($userDetailstatus < 1)?'disabled':''}}" href="{{route('education.index')}}" >Education</a>
+          <a class="nav-link {{ ($userDetailstatus < 1)?'disabled':''}}" href="{{route('education.index')}}" >
+            @if($educationStatus > 0) 
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+              @endif
+            Education
+          </a>
         </li>
         <li class="nav-item {{ (request()->segment(1)== 'experience')?'active':''}}">
-          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1)?'disabled':''}}" href="{{route('experience.index')}}" >Work Experience</a>
+          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1)?'disabled':''}}" href="{{route('experience.index')}}" >
+            @if($experiencesStatus > 0) 
+             <i class="fa fa-check-circle" aria-hidden="true"></i>
+              @endif
+            Work Experience
+          </a>
         </li>
         <li class="nav-item {{ (request()->segment(1)== 'technical-experience')?'active':''}}">
-          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 ||  $experiencesStatus < 1)?'disabled':''}}" href="{{route('technical-experience.index')}}">Technical Experience</a>
+          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 ||  $experiencesStatus < 1)?'disabled':''}}" href="{{route('technical-experience.index')}}">
+            @if($technicalExperienceStatus > 0) 
+             <i class="fa fa-check-circle" aria-hidden="true"></i>
+              @endif
+            Technical Experience
+          </a>
         </li>
         <?php $value = session('resume_selected_template', 'default') ?>
       @if ($value=="Resume Template 2")
         <li class="nav-item {{ (request()->segment(1)== 'highlight')?'active':''}}">
-          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1)?'disabled':''}}" href="{{route('highlight.index')}} " >HighLights</a>
+          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1)?'disabled':''}}" href="{{route('highlight.index')}} " >
+            @if($highlightStatus > 0) 
+             <i class="fa fa-check-circle" aria-hidden="true"></i>
+              @endif
+            HighLights
+          </a>
         </li>
         @endif
         <li class="nav-item {{ (request()->segment(1)== 'additional-experience')?'active':''}}">
-          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1 || ($value=="Resume Template 2" && $highlightStatus < 1))?'disabled':''}}" href="{{route('additional-experience.index')}}">Additional Experience</a>
+          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1 || ($value=="Resume Template 2" && $highlightStatus < 1))?'disabled':''}}" href="{{route('additional-experience.index')}}">
+            @if($additionalExperienceStatus > 0) 
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+             @endif
+            Additional Experience
+          </a>
         </li>
         <li class="nav-item {{ (request()->segment(1)== 'skills')?'active':''}}">
-          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1 || ($value=="Resume Template 2" && $highlightStatus < 1))?'disabled':''}}" href="{{route('skills.index')}}" >Skills</a>
+          <a class="nav-link {{ ($userDetailstatus < 1 || $educationStatus < 1 || $experiencesStatus < 1 || ($value=="Resume Template 2" && $highlightStatus < 1))?'disabled':''}}" href="{{route('skills.index')}}" >
+            @if($skillStatus > 0) 
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+             @endif
+            Skills
+          </a>
         </li>
       </ul>
     </div>

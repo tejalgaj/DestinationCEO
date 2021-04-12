@@ -139,7 +139,8 @@ h6 {
 }
 
 #header .logo a {
-    color: #5fcf80;
+    /* color: #5fcf80; */
+    color: #474a48;
 }
 
 #header .logo img {
@@ -1583,4 +1584,39 @@ section {
 
 .alert-message {
     color: red;
+}
+
+/* upload templates css */
+#upload_section {
+    width: 100%;
+    height: 80vh;
+    padding-top: 100px;
+
+    background-size: cover;
+    position: relative;
+}
+#upload_section .container .well {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #3ac162;
+    font-family: "Poppins", sans-serif;
+}
+@media (max-width: 992px) {
+    #upload_section {
+        padding-top: 62px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #upload_section {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 768px) {
+    #upload_section {
+        height: 100vh;
+    }
 }
