@@ -176,9 +176,9 @@
               <!--A108 Adam Street <br>
               New York, NY 535022<br>
               United States <br><br>-->
-            <b> Address:</b> <span id='footer_address'></span></br>
-             <b>Phone: </b><span id='footer_phone'></span></br>
-             <b> Email: </b><span id='footer_email'></span> </br>
+            <b> Address:</b> <span id='footer_address'></span><br/>
+             <b>Phone: </b><span id='footer_phone'></span><br/>
+             <b> Email: </b><span id='footer_email'></span> <br/>
             </p>
           </div>
 

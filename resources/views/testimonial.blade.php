@@ -6,7 +6,7 @@
   <title>Testimonials</title>
   <link href="{{asset('boottheme/assets/css/testimonial.css')}}" rel="stylesheet">
   
-  <link href= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel= "stylesheet">
+  {{-- <link href= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel= "stylesheet"> --}}
   
 </head>
 <main>
@@ -23,8 +23,11 @@
         
         <div class="col-md-4 text-center">
                 <div class="profile">
+                    @if ($testimonial->image!="")
+                    <img src="{{ asset('uploads/testimonial/' . $testimonial->image )}}" width="100px"  height="100px" alt="image" class="user" >
+            @endif
+               
                 
-                <img src="{{ asset('uploads/testimonial/' . $testimonial->image )}}" width="100px"  height="100px" alt="image" class="user" >
                 <blockquote>
                 {{ $testimonial->view}}
                 </blockquote>

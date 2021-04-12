@@ -58,7 +58,7 @@ Route::get('/testimonial', function () {
 
 Route::get('/testimonialform', function () {
     return view('testimonialform');
-})->middleware('auth');
+});
 
 Route::get('/googlereviews', function () {
     return view('googlereviews');
@@ -68,7 +68,7 @@ Route::get('/scraper', function () {
     return view('scraper');
 });
 
-Route::get('/testimonialform','App\Http\Controllers\TestimonialController@index')->middleware('auth');
+// Route::get('/testimonialform','App\Http\Controllers\TestimonialController@index')->middleware('auth');
 Route::post('/addimage','App\Http\Controllers\TestimonialController@store')->name('addimage');
 
 

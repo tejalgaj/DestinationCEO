@@ -22,7 +22,7 @@ class TestimonialController extends Controller
        $testimonial->name = $request->input('name');
        $testimonial->jobtitle = $request->input('jobtitle');
        $testimonial->view = $request->input('view');
-      
+       $testimonial->status = 'not approved'; //added by tejal
        
        if($request->hasfile('image')){
        $file = $request->file('image');
@@ -33,7 +33,7 @@ class TestimonialController extends Controller
  }
  else
  {
-        return $request;
+        //return $request; //commented by tejal
         $testimonial->image ='';
 
  }
@@ -58,11 +58,20 @@ class TestimonialController extends Controller
 
   }
 
+//   public function edit($id)
+//   {
+
+//      $testimonials = Testimonial::find($id);
+//      return view('testimonialupdateform')->with('testimonials', $testimonials);
+//   }
+//updated by tejal
   public function edit($id)
   {
 
      $testimonials = Testimonial::find($id);
-     return view('testimonialupdateform')->with('testimonials', $testimonials);
+     $testimonials->status = 'approved';
+     $testimonials-> save();
+     return redirect('/googlereviews')-> with ('testimonials',$testimonials);
   }
 
   public function update(Request $request, $id)

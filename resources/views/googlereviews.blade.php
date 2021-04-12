@@ -44,8 +44,8 @@
       <td>{{ $testimonial->view}}</td>
       <td>{{ $testimonial->status}}</td>
       <td> 
-        <a href="/editimage/{{ $testimonial->id }}" class="btn btn-success"> EDIT </a>
-        <a href="/deleteimage/{{ $testimonial->id }}" class="btn btn-danger deletebtn"> DELETE </a>
+        <a href="/editimage/{{ $testimonial->id }}" class="btn btn-success"> APPROVE </a>
+        <a href="/deleteimage/{{ $testimonial->id }}" class="btn btn-danger deletebtn"> REJECT </a>
 
       </td>
     </tr>
