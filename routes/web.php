@@ -158,8 +158,7 @@ Route::get('/admin/socialLinks', 'App\Http\Controllers\adminSocialLinks@index')-
 
 //Route::get('admin/aboutUs',[aboutUsControllerAdmin::class,'getAdminAddress']);
 //Route::get('app',[update_footer_address::class,'getFooterAddress']);
-Route::post('/update/{id}',[aboutUsControllerAdmin::class,'addData'])->middleware('auth');   
-Route::post('/update/{id}',[adminSocialLinks::class,'addData'])->middleware('auth');   
+  
 
 Route::get('/upload_template_form', 'App\Http\Controllers\UploadTemplatesController@display')->middleware('auth');
 
@@ -170,7 +169,7 @@ Route::get('UploadTemplateFile', [UploadTemplatesController::class, 'create'])->
 Route::post('UploadTemplateFile', [UploadTemplatesController::class, 'store'])->middleware('auth');
 
 Route::get('adminSocialLinksFile', [adminSocialLinks::class, 'index'])->middleware('auth'); 
-Route::post('adminSocialLinksFile', [adminSocialLinks::class, 'addData'])->middleware('auth');
+Route::post('/updateSociallinks/{id}',[adminSocialLinks::class,'addData']); 
 
 Route::get('adminAboutUsFile', [aboutUsControllerAdmin::class, 'index'])->middleware('auth');
 Route::post('adminAboutUsFile', [aboutUsControllerAdmin::class, 'addData'])->middleware('auth');

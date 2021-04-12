@@ -17,6 +17,7 @@ class admin_address extends Controller
   
     function update_function(Request $req)
     {
+        DB::table('admin_address_details')->where('id', 100)->delete();
         $address=$req->input('addressLine');
         $city=$req->input('city');
         $country=$req->input('Country');
@@ -24,9 +25,11 @@ class admin_address extends Controller
         $phone=$req->input('phoneNumber');
         $province=$req->input('state');
         $postcode=$req->input('postcode');
-        DB::update('update admin_address_details set address=?, city=?,country=?,email=?,phone=?,province=?,postcode=? where id=?',
-        [$address,$city,$country,$email,$phone,$province,$postcode,100]);
+        DB::insert('insert into admin_address_details (id,address,city,country,email,phone,province,postcode) values (?,?,?,?,?,?,?,?)',
+        [100,$address,$city,$country,$email,$phone,$province,$postcode]);
 
         return redirect('contact_details')->with('success','Data Updated');
     }
+    
+   
 }
