@@ -19,7 +19,7 @@
 <div class="section-title">
             <h2>Welcome to Address details</h2>
             
-            <p>Update Address </p>
+            <p>Admin Address Details </p>
           </div>
        <table class="table table-striped">
           <tbody>
@@ -77,7 +77,7 @@
                          </div>
                       </fieldset>
                           
-<button type="submit" class="btn btn-secondary">Update details</button>
+<button type="submit" class="btn btn-secondary">Save details</button>
                    </form>
                 </td>
              </tr>
