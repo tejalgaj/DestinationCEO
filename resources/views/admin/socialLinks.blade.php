@@ -24,7 +24,7 @@
              <tr>
                 
                 <td colspan="1">
-                   <form class="well form-horizontal" action="/update/100" method="POST">
+                   <form class="well form-horizontal" action="/updateSociallinks/1" method="POST">
                       @csrf
                      
                       <fieldset>
@@ -32,32 +32,32 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Twitter</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-twitter"></i></span><input id="addressLine" name="addressLine" placeholder="Twitter " required="true" class="form-control" value="" type="text"></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-twitter"></i></span><input id="twitter" name="twitter" placeholder="Twitter " required="true" class="form-control" value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Facebook</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-facebook"></i></span><input id="city" name="city" placeholder="Facebook" class="form-control" required="true" value="" type="text"></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-facebook"></i></span><input id="facebook" name="facebook" placeholder="Facebook" class="form-control" required="true" value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Instagram</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-instagram"></i></span><input id="state" name="state" placeholder="Instagram" class="form-control" required="true" value="" type="text"></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-instagram"></i></span><input id="instagram" name="instagram" placeholder="Instagram" class="form-control" required="true" value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Google</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-google"></i></span><input id="postcode" name="postcode" placeholder="Google" class="form-control"  required="true" value="" type="text"></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-google"></i></span><input id="google" name="google" placeholder="Google" class="form-control"  required="true" value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">LinkedIn</label>
                             
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-linkedin"></i></span><input id="Country" name="Country" placeholder="LinkedIn" class="form-control" required="true" value="" type="text"></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="bx bxl-linkedin"></i></span><input id="linkedIn" name="linkedIn" placeholder="LinkedIn" class="form-control" required="true" value="" type="text"></div>
                             </div>
                             </div>
                          </div>
@@ -73,7 +73,29 @@
    
     </div>
   
+    <script>
+    window.onload=populateDetails;
+    function populateDetails()
+    {
 
+    @foreach($admin_social_links_files as $adminSocialLinksFile)
+    {
+        
+    document.getElementById('twitter').value='{{$adminSocialLinksFile['twitter']}}';
+    
+    document.getElementById('facebook').value='{{$adminSocialLinksFile['facebook']}}';
+    
+    document.getElementById('instagram').value='{{$adminSocialLinksFile['instagram']}}';
+    
+    document.getElementById('google').value='{{$adminSocialLinksFile['google']}}';
+    
+    document.getElementById('linkedIn').value='{{$adminSocialLinksFile['linkedIn']}}';
+
+    }
+    @endforeach
+    
+    }
+      </script>
       
       </body>
       </html>

@@ -169,7 +169,7 @@ Route::get('UploadTemplateFile', [UploadTemplatesController::class, 'create'])->
 Route::post('UploadTemplateFile', [UploadTemplatesController::class, 'store'])->middleware('auth');
 
 Route::get('adminSocialLinksFile', [adminSocialLinks::class, 'index'])->middleware('auth'); 
-Route::post('adminSocialLinksFile', [adminSocialLinks::class, 'addData'])->middleware('auth');
+Route::post('/updateSociallinks/{id}',[adminSocialLinks::class,'addData']); 
 
 Route::get('adminAboutUsFile', [aboutUsControllerAdmin::class, 'index'])->middleware('auth');
 Route::post('adminAboutUsFile', [aboutUsControllerAdmin::class, 'addData'])->middleware('auth');

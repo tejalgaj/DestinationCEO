@@ -13,27 +13,18 @@ class adminSocialLinks extends Controller
     public function index()
     {
         $socialLinks=adminSocialLinksFile::all();
-        //return view('contact_details',['admin_address_details'=>$data]);
-        //$socialLinks = adminSocialLinksFile::whereId(15)->first();
-        
-
-        
+   
         return view('/admin/socialLinks',['admin_social_links_files'=>$socialLinks]);
 
     }
-   public function addData(Request $request)
+   public function addData(Request $req)
     {
-        $this->validate($request, [
-            'twitter' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
-            'google' => 'required',
-            'linkedIn' => 'required'        ]);
-        $twitter=$request->input('twitter');
-        $facebook=$request->input('facebook');
-        $instagram=$request->input('instagram');
-        $google=$request->input('google');
-        $linkedIn=$request->input('linkedIn');
+       
+        $twitter=$req->input('twitter');
+        $facebook=$req->input('facebook');
+        $instagram=$req->input('instagram');
+        $google=$req->input('google');
+        $linkedIn=$req->input('linkedIn');
        // $postcode=$req->input('postcode');
         DB::update('update admin_social_links_files set twitter=?, facebook=?,instagram=?,google=?,linkedIn=? where id=?',
         [$twitter,$facebook,$instagram,$google,$linkedIn,1]);
@@ -51,12 +42,5 @@ class adminSocialLinks extends Controller
 
     }
 
-    public function redirect()
-        {
-            $twitter=adminSocialLinksFile::all('twitter');
-
-            //$twitter = DB::table('admin_social_links_files')->where('facebook', 'https://www.facebook.com/destinationceo.ca/')->value('twitter');
-            return view('layouts/app')->with('twitter', $twitter);
-           // return view('upload_template')->with('twitter', $twitter);
-        }
+  
 }
