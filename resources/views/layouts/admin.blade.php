@@ -264,8 +264,8 @@
     @foreach($admin_address_details as $admin_address_detail)
     {
         
-      document.getElementById('footer_address').innerHTML='{{$admin_address_detail['address']}}' + " ,"+
-    '{{$admin_address_detail['city']}}' + " ," +'{{$admin_address_detail['province']}}'+" ,"+'{{$admin_address_detail['country']}}';
+      document.getElementById('footer_address').innerHTML='{{$admin_address_detail['address']}}' + " "+
+    '{{$admin_address_detail['city']}}' + " " +'{{$admin_address_detail['province']}}'+" "+'{{$admin_address_detail['country']}}';
     document.getElementById('footer_phone').innerHTML='{{$admin_address_detail['phone']}}';
     document.getElementById('footer_email').innerHTML='{{$admin_address_detail['email']}}';
     

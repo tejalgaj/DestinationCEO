@@ -12,10 +12,8 @@ class adminSocialLinks extends Controller
 
     public function index()
     {
-        $socialLinks=adminSocialLinksFile::all();
-   
+        $socialLinks=adminSocialLinksFile::all();  
         return view('/admin/socialLinks',['admin_social_links_files'=>$socialLinks]);
-
     }
    public function addData(Request $req)
     {

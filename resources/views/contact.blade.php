@@ -89,8 +89,8 @@
    @foreach($admin_address_details as $admin_address_detail)
     {
         
-    document.getElementById('location').innerHTML='{{$admin_address_detail['address']}}' + " ,"+
-    '{{$admin_address_detail['city']}}'+ " ,"+ '{{$admin_address_detail['country']}}' + " ," +'{{$admin_address_detail['province']}}';
+    document.getElementById('location').innerHTML='{{$admin_address_detail['address']}}' + " "+
+    '{{$admin_address_detail['city']}}' + " " +'{{$admin_address_detail['province']}}'+" "+'{{$admin_address_detail['country']}}';
     document.getElementById('phone').innerHTML='{{$admin_address_detail['phone']}}';
     document.getElementById('email').innerHTML='{{$admin_address_detail['email']}}';
     
