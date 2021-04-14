@@ -35,7 +35,7 @@ if (!is_null($user->details->github))
 <div class="heading">
 OBJECTIVE : <p>'.$user->highlight->objective.'</p>
 </div>
-<h4>HIGHLIGHTS OF QUALIFICATIONS – 7 Bullets</h4>
+<h4>HIGHLIGHTS OF QUALIFICATIONS</h4>
 <ul>';
             foreach($user->education as $education){
                  $highlight_education_enddate = $education->enddate;
@@ -45,8 +45,7 @@ $htmlcontent .='
 <li>Recent graduate of the '.$education->fieldofstudy.' '.$education->degree .' program at '.$education->schoolname .' ('.$new_highlight_education_enddate.')</li>';
                     
             }
-$htmlcontent .='
-<li>Masters / Bachelor Degree in __________</li>';
+
             if(count($user->highlight->hard_skills)>0)
             {
                 foreach ($user->highlight->hard_skills as $key=>$value)

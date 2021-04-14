@@ -54,8 +54,6 @@ class EducationController extends Controller
             'enddate'=>'required',
             'fieldofstudy'=>'required',
             'country'=>'required',
-            
-           // 'tags'=>'exist:tags,id',
         ]);
 
         
@@ -82,13 +80,8 @@ class EducationController extends Controller
          $education->state = ucfirst(request('state'));
          $education->fieldofstudy = ucfirst(request('fieldofstudy'));
          $education->country = ucfirst(request('country'));
-        //  dd(request('startdate'));
-        //  dd(request('enddate'));
          $education->save();
          
-
-
-         //return response()->json(['success'=>'Form Data is successfully Stored']);
         return redirect()->route('education.index');
     }
 
@@ -133,7 +126,7 @@ class EducationController extends Controller
             'enddate'=>'required',
             'fieldofstudy'=>'required',
             'country'=>'required',
-           // 'tags'=>'exist:tags,id',
+           
         ]);
 
         
@@ -159,8 +152,7 @@ class EducationController extends Controller
          $education->state = ucfirst(request('state'));
          $education->fieldofstudy = ucfirst(request('fieldofstudy'));
          $education->country = ucfirst(request('country'));
-        //  dd(request('startdate'));
-        //  dd(request('enddate'));
+      
          $education->save();
          
         return redirect()->route('education.index');

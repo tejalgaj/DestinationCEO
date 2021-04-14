@@ -35,9 +35,9 @@ class UploadTemplatesController extends Controller
             foreach($request->file('filenames') as $UploadTemplateFile)
             {
                 //$UploadTemplateFile= new UploadTemplateFile();
-
-                $name = basename($UploadTemplateFile->getClientOriginalName(), '.'.$UploadTemplateFile->getClientOriginalExtension());
-                 
+                $name = basename($UploadTemplateFile->getClientOriginalName());
+                //$name = basename($UploadTemplateFile->getClientOriginalName(), '.'.$UploadTemplateFile->getClientOriginalExtension()); //commented by tejal
+              
        // return redirect('/upload_template_form')->with('templates', $templates);
 
 

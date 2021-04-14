@@ -59,7 +59,7 @@ class UserDetailController extends Controller
             'state'=>'required',
             'address'=>'required',
             'credibleintro'=>'required',
-           // 'tags'=>'exist:tags,id',
+         
         ]);
 
 
@@ -131,7 +131,7 @@ class UserDetailController extends Controller
             'state'=>'required',
             'address'=>'required',
             'credibleintro'=>'required',
-           // 'tags'=>'exist:tags,id',
+           
         ]);
 
 
@@ -173,7 +173,7 @@ class UserDetailController extends Controller
 
     
      public function storeSessionData(Request $request) {
-       // $request->session()->put('resume_selected_template','Virat Gandhi');
+      
         session(['resume_selected_template' => $request->template_title]);
         return response()->json(['code'=>200, 'message'=>'session stored successfully'], 200);
         

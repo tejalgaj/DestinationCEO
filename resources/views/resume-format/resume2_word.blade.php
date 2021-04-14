@@ -232,7 +232,7 @@ h4 {
       <div class="heading">
         OBJECTIVE : {{$user->highlight->objective}}
     </div>
-    <h4>HIGHLIGHTS OF QUALIFICATIONS – 7 Bullets</h4>
+    <h4>HIGHLIGHTS OF QUALIFICATIONS </h4>
     <ul style="list-style: disc;">
         @foreach($user->education as $education)
                     <?php $highlight_education_enddate = $education->enddate;
@@ -242,7 +242,7 @@ h4 {
                 @endif
         @endforeach
         
-        <li>Masters / Bachelor Degree in __________</li>
+        
         @if(count($user->highlight->hard_skills)>0)
                 @foreach ($user->highlight->hard_skills as $key=>$value)
                         <li>{{$value}}</li>

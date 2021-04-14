@@ -19,11 +19,14 @@
     </tr>
   </thead>
   <tbody>
+    <?php $count = 1;?>
     @foreach ($templates as $template)
+    <?php $info = pathinfo($template->filenames);
    
+    $file_name =  $info['filename'];?>
     <tr>
-      <th>{{$template->id}}</th>
-      <th><a href= "{{ URL::to('/') }}/files/templates/{{$template->filenames}}" alt="file" rel="noopener noreferrer" target="_blank"  >{{$template->filenames}}</a>
+      <th>{{$count++}}</th>
+      <th><a href= "{{ URL::to('/') }}/files/templates/{{$template->filenames}}" alt="file" rel="noopener noreferrer" target="_blank"  >{{$file_name}}</a>
 </th>
 
    <!-- //<th> <a href= "{{ route('wordtopdf') }}" alt="file" target="_blank" height="100px" >dcd</a></th>  -->

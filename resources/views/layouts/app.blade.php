@@ -113,7 +113,7 @@
              <?php  $selected_template = session('resume_selected_template', 'default')?>
              @auth
              @if (Request::path()==='skills' && $selected_template!="default")
-             <button type="button" class="btn btn-outline-secondary btn-sm m-3 preview-iframe" data-toggle="modal" data-target="#exampleModal" style="background-color:  #6c757d;color:#fff">
+             <button type="button" class="btn btn-outline-secondary btn-sm m-2 preview-iframe" data-toggle="modal" data-target="#exampleModal" style="background-color:  #6c757d;color:#fff">
                 Preview
                 </button>
                 @endif

@@ -51,8 +51,6 @@ class AdditionalExperienceController extends Controller
             'startdate'=>'required',
             'country'=>'required',
             
-            
-           // 'tags'=>'exist:tags,id',
         ]);
         $additionalExperience = new AdditionalExperience();
          $additionalExperience->role = request('role');
@@ -121,9 +119,6 @@ class AdditionalExperienceController extends Controller
             'employer'=>'required',
             'startdate'=>'required',
             'country'=>'required',
-            
-            
-           // 'tags'=>'exist:tags,id',
         ]);
          $additionalExperience->role = request('role');
          $additionalExperience->user_id = auth()->id();

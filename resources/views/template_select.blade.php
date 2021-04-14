@@ -16,36 +16,51 @@
             <div class="container">
     
               <div class="row">
-                <div class="col-md-4">
-                  <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top" src="{{ URL::to('/') }}/resume_images/Resume_Example - 1Pg-page0001.jpg" alt="Card image cap" height="408px" width="294px">
-                    <div class="card-body">
-                      <p class="card-text">Resume Template 1</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary template_preview" data-toggle="modal" data-target="#exampleModal">Select Template</button>
-                         
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top" src="{{ URL::to('/') }}/resume_images/Standard Resume template-page0001.jpg" alt="Card image cap" height="408px" width="294px" >
-                    <div class="card-body">
-                        <p class="card-text">Resume Template 2</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary template_preview" data-toggle="modal" data-target="#exampleModal">Select Template</button>
-                          
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               <?php
+                $supported_image = array(
+    'gif',
+    'jpg',
+    'jpeg',
+    'png'
+);
+?>
+                @if (count($template_formats) > 0)
+                @foreach ($template_formats as $temp_form)
+                <?php
+                $support = true;
+                $info = pathinfo($temp_form->filenames);
+$ext = strtolower(pathinfo($temp_form->filenames, PATHINFO_EXTENSION));
+
+if (in_array($ext, $supported_image)) {
+  $image_url=$temp_form->filenames;
+} else {
+  $image_url='no-image.jpg';
+  $support = false;
+}
+                ?>
+<div class="col-md-4">
+  <div class="card mb-4 shadow-sm">
+    <img class="card-img-top" src="{{ URL::to('/') }}/files/templates/{{$image_url}}" alt="Card image cap" height="408px" width="294px">
+    <div class="card-body">
+      <p class="card-text">{{$info['filename']}}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+        
+          <button type="button" class="btn btn-sm btn-outline-secondary template_preview {{($support==true)?'':'disabled'}}" data-toggle="modal" data-target="#exampleModal">Select Template</button>
+        
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+                
+                @endforeach
+@else
+   <p>Sorry, No template uploaded</p>
+@endif
+                
+                
                
             </div>
           </div>

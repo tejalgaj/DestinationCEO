@@ -21,7 +21,6 @@ class ExperienceController extends Controller
             $experiences = auth()->user()->experiences;
             // Education Detail found
             $exp_status_count = (!empty(auth()->user()->experiences)?auth()->user()->experiences->count():0);
-            //return view('experience.index',compact('experiences'));
             return view('experience.index')->with(compact('experiences'))->with(compact('exp_status_count'));
          }else{
             return view('experience.create');
@@ -54,11 +53,8 @@ class ExperienceController extends Controller
             'startdate'=>'required',
             'country'=>'required',
             
-            
-           // 'tags'=>'exist:tags,id',
         ]);
-       // dd(request('work_responsibilities'));
-        //dd(request());
+      
         $experience = new Experience();
          $experience->job_title = request('job_title');
          $experience->user_id = auth()->id();
@@ -83,8 +79,6 @@ class ExperienceController extends Controller
          $experience->city = ucfirst(request('city'));
          $experience->state = ucfirst(request('state'));
          $experience->country = ucfirst(request('country'));
-        //  dd(request('startdate'));
-        //  dd(request('enddate'));
          $experience->save();
          
         return redirect()->route('experience.index');
@@ -128,8 +122,6 @@ class ExperienceController extends Controller
             'employer'=>'required',
             'startdate'=>'required',
             'country'=>'required',
-            
-           // 'tags'=>'exist:tags,id',
         ]);
 
        
@@ -154,8 +146,7 @@ class ExperienceController extends Controller
          $experience->city = ucfirst(request('city'));
          $experience->state = ucfirst(request('state'));
          $experience->country = ucfirst(request('country'));
-        //  dd(request('startdate'));
-        //  dd(request('enddate'));
+      
          $experience->save();
          
         return redirect()->route('experience.index');
