@@ -41,10 +41,10 @@
     <div class="md-form mb-4 pink-textarea active-pink-textarea">
       <textarea id="about-yourself" class="ta"  name="about-yourself" rows="6" cols="75" data-maxchars="4000" data-over="false" placeholder="Paste Resume here..." required></textarea>
      </div>
-      <div class="status-bar">
+      <div class="status-bar" >
         <table>
           <tr><td>Characters:</td><td class="charcount"></td></tr>
-          <tr><td class="remaining-label">Remaining:</td><td class="remaining"></td></tr>
+         <tr><td class="remaining-label">Remaining:</td><td class="remaining"></td></tr>
         </table>
       </div>
     </div>
@@ -188,12 +188,12 @@
 
   <tbody>
     <tr>
-      <td>Job posting:</td>
+      <td>Required:</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-       <td>Resume: </td>
+       <td>Found: </td>
       <td></td>
       <td></td>
     </tr>
@@ -220,12 +220,12 @@
 
   <tbody>
     <tr>
-      <td>Job posting:</td>
+      <td>Required:</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-       <td>Resume: </td>
+       <td>Found: </td>
       <td></td>
       <td></td>
     </tr>
