@@ -119,23 +119,13 @@
       <td><span>&#10060;</span></td>
 
     <tr>
-    
       <td>Linkedin Profile</td>
       <td></td>
       <td><span>&#10004;&#65039;</span></td>
       <td><span>&#10060;</span></td>
       </tr>
-      <!--
-    <tr>
-     
-      <td>Job Title Match</td>
-      <td></td>
-      <td><span>&#10004;&#65039;</span></td>
-      <td><span>&#10060;</span></td>
-    </tr>
--->
-    <tr>
-      
+   
+    <tr> 
       <td>Education Match</td>
       <td></td>
       <td><span>&#10004;&#65039;</span></td>
@@ -164,22 +154,14 @@
       <td><span>&#10004;&#65039;</span></td>
       <td><span>&#10060;</span></td>
     </tr>
-    <!--
-    <tr>
-      <td>Average ATS Match</td>
-      <td></td>
-      <td></td>
-    </tr>
--->
+ 
   </tbody>
 </table>
 
 </div>
 
 <div id="line_space_next"></div>
-
 <div id="hard_skills_match_container">
-<!--<div id="match_title"><p>Hard Skills: </p> </div>-->
 <div id="match_title"><p>Hard Skills Match:  <span id="hard_skills_match"></span></p></div>
 
 </br>
@@ -198,13 +180,6 @@
       <td></td>
     </tr>
 
-    <!--
-    <tr>
-    <td>Matched skills Average</td>
-      <td></td>
-      <td></td>
-    </tr>
--->
   </tbody>
 </table>
 </div>
@@ -230,13 +205,6 @@
       <td></td>
     </tr>
 
-    <!--
-    <tr>
-    <td>Matched skills Average</td>
-      <td></td>
-      <td></td>
-    </tr>
--->
   </tbody>
 </table>
 </div>
@@ -245,10 +213,6 @@
 <div class="pie" data-pie='{ "percent": 82, "colorSlice": "#E91E63", "time": 30, "fontWeight": 400 }'></div>
 <div id="match_title"><p>Matched Skills Word Cloud</p></div>
 <div id="word-cloud"></div>
-
-
-<!--<a href="/print">Print----</a>-->
-
 
 <script type="text/javascript" src="{{asset('boottheme/assets/js/scanningResultsPDF.js')}}"></script>
 <script>
@@ -260,12 +224,7 @@ function genPDFfunction()
 </script>
 </body>
 
-
-<!--<script src="{{asset('boottheme/assets/js/resumescanning.js')}}"></script>-->
 <script>
-
-
-
 
 /**
  * Functions to add/remove class on div.ta-container to emulate focus removed from textarea by CSS line 37 (outline:none)
@@ -378,9 +337,6 @@ function update() {
 
 function myFunctionWordMatch() {
 
-
-
-
     //for counting matches in resume..like education, job posting etc
     
     var resume_match_count = 0;
@@ -418,14 +374,7 @@ function myFunctionWordMatch() {
     var str_resume = str_resume.toLocaleLowerCase();
     var str_posting = document.getElementById('your-proposal').value;
     var str_posting = str_posting.toLocaleLowerCase();
-    /*for job titile*/
-    /*
-    var str_job_title = document.getElementById('job-title').value;
-    var str_job_title = str_job_title.toLocaleLowerCase();
-    var job_title_keywords = str_job_title.split(' ');
-    var job_title_keywords = job_title_keywords.map(v => v.toLowerCase());
-    /////
-    */
+    
     /* for education*/
     var arr_resume_previous = str_resume.split(' ');
     var arr_resume_withoutspaces = arr_resume_previous.filter(word => word.trim().length > 0);
@@ -434,25 +383,7 @@ function myFunctionWordMatch() {
     var arr_posting_withoutspaces = arr_posting_previous.filter(word => word.trim().length > 0);
     var arr_posting = arr_posting_withoutspaces.map(v => v.toLowerCase());
     
-    /*
-    //////To match job title
-    var found_job_title = str_resume.search(str_job_title);
-    if (found_job_title > 0) {
-        // console.log("Job title Found");
-        myTable.rows[2].cells[1].textContent = "The job title described : " + str_job_title + " matches with the resume. Excellent!";
-        resume_match_count = resume_match_count + 1;
-        myTable.rows[2].cells[3].textContent = "";
-
-        localStorage.setItem('job title','The job title described : ' + str_job_title + '; matches with the resume. Excellent!'); 
-    } else {
-        //  console.log("Not Found");
-        myTable.rows[2].cells[1].textContent = "The job title described does not match with resume. ";
-        myTable.rows[2].cells[2].textContent = "";
-        localStorage.setItem('job title', 'The job title described does not match with resume.'); 
-    }
-
-    */
-    // console.log(job_title_keywords);
+    
     //Matching Education//
     var found_education1 = str_resume.search("qualification");
     var found_education2 = str_resume.search("education");
@@ -836,7 +767,7 @@ function intersect(word, x, y) {
     } else {
         average_bestpractices_perc = 0;
     }
-    //myTable.rows[7].cells[1].textContent = " " + average_bestpractices_perc + "% ";
+    
     document.getElementById('ats_match_average').innerHTML=" " + average_bestpractices_perc + "% ";
     //
     localStorage.setItem('ats_match',average_bestpractices_perc + "% ");
@@ -861,7 +792,7 @@ function intersect(word, x, y) {
         matched_perc_hard_skills = 0;
     
       }
-    //myTableHardSkills.rows[2].cells[1].textContent = " " + matched_perc_hard_skills + "% ";
+   
     document.getElementById('hard_skills_match').innerHTML=" " + matched_perc_hard_skills + "% ";
     ///displaying soft skills in table
     myTableSoftSkills.rows[0].cells[1].textContent = "";
@@ -878,7 +809,7 @@ function intersect(word, x, y) {
     } else {
       matched_perc_soft_skills = 0;
     }
-    //myTableSoftSkills.rows[2].cells[1].textContent = " " + matched_perc_soft_skills + "% ";
+    
     document.getElementById('soft_skills_match').innerHTML=" " + matched_perc_soft_skills + "% ";
     ///final result
     var finalResult_perc = 0;
@@ -964,8 +895,6 @@ var progressBarVal=finalResult_perc;
    $(".soft_skills_progress").append(html);
 
    localStorage.setItem('soft_skills_match',matched_perc_soft_skills + '%');
-  //  document.getElementById('percentage').innerHTML=50%;
-
 
   localStorage.setItem('result_description', comment_result);
  
