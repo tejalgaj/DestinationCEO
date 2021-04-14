@@ -113,7 +113,7 @@
   <tbody>
     <tr>
       
-      <td>Email Address</td>
+      <td >Email Address</td>
       <td></td>
       <td><span>&#10004;&#65039;</span></td>
       <td><span>&#10060;</span></td>
