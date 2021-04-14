@@ -114,7 +114,7 @@
     document.getElementById('postcode').value='{{$admin_address_detail['postcode']}}';
     
     document.getElementById('phoneNumber').value='{{$admin_address_detail['phone']}}';
-   // document.getElementById('city').value='{{$admin_address_detail['city']}}';
+
     }
     @endforeach
     

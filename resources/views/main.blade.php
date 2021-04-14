@@ -7,7 +7,7 @@
     <h1>YOU are the CEO of YOUR destiny</h1>
     <h2>Achieve your career success with us</h2>
     
-   <!-- <a href="/home" class="btn-get-started">Get Started</a>-->
+
   </div>
 </section><!-- End Hero -->
 
@@ -90,9 +90,7 @@ Master Classes taught by Mentors</li>
           <h4>(FOUNDER) </h4>
           <img src="{{asset('boottheme/assets/img/meena.jpg')}}" alt=".." width="300" height="300">
            
-            <!--<div class="text-center">
-              <a href="about.html" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-            </div>-->
+            
           </div>
         </div>
         <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -233,20 +231,9 @@ Master Classes taught by Mentors</li>
                 
               </div>
 
-              <!--<h3><a href="course-details.html">Website Design</a></h3>-->
+             
               <p>Business collaboration is creating purposeful connections, both internally and externally, to
-                 achieve goals or solve problems through sharing varied skill sets, strengths, and perspectives</p>   <!--<div class="trainer d-flex justify-content-between align-items-center">
-                <div class="trainer-profile d-flex align-items-center">
-                  <img src="{{asset('boottheme/assets/img/trainers/trainer-1.jpg')}}" class="img-fluid" alt="">
-                  <span>Antonio</span>
-                </div>
-                <div class="trainer-rank d-flex align-items-center">
-                  <i class="bx bx-user"></i>&nbsp;50
-                  &nbsp;&nbsp;
-                  <i class="bx bx-heart"></i>&nbsp;65
-                </div>
-              </div>
--->
+                 achieve goals or solve problems through sharing varied skill sets, strengths, and perspectives</p>   
             </div>
           </div>
         </div> <!-- End Course Item-->
@@ -260,20 +247,8 @@ Master Classes taught by Mentors</li>
                 
               </div>
 
-             <!-- <h3><a href="course-details.html">Search Engine Optimization</a></h3>-->
-              <p>Many traditional nonprofits form short-term partnerships with superficially similar organizations to execute a single program, exchange a few resources, or attract funding.  </p>    <!--   <div class="trainer d-flex justify-content-between align-items-center">
-                <div class="trainer-profile d-flex align-items-center">
-                  <img src="{{asset('boottheme/assets/img/trainers/trainer-2.jpg')}}" class="img-fluid" alt="">
-                  <span>Lana</span>
-                </div>
              
-                  <div class="trainer-rank d-flex align-items-center">
-                  <i class="bx bx-user"></i>&nbsp;35
-                  &nbsp;&nbsp;
-                  <i class="bx bx-heart"></i>&nbsp;42
-                </div>
-              </div>
-              -->
+              <p>Many traditional nonprofits form short-term partnerships with superficially similar organizations to execute a single program, exchange a few resources, or attract funding.  </p>   
             </div>
           </div>
         </div> <!-- End Course Item-->
@@ -287,20 +262,8 @@ Master Classes taught by Mentors</li>
                 
               </div>
 
-              <!--<h3><a href="course-details.html">Copywriting</a></h3>-->
-              <p> Academic research is usually thought to mean an equal partnership between two academic faculty members who are pursuing mutually interesting and beneficial research.</p><!--  <div class="trainer d-flex justify-content-between align-items-center">
-                <div class="trainer-profile d-flex align-items-center">
-                  <img src="{{asset('bootthemeassets/img/trainers/trainer-3.jpg')}}" class="img-fluid" alt="">
-                  <span>Brandon</span>
-                </div>
-              <div class="trainer-rank d-flex align-items-center">
-                  <i class="bx bx-user"></i>&nbsp;20
-                  &nbsp;&nbsp;
-                  <i class="bx bx-heart"></i>&nbsp;85
-                </div>
-
-              </div>
-              -->
+              
+              <p> Academic research is usually thought to mean an equal partnership between two academic faculty members who are pursuing mutually interesting and beneficial research.</p>
             </div>
           </div>
         </div> <!-- End Course Item-->
@@ -310,80 +273,7 @@ Master Classes taught by Mentors</li>
     </div>
   </section><!-- End Popular Courses Section -->
 
-  <!-- ======= Trainers Section ======= -->
-  <!--
-  <section id="trainers" class="trainers">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Trainers</h2>
-        <p>Our Professional Trainers</p>
-      </div>
-
-      <div class="row" data-aos="zoom-in" data-aos-delay="100">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="member">
-            <img src="{{asset('bootthemeassets/img/trainers/trainer-1.jpg')}}" class="img-fluid" alt="">
-            <div class="member-content">
-              <h4>Walter White</h4>
-              <span>Web Development</span>
-              <p>
-                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-              </p>
-              <div class="social">
-                <a href=""><i class="icofont-twitter"></i></a>
-                <a href=""><i class="icofont-facebook"></i></a>
-                <a href=""><i class="icofont-instagram"></i></a>
-                <a href=""><i class="icofont-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="member">
-            <img src="{{asset('bootthemeassets/img/trainers/trainer-2.jpg')}}" class="img-fluid" alt="">
-            <div class="member-content">
-              <h4>Sarah Jhinson</h4>
-              <span>Marketing</span>
-              <p>
-                Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
-              </p>
-              <div class="social">
-                <a href=""><i class="icofont-twitter"></i></a>
-                <a href=""><i class="icofont-facebook"></i></a>
-                <a href=""><i class="icofont-instagram"></i></a>
-                <a href=""><i class="icofont-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="member">
-            <img src="{{asset('bootthemeassets/img/trainers/trainer-3.jpg')}}" class="img-fluid" alt="">
-            <div class="member-content">
-              <h4>William Anderson</h4>
-              <span>Content</span>
-              <p>
-                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-              </p>
-              <div class="social">
-                <a href=""><i class="icofont-twitter"></i></a>
-                <a href=""><i class="icofont-facebook"></i></a>
-                <a href=""><i class="icofont-instagram"></i></a>
-                <a href=""><i class="icofont-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-  End Trainers Section -->
-
+  
 
 </main><!-- End #main -->
 @endsection
