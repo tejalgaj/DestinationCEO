@@ -9,14 +9,26 @@ class TestimonialController extends Controller
 {
    public  function index()
    {
-           
-     return view('testimonialform');
+  
+    return view('testimonialform');
    
+  }
+
+  public function getData(Request $req)
+  {
+    
+    return $req->input();
+
   }
 
   public function store(Request $request)
   {
-       
+       $validateData = $request->validate([
+         'name' => 'required ',
+         'jobtitle' => 'required ',
+         'view' => 'required '
+
+       ]);
 
        $testimonial = new Testimonial();
        $testimonial->name = $request->input('name');

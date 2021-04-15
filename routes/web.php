@@ -71,7 +71,8 @@ Route::get('/scraper', function () {
     return view('scraper');
 });
 
-// Route::get('/testimonialform','App\Http\Controllers\TestimonialController@index')->middleware('auth');
+Route::view('/testimonialform','testimonialform');
+Route::post('App\Http\Controllers\TestimonialController','App\Http\Controllers\TestimonialController@index');
 Route::post('/addimage','App\Http\Controllers\TestimonialController@store')->name('addimage');
 
 
