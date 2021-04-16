@@ -385,45 +385,28 @@ function myFunctionWordMatch() {
     
     
     //Matching Education//
-    var found_education1 = str_resume.search("qualification");
-    var found_education2 = str_resume.search("education");
-    var education_level = ["bachelor’s", "bachelor", "bachelors", "master's", "master", "doctorate", "graduate", "postgraduate", "postgraduation", "graduation"];
+    var found_education=0;
+   
+    var education_level = ["bachelor’s", "bachelor", "bachelors", "masters", "master", "doctorate", "graduate", "postgraduate", "postgraduation", "graduation"];
+   for(var i=0;i<education_level.length;i++)
+   {
+    if((str_resume.search(education_level[i]))>0)
+    {
+    found_education=1;
+    
+    }
+   }
     var arr_resume_previous_education = str_resume.split('\n');
     var arr_resume_final_education = arr_resume_previous_education.map(v => v.toLowerCase());
     var education_degree = false;
-    if (found_education1 > 0 || found_education2 > 0) {
-        // console.log("Education found");
-        var arr_resume_previous_hard_skills = str_resume.split('\n');
-        var arr_resume_withoutspaces_hard_skills = arr_resume_previous_hard_skills.map(el => el.trim());
-        var arr_resume_final_hard_skills = arr_resume_withoutspaces_hard_skills.map(v => v.toLowerCase());
-        for (var i = 0; i < arr_resume_final_hard_skills.length; i++) {
-            var temp_posting_str = arr_resume_final_hard_skills[i];
-            var temp_posting_arr = temp_posting_str.split(',');
-            var temp_posting_arr_withoutspaces = temp_posting_arr.map(el => el.trim());
-            for (var j = 0; j < temp_posting_arr_withoutspaces.length; j++) {
-                // console.log(temp_posting_arr_withoutspaces[j]);
-                for (var k = 0; k < education_level.length; k++) {
-                    if (temp_posting_arr_withoutspaces[j].search(education_level[k])) {
-                        education_degree = true;
-                    }
-                }
-            }
-        }
-        if (education_degree == true) {
-            //    console.log("Professional degree found");
+    if (found_education==1) {
+       
             myTable.rows[2].cells[1].textContent = "Education is found in the resume. Professional degree is there. Excellent job!";
             myTable.rows[2].cells[3].textContent = "";
             resume_match_count = resume_match_count + 1;
 
             localStorage.setItem('education','Education is found in the resume. Professional degree is there. Excellent job!');
-        } else {
-            //  console.log("Professional degree not found");
-            myTable.rows[2].cells[1].textContent = "Education is found in the resume. Professional degree is not there.";
-            myTable.rows[2].cells[3].textContent = "";
-
-            localStorage.setItem('education','Education is found in the resume. Professional degree is not there.');
-      
-        }
+        
     } else {
         //  console.log("Education Not Found");
         myTable.rows[2].cells[1].textContent = "No Education related information found. ";
