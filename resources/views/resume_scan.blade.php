@@ -414,9 +414,21 @@ function myFunctionWordMatch() {
 
         localStorage.setItem('education','No Education related information found.');
     }
+
     //experience
-    var found_experience = str_resume.search("experience");
-    if (found_experience > 0) {
+
+   var found_experience = 0;
+    var experience_list = ["experience", "experiences", "project", "projects","experienced"];
+   for(var i=0;i<experience_list.length;i++)
+   {
+    if((str_resume.search(experience_list[i]))>0)
+    {
+      found_experience=1;
+    
+    }
+   }
+    
+    if (found_experience==1) {
         //  console.log("Experience found");
         myTable.rows[3].cells[1].textContent = "Valid Experience is found in the resume. Excellent job!";
         myTable.rows[3].cells[3].textContent = "";
@@ -433,11 +445,19 @@ function myFunctionWordMatch() {
         localStorage.setItem('experience','No Valid Experience found in the resume.');
     }
     //Certifications
-    var found_certification1 = str_resume.search("certification");
-    var found_certification2 = str_resume.search("certifications");
-    var found_certification3 = str_resume.search("training");
-    var found_certification4 = str_resume.search("trainings");
-    if (found_certification1 > 0 || found_certification2 > 0 || found_certification3 > 0 ||found_certification4 > 0) {       
+
+    var found_certification = 0;
+    var certification_list = ["certification", "certifications", "training", "trainings","certified"];
+   for(var i=0;i<certification_list.length;i++)
+   {
+    if((str_resume.search(certification_list[i]))>0)
+    {
+      found_certification=1;
+    
+    }
+   }
+   
+    if (found_certification==1) {       
         myTable.rows[4].cells[1].textContent = "Valid Certifications/Trainings are found in the resume. Excellent job!";
         myTable.rows[4].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
