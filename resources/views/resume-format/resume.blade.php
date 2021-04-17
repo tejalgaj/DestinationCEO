@@ -256,10 +256,10 @@ color: #000;
          <div class="centre_content_section">{{$work->employer }}</div>
         </div>
         <p>
-            @if (!is_null($work->city))
+            @if ($work->city!="")
             {{$work->city.', ' }}
             @endif
-            @if (!is_null($work->state))
+            @if ($work->state!="")
             {{$work->state.', ' }}
             @endif
             {{$work->country }}</p>
@@ -274,10 +274,11 @@ color: #000;
         @foreach($user->education as $education)
         <div class="container">
         <div class="left_content_section">
-            @if (!is_null($education->city))
+            
+            @if ($education->city!="")
             {{$education->city.', ' }}
             @endif
-            @if (!is_null($education->state))
+            @if ($education->state!="")
             {{$education->state.', ' }}
             @endif
             {{$education->country }}

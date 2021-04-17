@@ -190,11 +190,11 @@
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         @foreach ($admin_social_links_files as $adminSocialLinksFile)
-          <a href="{{$adminSocialLinksFile['twitter'] }}" class="twitter"><i class="bx bxl-twitter"></i></a>  
-          <a href="{{$adminSocialLinksFile['facebook'] }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="{{$adminSocialLinksFile['instagram'] }}" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="{{$adminSocialLinksFile['google'] }}" class="google-plus"><i class="bx bxl-google"></i></a>
-          <a href="{{$adminSocialLinksFile['linkedIn'] }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="{{$adminSocialLinksFile['twitter'] }}" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>  
+          <a href="{{$adminSocialLinksFile['facebook'] }}" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+          <a href="{{$adminSocialLinksFile['instagram'] }}" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+          <a href="{{$adminSocialLinksFile['google'] }}" class="google-plus" target="_blank"><i class="bx bxl-google"></i></a>
+          <a href="{{$adminSocialLinksFile['linkedIn'] }}" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
           @endforeach
         </div>
     </div>

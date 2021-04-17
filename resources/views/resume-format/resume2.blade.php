@@ -280,10 +280,10 @@ h4 {
             <li>{{$work->job_title }}</li>
             <li>
                 {{$work->employer.', ' }}
-                @if (!is_null($work->city))
+                @if ($work->city!="")
                 {{$work->city.', ' }}
                 @endif
-                @if (!is_null($work->state))
+                @if ($work->state!="")
                 {{$work->state.', ' }}
                 @endif
                 {{$work->country }}
@@ -323,12 +323,12 @@ h4 {
         <div class="education-row">
             <h4>{{$education->fieldofstudy }}, {{$education->degree }}</h4>
             <span>{{$education->schoolname.', ' }} 
-                @if (!is_null($education->city))
-                {{$education->city.', ' }}
-                @endif
-                @if (!is_null($education->state))
-                {{$education->state.', ' }}
-                @endif
+                @if ($education->city!="")
+            {{$education->city.', ' }}
+            @endif
+            @if ($education->state!="")
+            {{$education->state.', ' }}
+            @endif
                 {{$education->country }}</span>
             <div class="education-year">
                 <?php $education_enddate = $education->enddate;

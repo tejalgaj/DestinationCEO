@@ -276,12 +276,12 @@ h4 {
             <li>{{$work->job_title }}</li>
             <li>
                 {{$work->employer.', ' }}
-                @if (!is_null($work->city))
-                {{$work->city.' ,' }}
-                @endif
-                @if (!is_null($work->state))
-                {{$work->state.' ,' }}
-                @endif
+                @if ($work->city!="")
+            {{$work->city.', ' }}
+            @endif
+            @if ($work->state!="")
+            {{$work->state.', ' }}
+            @endif
                 {{$work->country }}
             </li>
             <li>
@@ -315,11 +315,11 @@ h4 {
             <h4>{{$education->fieldofstudy }}, {{$education->degree }}</h4>
             <span>
                 {{$education->schoolname.', ' }} 
-                @if (!is_null($education->city))
-                {{$education->city.' ,' }}
+                @if ($education->city!="")
+                {{$education->city.', ' }}
                 @endif
-                @if (!is_null($education->state))
-                {{$education->state.' ,' }}
+                @if ($education->state!="")
+                {{$education->state.', ' }}
                 @endif
                 {{$education->country }}
             </span>
