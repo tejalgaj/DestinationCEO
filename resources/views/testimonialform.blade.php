@@ -3,6 +3,7 @@
  <head>
  <link href="{{asset('boottheme/assets/css/testimonial.css')}}" rel="stylesheet">
  </head>
+ <body>
  <div class= "container">
  <div class="section-title mt-5 ">
             <h2>Welcome to Testimonial Feature</h2>
@@ -53,7 +54,7 @@
         </form>
       </div>  
    </div>
-
+</body>
   
 @endsection
 

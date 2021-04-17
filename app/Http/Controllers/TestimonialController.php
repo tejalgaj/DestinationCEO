@@ -34,7 +34,7 @@ class TestimonialController extends Controller
        $testimonial->name = $request->input('name');
        $testimonial->jobtitle = $request->input('jobtitle');
        $testimonial->view = $request->input('view');
-       $testimonial->status = 'not approved'; //added by tejal
+       $testimonial->status = 'not approved'; 
        
        if($request->hasfile('image')){
        $file = $request->file('image');
@@ -45,7 +45,7 @@ class TestimonialController extends Controller
  }
  else
  {
-        //return $request; //commented by tejal
+       
         $testimonial->image ='';
 
  }
@@ -70,13 +70,6 @@ class TestimonialController extends Controller
 
   }
 
-//   public function edit($id)
-//   {
-
-//      $testimonials = Testimonial::find($id);
-//      return view('testimonialupdateform')->with('testimonials', $testimonials);
-//   }
-//updated by tejal
   public function edit($id)
   {
 
@@ -98,16 +91,39 @@ class TestimonialController extends Controller
   public function delete($id)
   {
          $testimonials = Testimonial::find($id);
-         $testimonials->delete();
-         return redirect('/googlereviews')->with('testimonials',$testimonials);
+         $image = '/uploads/testimonial/'.$testimonials->image;
+         $path = str_replace('\\','/',public_path());
+         if(strcmp($path.$image , $path.'/uploads/testimonial/'))
+         {
+            unlink($path.$image);
+            $testimonials-> delete();
+            return redirect('/googlereviews')-> with ('testimonials',$testimonials);
 
+         }
+         
+         else{
+          
+          
+          $testimonials-> delete();
+          return redirect('/googlereviews')-> with ('testimonials',$testimonials);
+         }
 
+         
+
+      
+
+    }
 
   }
+
+
+    
+        
+
   
 
 
-}
+
 
 
 
