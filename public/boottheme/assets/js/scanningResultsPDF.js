@@ -44,13 +44,7 @@ function genPDF() {
     doc.text(10, 200, localStorage.getItem('certification'));
 
 
-    doc.setDrawColor(255, 0, 0);
-    doc.line(15, 250, 200, 250);
 
-    doc.setFontSize(15);
-    doc.text(30, 260, localStorage.getItem('result_description'));
-    doc.setDrawColor(255, 0, 0);
-    doc.line(15, 270, 200, 270);
 
 
     doc.addPage();
@@ -107,25 +101,6 @@ function genPDF() {
     doclength = doclength + 8;
     doc.text(20, doclength, soft_skills_resume);
 
-    doc.setDrawColor(255, 0, 0);
-    doc.line(15, 250, 200, 250);
 
-    doc.setFontSize(15);
-    doc.text(30, 260, localStorage.getItem('result_description'));
-    doc.setDrawColor(255, 0, 0);
-    doc.line(15, 270, 200, 270);
-    /*
-    doc.text(20, 130, 'Soft Skills Required:');
-    doc.setFontSize(10);
-    var soft_skills_posting = (localStorage.getItem("soft_skills_posting"));
-    doc.text(20, 140, soft_skills_posting);
-    doc.setFontSize(13);
-    doc.text(20, 150, 'Soft Skills Matched:');
-    doc.setFontSize(10);
-    var soft_skills_resume = (localStorage.getItem("soft_skills_resume"));
-
-    doc.text(20, 160, soft_skills_resume);
-
-   */
     doc.save('ScanningResults.pdf');
 }
