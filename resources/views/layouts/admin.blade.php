@@ -62,7 +62,7 @@
           </ul>
         </li>
          
-         <li class={{ Request::path()==='googlereviews'?'active':''}}><a href="googlereviews">Testimonial</a></li>
+         <li class={{ Request::path()==='googlereviews'?'active':''}}><a href="/googlereviews">Testimonial</a></li>
            
           
        
