@@ -59,23 +59,23 @@ function genPDF() {
     doc.text(60, 40, 'HARD SKILLS MATCH :' + localStorage.getItem('hard_skills_match'));
     doc.setFontSize(18);
     doc.text(20, 60, 'Hard Skills Required:');
-    doc.setFontSize(15);
+    doc.setFontSize(10);
     var hard_skills_posting = JSON.parse(localStorage.getItem('hard_skills_posting'));
-    doc.text(15, 70, hard_skills_posting);
+    doc.text(20, 70, hard_skills_posting);
     /*for (var i = 0; i <= hard_skills_posting.length; i++) {
         doc.text(20, 70, hard_skills_posting[i]);
     }
 */
 
     var hard_skills_posting_length = hard_skills_posting.length;
-    var doclength = 70 + (hard_skills_posting_length * 7);
+    var doclength = 70 + (hard_skills_posting_length * 5);
     doc.setFontSize(18);
     doc.text(20, doclength, 'Hard Skills Matched:');
 
-    doc.setFontSize(15);
+    doc.setFontSize(10);
     var hard_skills_resume = JSON.parse(localStorage.getItem("hard_skills_resume"));
-    doclength = doclength + 8;
-    doc.text(15, doclength, hard_skills_resume);
+    doclength = doclength + 4;
+    doc.text(20, doclength, hard_skills_resume);
 
     var hard_skills_resume_length = hard_skills_resume.length;
     doclength = doclength + hard_skills_resume_length * 6;
@@ -86,33 +86,20 @@ function genPDF() {
     doc.text(60, 40, 'SOFT SKILLS MATCH :' + localStorage.getItem('soft_skills_match'));
     doc.setFontSize(18);
     doc.text(20, 60, 'Soft Skills Required:');
-    doc.setFontSize(15);
+    doc.setFontSize(10);
     var soft_skills_posting = JSON.parse(localStorage.getItem('soft_skills_posting'));
     doc.text(20, 70, soft_skills_posting);
 
     var soft_skills_posting_length = soft_skills_posting.length;
-    var doclength = 70 + (soft_skills_posting_length * 7);
+    var doclength = 70 + (soft_skills_posting_length * 5);
     doc.setFontSize(18);
-    doc.text(15, doclength, 'Soft Skills Matched:');
+    doc.text(20, doclength, 'Soft Skills Matched:');
 
-    doc.setFontSize(15);
+    doc.setFontSize(10);
     var soft_skills_resume = JSON.parse(localStorage.getItem("soft_skills_resume"));
     doclength = doclength + 8;
-    doc.text(15, doclength, soft_skills_resume);
+    doc.text(20, doclength, soft_skills_resume);
 
 
-    /*
-    doc.text(20, 130, 'Soft Skills Required:');
-    doc.setFontSize(10);
-    var soft_skills_posting = (localStorage.getItem("soft_skills_posting"));
-    doc.text(20, 140, soft_skills_posting);
-    doc.setFontSize(13);
-    doc.text(20, 150, 'Soft Skills Matched:');
-    doc.setFontSize(10);
-    var soft_skills_resume = (localStorage.getItem("soft_skills_resume"));
-
-    doc.text(20, 160, soft_skills_resume);
-
-   */
     doc.save('ScanningResults.pdf');
 }
