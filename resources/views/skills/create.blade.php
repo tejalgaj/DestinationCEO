@@ -19,8 +19,8 @@
             @csrf
           
               <div class="form-group">
-                <label for="skills-name">Skill Title<span class="alert-message">*</span></label>
-                <input type="text" class="form-control {{ $errors->has('skill_title') ? 'is-invalid' : ''}}" id="skills-title" placeholder="Skill Title" name="skill_title" value="{{old('skill_title')}}" required>
+                <label for="skills-name">Skill Type<span class="alert-message">*</span></label>
+                <input type="text" class="form-control {{ $errors->has('skill_title') ? 'is-invalid' : ''}}" id="skills-title" placeholder="e.g.Languages" name="skill_title" value="{{old('skill_title')}}" required>
                  @error('skill_title')
                  <div class="invalid-feedback">
                  {{$errors->first('skill_title')}}
@@ -29,8 +29,8 @@
               </div>
 
               <div class="form-group">
-                <label for="skills-name">Skill Value<span class="alert-message">*</span></label>
-                <input type="text" class="form-control {{ $errors->has('value') ? 'is-invalid' : ''}}" id="skills-value" placeholder="Skill Value" name="value" value="{{old('value')}}" required>
+                <label for="skills-name">Specific skill for given type<span class="alert-message">*</span></label>
+                <input type="text" class="form-control {{ $errors->has('value') ? 'is-invalid' : ''}}" id="skills-value" placeholder="e.g.Phython,JavaScript" name="value" value="{{old('value')}}" required>
                  @error('value')
                  <div class="invalid-feedback">
                  {{$errors->first('value')}}
