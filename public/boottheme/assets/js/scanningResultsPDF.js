@@ -1,6 +1,6 @@
 function genPDF() {
     var doc = new jsPDF();
-    doc.setFontStyle('Arial');
+
     doc.setFontSize(10);
     doc.setFontSize(25);
     doc.text(70, 20, 'SCANNING REPORT');
