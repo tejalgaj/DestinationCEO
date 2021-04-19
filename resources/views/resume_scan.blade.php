@@ -490,7 +490,7 @@ function myFunctionWordMatch() {
         myTable.rows[1].cells[3].textContent = "";
         resume_match_count = resume_match_count + 1;
 
-        localStorage.setItem('linkedin','The resume shows linkedIn link ' + result_linkedin[0] + ' This is highly appreciated!'); 
+        localStorage.setItem('linkedin','The resume shows LinkedIn link ' + result_linkedin[0] + ' This is highly appreciated!'); 
   
     } else {
         myTable.rows[1].cells[1].textContent = "The resume does not shows any linkedIn link; This is disappointing!";
