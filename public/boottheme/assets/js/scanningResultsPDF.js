@@ -16,7 +16,7 @@ function genPDF() {
     doc.text(10, 70, '');
     doc.setFontSize(13);
     doc.text(10, 90, 'RESUME WORD COUNT: ' + localStorage.getItem('number Chars'));
-    doc.text(10, 110, 'LINKED IN MATCH:');
+    doc.text(10, 110, 'LINKEDIN MATCH:');
     doc.setFontSize(10);
     doc.text(10, 120, localStorage.getItem('linkedin'));
     doc.setFontSize(13);
