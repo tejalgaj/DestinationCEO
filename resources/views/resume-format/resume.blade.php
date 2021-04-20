@@ -64,7 +64,7 @@ color: #000;
     .resume-box {
         width:100%;
         margin:0 auto;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Arial', sans-serif;
 	font-size: 14px;
        
     }

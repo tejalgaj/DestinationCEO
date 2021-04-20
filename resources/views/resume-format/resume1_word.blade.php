@@ -25,7 +25,7 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
     .resume-box {
         width:100%;
         margin:0 auto;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: 'Arial', sans-serif;
         font-size: 18px;
        
     }
@@ -60,7 +60,7 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
     font-weight:600;
     font-size: 20px;
 	color: #000;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Arial', sans-serif;
 }
 .heading {
 	font-size: 20px;

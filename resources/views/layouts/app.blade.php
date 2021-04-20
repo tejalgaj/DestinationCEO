@@ -46,14 +46,20 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="/">Destination CEO</a></h1>
+      <h1 class="logo mr-auto"><a href="/"> <img src="{{asset('boottheme/assets/img/DCEO Logo Metallic Gold-latest.png')}}" class="img-fluid dest-logo-img" alt="">Destination CEO</a></h1>
     
       <nav class="nav-menu d-none d-lg-block">
       <ul>
           <li class={{ Request::path()==='/'?'active':''}}><a href="/">Home</a></li>
           <li class={{ Request::path()==='view_aboutUs'?'active':''}}><a href="/view_aboutUs">About Us</a></li>
-          <li class={{ Request::path()==='resume-builder'?'active':''}}><a href="/resume-builder">Resume Builder</a></li>
-          <li class={{ Request::path()==='resume-scan'?'active':''}}><a href="/resume-scan">Scanning</a></li>
+          <li class="drop-down"><a href="">Resume Tools</a>
+            <ul>
+              <li class={{ Request::path()==='resume-builder'?'active':''}}><a href="/resume-builder">Resume Builder</a></li>
+              <li class={{ Request::path()==='resume-scan'?'active':''}}><a href="/resume-scan">Resume Scanning</a></li>
+              
+            </ul>
+         </li>
+          
          
           <li class={{ Request::path()==='contact'?'active':''}}><a href="/contact">Contact</a></li>
           <li class="drop-down"><a href="">Reviews</a>
@@ -177,9 +183,8 @@
       <div class="footer-text" style="width: 40rem;">
             
            
-           <p style="line-height: 24px"> <b>Disclaimer-</b>The information contained on this site was correct at the time it was posted. Be aware that it is possible there may have been subsequent changes, 
-           which make the information outdated at the time you are accessing it. </p>
-           <p>Copyright © 2021 | Destination CEO | All Rights Reserved</p>
+           
+           <p>Copyright © {{date("Y")}} | Destination CEO | All Rights Reserved</p>
           </div>
         </div>
       </div>

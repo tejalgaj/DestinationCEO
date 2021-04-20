@@ -4,8 +4,8 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-content-center align-items-center">
   <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-    <h1>YOU are the CEO of YOUR destiny</h1>
-    <h2>Achieve your career success with us</h2>
+    <h1>YOU are the CEO of YOUR Destiny</h1>
+    
     
 
   </div>
@@ -40,7 +40,7 @@ Master Classes taught by Mentors</li>
             <li><i class="icofont-check-circled"></i> Insight into the Hidden Job Market in Canada: Personal Introductions to the 100's of Employers within the Destination CEO Employer Network</li>
           </ul>
          
-          <a href="about.html" class="learn-more-btn">Learn More</a>
+          <a href="/view_aboutUs" class="learn-more-btn">Learn More</a>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ Master Classes taught by Mentors</li>
           
         <div class="content">
           <h3>Meena Dowlwani</h3>
-          <h4>(FOUNDER) </h4>
+          <h4>FOUNDER</h4>
           <img src="{{asset('boottheme/assets/img/meena.jpg')}}" alt=".." width="300" height="300">
            
             

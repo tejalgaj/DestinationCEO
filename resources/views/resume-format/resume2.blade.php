@@ -64,7 +64,7 @@ color: #000;
         -ms-box-sizing: border-box
     }
     .resume-box {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Arial', sans-serif;
 	font-size: 14px;
 	color: #000;
 	padding: 15px;

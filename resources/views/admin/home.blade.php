@@ -4,8 +4,8 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-content-center align-items-center">
   <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-    <h1>YOU are the CEO of YOUR destiny</h1>
-    <h2>Achieve your career success with us</h2>
+    <h1>YOU are the CEO of YOUR Destiny</h1>
+    
     
    <!-- <a href="/home" class="btn-get-started">Get Started</a>-->
   </div>
@@ -24,7 +24,7 @@
 
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-          <img src="{{asset('bootthemeassets/img/about.jpg')}}" class="img-fluid" alt="">
+          <img src="{{asset('boottheme/assets/img/about.jpg')}}" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
           <h3>WHAT WE DO</h3>
@@ -40,7 +40,7 @@ Master Classes taught by Mentors</li>
             <li><i class="icofont-check-circled"></i> Insight into the Hidden Job Market in Canada: Personal Introductions to the 100's of Employers within the Destination CEO Employer Network</li>
           </ul>
          
-          <a href="about.html" class="learn-more-btn">Learn More</a>
+          <a href="/view_aboutUs" class="learn-more-btn">Learn More</a>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ Master Classes taught by Mentors</li>
           
         <div class="content">
           <h3>Meena Dowlwani</h3>
-          <h4>(FOUNDER) </h4>
+          <h4>FOUNDER</h4>
           <img src="{{asset('boottheme/assets/img/meena.jpg')}}" alt=".." width="300" height="300">
            
             <!--<div class="text-center">

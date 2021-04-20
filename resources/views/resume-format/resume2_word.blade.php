@@ -53,7 +53,7 @@ header("Content-Disposition: attachment;Filename=".$user->name.'_'.time().".doc"
 body{
     width: var(--page-width);
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Arial', sans-serif;
 font-size: px18;
 color: #000;
   line-height: 1.3;
@@ -68,7 +68,7 @@ color: #000;
         -ms-box-sizing: border-box
     }
     .resume-box {
-    font-family: 'Times New Roman', Times, serif;
+        font-family: 'Arial', sans-serif;
 	font-size: 20px;
 	color: #000;
 	padding: 15px;
@@ -180,7 +180,7 @@ ul li span, ol li span {
 h4 {
     margin-top: 0px;
     margin-bottom:5px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Arial', sans-serif;
 
 }
 .education-row {
@@ -200,7 +200,7 @@ h4 {
 	margin: 0;
     text-align: center;
     font-size: 24px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Arial', sans-serif;
 }
 .display-content-text p{
     margin: 0;
