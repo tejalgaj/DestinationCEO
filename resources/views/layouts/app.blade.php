@@ -6,12 +6,12 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'Destination CEO') }}</title> --}}
-    <title>Destination CEO</title>
+    <title>Destination CEO - YOU are the CEO of YOUR Destiny</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('boottheme/assets/img/favicon.png')}}" rel="icon">
+  <link href="{{asset('boottheme/assets/img/favicon-32x32.png')}}" rel="icon">
   <link href="{{asset('boottheme/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
