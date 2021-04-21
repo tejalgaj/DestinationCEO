@@ -1,20 +1,14 @@
 @extends('layouts.app')
+
 @section('main-content')
 
-<!DOCTYPE html>
-<html>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
- 
-
 <title>Keyword Scanning</title>
   <link href="{{asset('boottheme/assets/css/resumescancss.css')}}" rel="stylesheet">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-  
-  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
 
@@ -908,4 +902,3 @@ initialise()
 </main>
 </body>
 @endsection
-</html>

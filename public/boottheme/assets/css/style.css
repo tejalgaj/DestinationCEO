@@ -5,9 +5,11 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
@@ -31,9 +33,11 @@ h6 {
     font-family: "Raleway", sans-serif;
 }
 
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -60,9 +64,11 @@ h6 {
     color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+
 #preloader {
     position: fixed;
     top: 0;
@@ -107,18 +113,22 @@ h6 {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
+
 @media screen and (max-width: 768px) {
     [data-aos-delay] {
         transition-delay: 0 !important;
     }
 }
 
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
 #header {
     background: #fff;
     transition: all 0.5s;
@@ -154,21 +164,25 @@ h6 {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+
+
 /* Desktop Navigation */
+
 .nav-menu ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.nav-menu > ul {
+.nav-menu>ul {
     display: flex;
 }
 
-.nav-menu > ul > li {
+.nav-menu>ul>li {
     position: relative;
     white-space: nowrap;
     padding: 10px 0 10px 24px;
@@ -185,8 +199,8 @@ h6 {
 }
 
 .nav-menu a:hover,
-.nav-menu .active > a,
-.nav-menu li:hover > a {
+.nav-menu .active>a,
+.nav-menu li:hover>a {
     color: #dd9933;
 }
 
@@ -205,7 +219,7 @@ h6 {
     border-radius: 4px;
 }
 
-.nav-menu .drop-down:hover > ul {
+.nav-menu .drop-down:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -225,12 +239,12 @@ h6 {
 }
 
 .nav-menu .drop-down ul a:hover,
-.nav-menu .drop-down ul .active > a,
-.nav-menu .drop-down ul li:hover > a {
+.nav-menu .drop-down ul .active>a,
+.nav-menu .drop-down ul li:hover>a {
     color: #dd9933;
 }
 
-.nav-menu .drop-down > a:after {
+.nav-menu .drop-down>a:after {
     content: "\ea99";
     font-family: IcoFont;
     padding-left: 5px;
@@ -241,17 +255,17 @@ h6 {
     left: calc(100% - 30px);
 }
 
-.nav-menu .drop-down .drop-down:hover > ul {
+.nav-menu .drop-down .drop-down:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
 }
 
-.nav-menu .drop-down .drop-down > a {
+.nav-menu .drop-down .drop-down>a {
     padding-right: 35px;
 }
 
-.nav-menu .drop-down .drop-down > a:after {
+.nav-menu .drop-down .drop-down>a:after {
     content: "\eaa0";
     font-family: IcoFont;
     position: absolute;
@@ -262,15 +276,17 @@ h6 {
     .nav-menu .drop-down .drop-down ul {
         left: -90%;
     }
-    .nav-menu .drop-down .drop-down:hover > ul {
+    .nav-menu .drop-down .drop-down:hover>ul {
         left: -100%;
     }
-    .nav-menu .drop-down .drop-down > a:after {
+    .nav-menu .drop-down .drop-down>a:after {
         content: "\ea9d";
     }
 }
 
+
 /* Get Startet Button */
+
 .get-started-btn {
     margin-left: 22px;
     background: #dd9933;
@@ -295,7 +311,9 @@ h6 {
     }
 }
 
+
 /* Mobile Navigation */
+
 .mobile-nav-toggle {
     position: fixed;
     top: 17px;
@@ -347,13 +365,13 @@ h6 {
 }
 
 .mobile-nav a:hover,
-.mobile-nav .active > a,
-.mobile-nav li:hover > a {
+.mobile-nav .active>a,
+.mobile-nav li:hover>a {
     color: #dd9933;
     text-decoration: none;
 }
 
-.mobile-nav .drop-down > a:after {
+.mobile-nav .drop-down>a:after {
     content: "\ea99";
     font-family: IcoFont;
     padding-left: 10px;
@@ -361,11 +379,11 @@ h6 {
     right: 15px;
 }
 
-.mobile-nav .active.drop-down > a:after {
+.mobile-nav .active.drop-down>a:after {
     content: "\eaa1";
 }
 
-.mobile-nav .drop-down > a {
+.mobile-nav .drop-down>a {
     padding-right: 35px;
 }
 
@@ -404,9 +422,11 @@ h6 {
     color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 #hero {
     width: 100%;
     height: 80vh;
@@ -489,9 +509,11 @@ h6 {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
+
 section {
     padding: 60px 0;
     overflow: hidden;
@@ -560,9 +582,11 @@ section {
     margin-bottom: 0;
 }
 
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
 .about .content h3 {
     font-weight: 600;
     font-size: 26px;
@@ -606,9 +630,11 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
+
 .counts {
     padding: 30px 0;
 }
@@ -629,9 +655,11 @@ section {
     color: #37423b;
 }
 
+
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
+
 .why-us .content {
     padding: 30px;
     background: #dd9933;
@@ -695,9 +723,11 @@ section {
     color: #848484;
 }
 
+
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/
+
 .features {
     padding-top: 0px;
 }
@@ -737,9 +767,11 @@ section {
     color: #dd9933;
 }
 
+
 /*--------------------------------------------------------------
 # Courses
 --------------------------------------------------------------*/
+
 .courses .course-item {
     border-radius: 5px;
     border: 1px solid #eef0ef;
@@ -805,9 +837,11 @@ section {
     color: #657a6d;
 }
 
+
 /*--------------------------------------------------------------
 # Trainers
 --------------------------------------------------------------*/
+
 .trainers .member {
     text-align: center;
     margin-bottom: 20px;
@@ -860,9 +894,11 @@ section {
     margin: 0 2px;
 }
 
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
+
 .testimonials .testimonial-wrap {
     padding-left: 50px;
 }
@@ -955,9 +991,11 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Cource Details
 --------------------------------------------------------------*/
+
 .course-details h3 {
     font-size: 24px;
     margin: 30px 0 15px 0;
@@ -1010,9 +1048,11 @@ section {
     color: #657a6d;
 }
 
+
 /*--------------------------------------------------------------
 # Cource Details Tabs
 --------------------------------------------------------------*/
+
 .cource-details-tabs {
     overflow: hidden;
     padding-top: 0;
@@ -1073,9 +1113,11 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Events
 --------------------------------------------------------------*/
+
 .events .card {
     border: 0;
     padding: 0 30px;
@@ -1145,9 +1187,11 @@ section {
     color: #dd9933;
 }
 
+
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
+
 .pricing .box {
     padding: 20px;
     background: #fff;
@@ -1255,9 +1299,11 @@ section {
     color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
 .contact {
     padding-top: 5px;
 }
@@ -1334,7 +1380,7 @@ section {
     font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
     margin-top: 25px;
 }
 
@@ -1418,9 +1464,11 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 #footer {
     color: #37423b;
     font-size: 14px;
@@ -1581,21 +1629,31 @@ section {
     color: #fff;
     text-decoration: none;
 }
+
+#footer .footer-copyright {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+
 /* --------------------alert message css--------------------- */
 
 .alert-message {
     color: red;
 }
 
+
 /* upload templates css */
+
 #upload_section {
     width: 100%;
     height: 80vh;
     padding-top: 100px;
-
     background-size: cover;
     position: relative;
 }
+
 #upload_section .container .well {
     margin: 0;
     font-size: 48px;
@@ -1604,6 +1662,7 @@ section {
     color: #000;
     font-family: "Poppins", sans-serif;
 }
+
 @media (max-width: 992px) {
     #upload_section {
         padding-top: 62px;
@@ -1622,7 +1681,9 @@ section {
     }
 }
 
+
 /* dest logo img css */
+
 .dest-logo-img {
     margin-right: 5px;
 }
