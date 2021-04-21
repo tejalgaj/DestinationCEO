@@ -99,8 +99,8 @@ table {
 
 #submitbtn {
     padding: 0.4em 1.2em;
-    background-color: #dd9933;
-    border: 1px solid hsl(0, 0%, 60%);
+    background-color: #0069D9;
+    border: 1px solid #0069D9;
     color: hsl(0, 100%, 100%);
     border-radius: 0.25em;
     float: left;
@@ -108,7 +108,7 @@ table {
 
 #convert_pdf {
     padding: 0.4em 1.2em;
-    background-color: #dd9933;
+    background-color: #0069D9;
     border: 1px solid hsl(0, 0%, 60%);
     color: hsl(0, 100%, 100%);
     border-radius: 0.25em;
@@ -116,8 +116,8 @@ table {
 
 #anotherbtn {
     padding: 0.4em 1.2em;
-    background-color: #dd9933;
-    border: 1px solid hsl(0, 0%, 60%);
+    background-color: #0069D9;
+    border: 1px solid #0069D9;
     color: hsl(0, 0%, 100%);
     border-radius: 0.25em;
     float: right;

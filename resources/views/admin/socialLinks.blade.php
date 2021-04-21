@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <link href="{{asset('boottheme/assets/css/style.css')}}" rel="stylesheet">
+<link href="{{asset('boottheme/assets/css/resumescancss.css')}}" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,9 +18,19 @@
 <body>
    
 <div class="container-form">
-<h2>Update Social widgets</h2></br>
+
+<div class="section-title">
+            <h2>Welcome to Social Widgets</h2>
+            
+            <p>SOCIAL WIDGETS </p>
+          </div>
 
        <table class="table table-striped">
+       @if(session('success'))
+<div class="alert alert-success">
+  {{ session('success') }}
+</div> 
+@endif
           <tbody>
              <tr>
                 
@@ -63,8 +74,8 @@
                          </div>
                          
                       </fieldset>
-                          
-<button type="submit" class="btn btn-secondary">Update Links</button>
+                      </br>
+                      <button id="submitbtn"  type="submit"  >Save Details</button>
                    </form>
                 </td>
              </tr>

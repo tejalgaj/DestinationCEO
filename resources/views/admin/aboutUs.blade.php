@@ -1,4 +1,5 @@
 <link href="{{asset('boottheme/assets/css/style.css')}}" rel="stylesheet">
+<link href="{{asset('boottheme/assets/css/resumescancss.css')}}" rel="stylesheet">
 @push('datepicker-js')
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
@@ -6,11 +7,12 @@
 
 @extends('layouts.admin')
 @section('main-content')
+
 <main id="main">
     <section id="about" class="about">
          <div class="container" data-aos="fade-up">
         
-        <h3 class="well">About Destination CEO</h3>
+       
 <div class="container lst">
   
 @if (count($errors) > 0)
@@ -24,12 +26,11 @@
 </div>
 @endif
   
-@if(session('success'))
-<div class="alert alert-success">
-  {{ session('success') }}
-</div> 
-@endif
-  <style>
+
+<style>
+    #about .container .section-title {
+      padding-top: 50px;
+    }
   .form-control{
     width: 100%;
 
@@ -39,8 +40,19 @@
     width: 100%;
 }
 </style>
+   
+<div class="container-form">
 
- 
+<div class="section-title">
+
+            <h2>Welcome to About US</h2>
+            <p>ABOUT US</p>
+          </div>
+          @if(session('success'))
+<div class="alert alert-success">
+  {{ session('success') }}
+</div> 
+@endif
 <form method="post" action="{{url('adminAboutUsFile')}}" enctype="multipart/form-data">
     @csrf
      <div class="hdtuto control-group lst input-group" 
@@ -54,8 +66,8 @@
       {{$about['about']}}
        </textarea>
       </div>
-  
-    <button type="submit" class="btn btn-success" style="margin-top:19px">Update</button>
+</br>
+      <button id="submitbtn"  type="submit"  >Save Details</button>
 </form>        
 </div>
 

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <link href="{{asset('boottheme/assets/css/style.css')}}" rel="stylesheet">
+<link href="{{asset('boottheme/assets/css/resumescancss.css')}}" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -82,8 +83,9 @@
                             </div>
                          </div>
                       </fieldset>
-                          
-<button type="submit" class="btn btn-secondary">Save details</button>
+   </br>
+                      <button id="submitbtn"  type="submit"  >Save Details</button>
+    
                    </form>
                 </td>
              </tr>

@@ -74,7 +74,11 @@
 </div>
 </div>
 
+
 </div>
+
+</br>
+</br>
 <form id="skills-form">
 <div  id="container_scan_results">
 <div id="line_space"></div>
