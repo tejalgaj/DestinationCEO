@@ -183,9 +183,11 @@
       
         </div>
       </div>
+      <!--
       <div class="footer-copyright" style="width: 40rem;">
            <p>Copyright © {{date("Y")}} | Destination CEO | All Rights Reserved</p>
           </div>
+  -->
     </div>
     
     <div class="container d-md-flex py-4">

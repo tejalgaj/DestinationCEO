@@ -1,6 +1,4 @@
-
-
- <head>
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Testimonial</title>
   <link href="{{asset('boottheme/assets/css/testimonial.css')}}" rel="stylesheet">
