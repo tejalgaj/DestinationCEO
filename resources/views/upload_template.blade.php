@@ -22,7 +22,12 @@
 </div> 
 @endif
   
-<h3 class="well">Upload resume templates</h3>
+
+<div class="section-title">
+            <h2>Welcome to Templates</h2>
+            
+            <p>UPLOAD TEMPLATES </p>
+          </div>
  
 <form method="post" action="{{url('UploadTemplateFile')}}" enctype="multipart/form-data">
     @csrf

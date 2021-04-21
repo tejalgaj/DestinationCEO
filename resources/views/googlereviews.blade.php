@@ -7,10 +7,13 @@
 
 <body>
 <div class= "container">
-<div class="testimonial-title mt-5">
-            <h2>Welcome to confirm testimonial</h2>
-            <p>Testimonial</p>
- </div>
+</br></br></br></br>
+
+<div class="section-title">
+            <h2>Welcome to Testimonials</h2>
+            
+            <p>Testimonials </p>
+          </div>
 
 @if(\Session::has('success'))
 <div class="alert alert-danger">

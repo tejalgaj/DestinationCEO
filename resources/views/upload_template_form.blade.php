@@ -7,8 +7,14 @@
 <!-- Modal for delete confirmation -->
 
     <div class="container">
+</br></br></br></br>
+    <div class="section-title">
+            <h2>Welcome to Templates</h2>
+            
+            <p>Your Templates </p>
+          </div>
         <div class="jumbotron">
-        <h1 class="well" style="color:#3ac162; padding-top: 20px;"> Your saved templates</h1>
+        
         <table class="table">
   <thead class="thead-dark">
     <tr>
