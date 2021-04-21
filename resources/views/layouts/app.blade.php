@@ -180,6 +180,34 @@
             </p>
           </div>
 
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li class={{ Request::path()==='/'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/">Home</a></li>
+          <li class={{ Request::path()==='view_aboutUs'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/view_aboutUs">About Us</a></li>
+          <li class={{ Request::path()==='contact'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/contact">Contact</a></li>
+          
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li class={{ Request::path()==='resume-builder'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/resume-builder">Resume Builder</a></li>
+              <li class={{ Request::path()==='resume-scan'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/resume-scan">Resume Scanning</a></li>
+         
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Reviews</h4>
+            <ul>
+              <li class={{ Request::path()==='scraper'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/scraper">Google Reviews</a></li>
+          <li class={{ Request::path()==='testimonialpage'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/testimonialpage">Testimonials</a></li>
+          <li class={{ Request::path()==='testimonialform'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/testimonialform">Post Testimonial</a></li>
+            </ul>
+          </div>
+
       
         </div>
       </div>
@@ -192,9 +220,12 @@
     
     <div class="container d-md-flex py-4">
 
+      
       <div class="mr-md-auto text-center text-md-left">
-        
-       
+        <div class="copyright">
+          &copy; Copyright {{date("Y")}} <strong><span>Destination CEO</span></strong>. All Rights Reserved
+        </div>
+      
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         @foreach ($admin_social_links_files as $adminSocialLinksFile)
