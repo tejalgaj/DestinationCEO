@@ -20,18 +20,20 @@ class aboutUsControllerAdmin extends Controller
     }
     public function addData(Request $request)
     {
-        $this->validate($request, [
-            'about' => 'required'        ]);
-     
+       
     //   $adminAbout_obj = new adminAboutUsFile;
       
     //   $adminAbout_obj->about= $request->input('about');
      
     //    $adminAbout_obj->save();
+    DB::table('admin_about_us_files')->where('id', 2)->delete();
        $about=$request->input('about');
-              DB::update('update admin_about_us_files set about=? where id=?',
-       [$about,2]);
+       DB::insert('insert into admin_about_us_files (id,about) values (?,?)',
+        [2,$about]);
 
+            /*  DB::update('update admin_about_us_files set about=? where id=?',
+       [$about,2]);
+*/
        return redirect('admin/aboutUs')->with('success','Data Updated');
      
 
