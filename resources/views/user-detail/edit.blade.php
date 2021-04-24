@@ -144,7 +144,7 @@
              
            </div>
           
-           <x-form.btnsubmit name="Update Details"></x-form.btnsubmit>
+           <x-form.btnsubmit class="btn btn-dark" name="Update Details"></x-form.btnsubmit>
          
          </form>
      

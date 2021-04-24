@@ -58,8 +58,7 @@
      <div class="hdtuto control-group lst input-group" 
     style="margin-top:10px; ; color:#3ac162;   font-size: 25px;">
     <label for="exampleInputEmail1"></label></div>
-    <div class="input-group hdtuto control-group lst increment" >
-    
+    <div class="input-group hdtuto control-group lst increment" > 
     
 <!-- <textarea id="myfrm form-control" name="about"  rows="10" cols="120"> -->
 <textarea class="ckeditor form-control" name="about" style= "max-width: 100%;">

@@ -20,7 +20,7 @@
             <div class="card-body">
               <h5 class="card-title">{{$exp->employer}}</h5>
               <p class="card-text">{{$exp->country}}</p>
-              <a href="{{route('experience.edit',$exp)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
+              <a href="{{route('experience.edit',$exp)}}" class="btn btn-sm btn-dark" role="button">Edit</a>
               <form action={{route('experience.destroy',$exp)}} method="POST" class="mt-2" style="display: inline">
 @csrf
 @method('DELETE')
@@ -47,7 +47,7 @@
     
         <div class="col text-right">
          
-          <a class=" btn btn-primary {{ ($exp_status_count < 1)?'disabled':''}}" href=" {{route('technical-experience.index')}} " role="button">Technical Experience</a>
+          <a class=" btn btn-dark {{ ($exp_status_count < 1)?'disabled':''}}" href=" {{route('technical-experience.index')}} " role="button">Technical Experience</a>
       
             
         </div>

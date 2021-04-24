@@ -31,7 +31,7 @@
             </li>
           </ul>
           
-          <button type="button" class="btn btn-primary"><a href="/resume-template">Build your resume now</a></button>
+          <button style="color:white" type="button" class="btn btn-dark"><a href="/resume-template">Build your resume now</a></button>
 
         </div>
       </div>

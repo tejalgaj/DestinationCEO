@@ -20,7 +20,7 @@
             <div class="card-body">
               <h5 class="card-title">{{$tech_exp->project_title}}</h5>
               <p class="card-text">{{$tech_exp->technology_stack}}</p>
-              <a href="{{route('technical-experience.edit',$tech_exp)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
+              <a href="{{route('technical-experience.edit',$tech_exp)}}" class="btn btn-sm btn-dark" role="button">Edit</a>
               <form action={{route('technical-experience.destroy',$tech_exp)}} method="POST" class="mt-2" style="display: inline">
 @csrf
 @method('DELETE')
@@ -49,9 +49,9 @@
           <?php $value = session('resume_selected_template', 'default') ?>
       
       @if ($value=="Resume Template 2")
-      <a class=" btn btn-primary" href=" {{route('highlight.index')}} " role="button">Highlight</a> 
+      <a class=" btn btn-dark" href=" {{route('highlight.index')}} " role="button">Highlight</a> 
       @else
-      <a class=" btn btn-primary" href=" {{route('additional-experience.index')}} " role="button">Additional Experience</a>
+      <a class=" btn btn-dark" href=" {{route('additional-experience.index')}} " role="button">Additional Experience</a>
       @endif
          
         </div>

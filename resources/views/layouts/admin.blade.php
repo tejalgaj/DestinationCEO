@@ -142,13 +142,12 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.download')}}"
+  <a name="" id="" class="btn btn-dark" href="{{route('resume-format.resume.download')}}"
   role="button">PDF</a>
-  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.DOCdownload')}}"
+  <a name="" id="" class="btn btn-dark" href="{{route('resume-format.resume.DOCdownload')}}"
   role="button">DOC</a> 
-  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.TXTdownload')}}"
+  <a name="" id="" class="btn btn-dark" href="{{route('resume-format.resume.TXTdownload')}}"
   role="button">TXT</a>
-  
 </div>
 </div>
 </div>
@@ -175,9 +174,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li class={{ Request::path()==='/'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/">Home</a></li>
-          <li class={{ Request::path()==='view_aboutUs'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/view_aboutUs">About Us</a></li>
-          <li class={{ Request::path()==='contact'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/contact">Contact</a></li>
+              <li class={{ Request::path()==='/'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/admin">Home</a></li>
+          <li class={{ Request::path()==='/admin/aboutUs'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/admin/aboutUs">About Us</a></li>
+          <li class={{ Request::path()==='/admin/contact_details'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/contact_details">Contact</a></li>
           
             </ul>
           </div>
@@ -185,8 +184,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li class={{ Request::path()==='resume-builder'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/resume-builder">Resume Builder</a></li>
-              <li class={{ Request::path()==='resume-scan'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/resume-scan">Resume Scanning</a></li>
+              <li class={{ Request::path()==='upload_template'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/upload_template">Upload Templates</a></li>
+              <li class={{ Request::path()==='upload_template_form'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/upload_template_form">Manage Templates</a></li>
+              <li class={{ Request::path()==='/admin/socialLinks'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/admin/socialLinks">Social Widgets</a></li>
          
             </ul>
           </div>
@@ -194,10 +194,8 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Reviews</h4>
             <ul>
-              <li class={{ Request::path()==='scraper'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/scraper">Google Reviews</a></li>
-          <li class={{ Request::path()==='testimonialpage'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/testimonialpage">Testimonials</a></li>
-          <li class={{ Request::path()==='testimonialform'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/testimonialform">Post Testimonial</a></li>
-            </ul>
+              <li class={{ Request::path()==='googlereviews'?'active':''}}><i class="bx bx-chevron-right"></i><a href="/googlereviews">Manage Testimonials</a></li>
+                 </ul>
           </div>
 
       

@@ -163,7 +163,7 @@ jQuery(function () {
 
   var addCourseButton = $('.add_course'); //Add button selector
   var course_wrapper = $('.field_wrapper_course'); //Input field wrapper
-  var field_course_HTML = '<div class="form-row"><div class="form-group col-md-4"><input type="text" class="form-control" placeholder="Relevant course" name="relevant_courses[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-primary remove_course_button">Delete</a></div></div>'; //New input field html 
+  var field_course_HTML = '<div class="form-row"><div class="form-group col-md-4"><input type="text" class="form-control" placeholder="Relevant course" name="relevant_courses[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-dark remove_course_button">Delete</a></div></div>'; //New input field html 
   var x=1;
   
   //Once add button is clicked
@@ -187,7 +187,7 @@ jQuery(function () {
 
   var addAwardsButton = $('.add_awards'); //Add button selector
   var awards_wrapper = $('.field_wrapper_awards'); //Input field wrapper
-  var field_awards_HTML = '<div class="form-row"><div class="form-group col-md-4"><input type="text" class="form-control" placeholder="Awards" name="awards[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-primary remove_awards_button">Delete</a></div></div>'; //New input field html 
+  var field_awards_HTML = '<div class="form-row"><div class="form-group col-md-4"><input type="text" class="form-control" placeholder="Awards" name="awards[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-dark remove_awards_button">Delete</a></div></div>'; //New input field html 
   var Y=1;
   
   //Once add button is clicked
@@ -211,7 +211,7 @@ jQuery(function () {
 
   var addCurricularButton = $('.add_curricular'); //Add button selector
   var curricular_wrapper = $('.field_wrapper_curricular'); //Input field wrapper
-  var field_curricular_HTML = '<div class="form-row"><div class="form-group col-md-4"><input type="text" class="form-control" placeholder="Extra Curricular Activity" name="extra_activity[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-primary remove_curricular_button">Delete</a></div></div>'; //New input field html 
+  var field_curricular_HTML = '<div class="form-row"><div class="form-group col-md-4"><input type="text" class="form-control" placeholder="Extra Curricular Activity" name="extra_activity[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-dark remove_curricular_button">Delete</a></div></div>'; //New input field html 
   var Z=1;
   
   //Once add button is clicked

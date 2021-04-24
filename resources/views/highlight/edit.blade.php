@@ -40,7 +40,7 @@
   
                 </div>
                 <div class="form-group col-md-4">
-                  <a href="javascript:void(0);" class="btn btn-primary remove_button">Delete</a>
+                  <a href="javascript:void(0);" class="btn btn-dark remove_button">Delete</a>
                 </div>
             </div>
             @endforeach
@@ -73,7 +73,7 @@
               <input type="text" class="form-control soft_skill_text" placeholder="Soft Skills" name="soft_skills[]" value="{{$value}}"/>
             </div>
             <div class="form-group col-md-4">
-              <a href="javascript:void(0);" class="btn btn-primary remove_button_sk">Delete</a>
+              <a href="javascript:void(0);" class="btn btn-dark remove_button_sk">Delete</a>
             </div>
         </div>
         @endforeach
@@ -121,7 +121,7 @@
   var maxHardSkills = 2; //Input fields increment limitation
     var addHardSkillButton = $('.add_hard_skills'); //Add button selector
     var HradSkillwrapper = $('.field_wrapper_hard_skills'); //Input field wrapper
-    var fieldHTMLHardSkills = '<div class="form-row"><div class="form-group col-md-8"><input type="text" class="form-control hard_skill_text" placeholder="Hard Skills" name="hard_skills[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-primary remove_button">Delete</a></div></div>'; //New input field html 
+    var fieldHTMLHardSkills = '<div class="form-row"><div class="form-group col-md-8"><input type="text" class="form-control hard_skill_text" placeholder="Hard Skills" name="hard_skills[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-dark remove_button">Delete</a></div></div>'; //New input field html 
     var x = jQuery("#hard_skill_count").val(); //Initial field counter is 1
     
     //Once add button is clicked
@@ -152,7 +152,7 @@
   var maxSoftSkills = 1; //Input fields increment limitation
     var addSoftSkillButton = $('.add_soft_skills'); //Add button selector
     var SoftSkillwrapper = $('.field_wrapper_soft_skills'); //Input field wrapper
-    var fieldHTMLSoftSkills = '<div class="form-row"><div class="form-group col-md-8"><input type="text" class="form-control soft_skill_text" placeholder="Soft Skills" name="soft_skills[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-primary remove_button_sk">Delete</a></div></div>'; //New input field html 
+    var fieldHTMLSoftSkills = '<div class="form-row"><div class="form-group col-md-8"><input type="text" class="form-control soft_skill_text" placeholder="Soft Skills" name="soft_skills[]"/></div><div class="form-group col-md-4"><a href="javascript:void(0);" class="btn btn-dark remove_button_sk">Delete</a></div></div>'; //New input field html 
     var y = jQuery("#soft_skill_count").val(); //Initial field counter is 1
     
     //Once add button is clicked

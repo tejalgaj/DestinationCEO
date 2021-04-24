@@ -59,9 +59,9 @@
       
     </div>
 
-    <button id="submitbtn"  type="submit"   onclick="update()">Continue Scanning----</button>
+    <button id="submitbtn"  type="submit"   onclick="update()">Continue Scanning</button>
     
-    <button id="anotherbtn"  type="submit"  onclick="window.location.reload();">Scan Another Resume----</button>
+    <button id="anotherbtn"  type="submit"  onclick="window.location.reload();">Scan Another Resume</button>
  
  </br>
  <br>

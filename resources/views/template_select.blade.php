@@ -79,7 +79,7 @@ if (in_array($ext, $supported_image)) {
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary use-template-button">Use This Template</button>
+                  <button type="button" class="btn btn-dark use-template-button">Use This Template</button>
                 </div>
               </div>
             </div>

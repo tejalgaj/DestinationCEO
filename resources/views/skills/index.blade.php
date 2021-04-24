@@ -20,7 +20,7 @@
             <div class="card-body">
               <h5 class="card-title">{{$skill->skill_title}}</h5>
               <p class="card-text">{{$skill->value}}</p>
-              <a href="{{route('skills.edit',$skill)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
+              <a href="{{route('skills.edit',$skill)}}" class="btn btn-sm btn-dark" role="button">Edit</a>
               <form action={{route('skills.destroy',$skill)}} method="POST" class="mt-2" style="display: inline">
 @csrf
 @method('DELETE')
@@ -47,7 +47,7 @@
         @if ( $selected_template!="default")
         
           <div class="col text-right">
-            <a class=" btn btn-primary skill_preview">Preview</a>
+            <a class=" btn btn-dark skill_preview">Preview</a>
         </div>
         
         @endif

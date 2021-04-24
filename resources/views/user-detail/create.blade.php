@@ -129,7 +129,7 @@
             </div>
             
           </div>
-          <x-form.btnsubmit name="Save Details"></x-form.btnsubmit>
+          <x-form.btnsubmit  name="Save Details"></x-form.btnsubmit>
          
          </form>
      

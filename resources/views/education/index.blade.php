@@ -20,7 +20,7 @@
             <div class="card-body">
               <h5 class="card-title">{{$edu->schoolname}}</h5>
               <p class="card-text">{{$edu->fieldofstudy}}</p>
-              <a href="{{route('education.edit',$edu)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
+              <a href="{{route('education.edit',$edu)}}" class="btn btn-sm btn-dark" role="button">Edit</a>
               <form action={{route('education.destroy',$edu)}} method="POST" class="mt-2" style="display: inline">
 @csrf
 @method('DELETE')
@@ -42,7 +42,7 @@
         </div>
     
         <div class="col text-right">
-            <a class=" btn btn-primary {{ ($edu_status_count < 1)?'disabled':''}}" href=" {{route('experience.index')}} " role="button">Work History</a> 
+            <a class=" btn btn-dark {{ ($edu_status_count < 1)?'disabled':''}}" href=" {{route('experience.index')}} " role="button">Work History</a> 
         </div>
     </div>
       

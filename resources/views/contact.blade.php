@@ -77,7 +77,8 @@
                 <div class="error-message"></div>
                 
               </div>
-              <div class="text-center"><button class="btn btn-primary" type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" class="btn btn-dark">Send  Message</button></div>
+            
             </form>
 
       </div>

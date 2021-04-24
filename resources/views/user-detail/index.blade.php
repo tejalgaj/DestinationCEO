@@ -21,7 +21,7 @@
             <div class="card-body">
               <h5 class="card-title">{{$userdetail->email}}</h5>
               <p class="card-text">{{$userdetail->city.' '.$userdetail->state.' '.$userdetail->country}}</p>
-              <a href="{{route('user-detail.edit',$userdetail)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
+              <a href="{{route('user-detail.edit',$userdetail)}}" class="btn btn-sm btn-dark" role="button">Edit</a>
               
               
             </div>
@@ -42,7 +42,7 @@
        
     
         <div class="col text-right">
-            <a class=" btn btn-primary {{ ($user_status_count < 1)?'disabled':''}}" href=" {{route('education.index')}} " role="button">Next Section</a>
+            <a class=" btn btn-dark {{ ($user_status_count < 1)?'disabled':''}}" href=" {{route('education.index')}} " role="button">Next Section</a>
         </div>
     </div>
        

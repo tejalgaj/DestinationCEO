@@ -84,8 +84,9 @@
                          </div>
                       </fieldset>
    </br>
-                      <button id="submitbtn"  type="submit"  >Save Details</button>
-    
+                     <!-- <button id="submitbtn"  type="submit" class="btn btn-amber"  >Save Details</button>-->
+                      
+                      <button type="submit" class="btn btn-dark">Save Details</button>
                    </form>
                 </td>
              </tr>

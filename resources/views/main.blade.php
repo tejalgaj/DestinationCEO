@@ -40,7 +40,7 @@ Master Classes taught by Mentors</li>
             <li><i class="icofont-check-circled"></i> Insight into the Hidden Job Market in Canada: Personal Introductions to the 100's of Employers within the Destination CEO Employer Network</li>
           </ul>
          
-          <a href="/view_aboutUs" class="learn-more-btn">Learn More</a>
+          <a href="/view_aboutUs" class="btn btn-dark">Learn More</a>
         </div>
       </div>
 

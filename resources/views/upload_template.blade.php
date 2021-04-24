@@ -43,7 +43,7 @@
       </div>
     </div> -->
     <div class="hdtuto control-group lst input-group" 
-    style="margin-top:10px; ; color:#3ac162;   font-size: 25px;">
+    style="margin-top:10px; ; color:#343A40;   font-size: 25px;">
     <label for="exampleInputEmail1">Choose Template:</label></div>
     <div class="input-group hdtuto control-group lst increment" >
       <input type="file" name="filenames[]" class="myfrm form-control">
@@ -51,7 +51,7 @@
     </div>
     
   
-    <button type="submit" class="btn btn-success" style="margin-top:19px">Submit</button>
+    <button type="submit" class="btn btn-dark" style="margin-top:19px">Submit</button>
 </form>        
 </div>
 </div>

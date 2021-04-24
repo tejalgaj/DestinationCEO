@@ -27,7 +27,7 @@
               </h5>
               <p class="card-text">{{$highlight->objective}}</p>
              
-              <a href="{{route('highlight.edit',$highlight)}}" class="btn btn-sm btn-primary" role="button">Edit</a>
+              <a href="{{route('highlight.edit',$highlight)}}" class="btn btn-sm btn-dark" role="button">Edit</a>
               
               
             </div>
@@ -49,7 +49,7 @@
        
     
         <div class="col text-right">
-          <a class=" btn btn-primary {{ ($highlight_status_count < 1)?'disabled':''}}" href=" {{route('additional-experience.index')}} " role="button">Additional Experience</a>
+          <a class=" btn btn-dark {{ ($highlight_status_count < 1)?'disabled':''}}" href=" {{route('additional-experience.index')}} " role="button">Additional Experience</a>
         </div>
     </div>
      

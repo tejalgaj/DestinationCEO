@@ -150,11 +150,11 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.download')}}"
+  <a name="" id="" class="btn btn-dark" href="{{route('resume-format.resume.download')}}"
   role="button">PDF</a>
-  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.DOCdownload')}}"
+  <a name="" id="" class="btn btn-dark" href="{{route('resume-format.resume.DOCdownload')}}"
   role="button">DOC</a> 
-  <a name="" id="" class="btn btn-primary" href="{{route('resume-format.resume.TXTdownload')}}"
+  <a name="" id="" class="btn btn-dark" href="{{route('resume-format.resume.TXTdownload')}}"
   role="button">TXT</a>
   
 </div>
